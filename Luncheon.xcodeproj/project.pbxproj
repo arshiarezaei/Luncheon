@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5921F413240183E700739020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F412240183E700739020 /* AppDelegate.swift */; };
+		5921F415240183E700739020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F414240183E700739020 /* SceneDelegate.swift */; };
+		5921F417240183E700739020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F416240183E700739020 /* ViewController.swift */; };
+		5921F41A240183E700739020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921F418240183E700739020 /* Main.storyboard */; };
+		5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5921F41B240183E700739020 /* Luncheon.xcdatamodeld */; };
+		5921F41F240183EA00739020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5921F41E240183EA00739020 /* Assets.xcassets */; };
+		5921F422240183EA00739020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921F420240183EA00739020 /* LaunchScreen.storyboard */; };
+		5921F42D240183EA00739020 /* LuncheonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F42C240183EA00739020 /* LuncheonTests.swift */; };
+		5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F437240183EA00739020 /* LuncheonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5921F429240183EA00739020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5921F407240183E700739020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5921F40E240183E700739020;
+			remoteInfo = Luncheon;
+		};
+		5921F434240183EA00739020 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5921F407240183E700739020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5921F40E240183E700739020;
+			remoteInfo = Luncheon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5921F40F240183E700739020 /* Luncheon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luncheon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5921F412240183E700739020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5921F414240183E700739020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5921F416240183E700739020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5921F419240183E700739020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5921F41C240183E700739020 /* Luncheon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Luncheon.xcdatamodel; sourceTree = "<group>"; };
+		5921F41E240183EA00739020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5921F421240183EA00739020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5921F423240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5921F428240183EA00739020 /* LuncheonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuncheonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5921F42C240183EA00739020 /* LuncheonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuncheonTests.swift; sourceTree = "<group>"; };
+		5921F42E240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5921F433240183EA00739020 /* LuncheonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuncheonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5921F437240183EA00739020 /* LuncheonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuncheonUITests.swift; sourceTree = "<group>"; };
+		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5921F40C240183E700739020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F425240183EA00739020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F430240183EA00739020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5921F406240183E700739020 = {
+			isa = PBXGroup;
+			children = (
+				5921F411240183E700739020 /* Luncheon */,
+				5921F42B240183EA00739020 /* LuncheonTests */,
+				5921F436240183EA00739020 /* LuncheonUITests */,
+				5921F410240183E700739020 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5921F410240183E700739020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5921F40F240183E700739020 /* Luncheon.app */,
+				5921F428240183EA00739020 /* LuncheonTests.xctest */,
+				5921F433240183EA00739020 /* LuncheonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5921F411240183E700739020 /* Luncheon */ = {
+			isa = PBXGroup;
+			children = (
+				5921F412240183E700739020 /* AppDelegate.swift */,
+				5921F414240183E700739020 /* SceneDelegate.swift */,
+				5921F416240183E700739020 /* ViewController.swift */,
+				5921F418240183E700739020 /* Main.storyboard */,
+				5921F41E240183EA00739020 /* Assets.xcassets */,
+				5921F420240183EA00739020 /* LaunchScreen.storyboard */,
+				5921F423240183EA00739020 /* Info.plist */,
+				5921F41B240183E700739020 /* Luncheon.xcdatamodeld */,
+			);
+			path = Luncheon;
+			sourceTree = "<group>";
+		};
+		5921F42B240183EA00739020 /* LuncheonTests */ = {
+			isa = PBXGroup;
+			children = (
+				5921F42C240183EA00739020 /* LuncheonTests.swift */,
+				5921F42E240183EA00739020 /* Info.plist */,
+			);
+			path = LuncheonTests;
+			sourceTree = "<group>";
+		};
+		5921F436240183EA00739020 /* LuncheonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5921F437240183EA00739020 /* LuncheonUITests.swift */,
+				5921F439240183EA00739020 /* Info.plist */,
+			);
+			path = LuncheonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5921F40E240183E700739020 /* Luncheon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5921F43C240183EA00739020 /* Build configuration list for PBXNativeTarget "Luncheon" */;
+			buildPhases = (
+				5921F40B240183E700739020 /* Sources */,
+				5921F40C240183E700739020 /* Frameworks */,
+				5921F40D240183E700739020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Luncheon;
+			productName = Luncheon;
+			productReference = 5921F40F240183E700739020 /* Luncheon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5921F427240183EA00739020 /* LuncheonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5921F43F240183EA00739020 /* Build configuration list for PBXNativeTarget "LuncheonTests" */;
+			buildPhases = (
+				5921F424240183EA00739020 /* Sources */,
+				5921F425240183EA00739020 /* Frameworks */,
+				5921F426240183EA00739020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5921F42A240183EA00739020 /* PBXTargetDependency */,
+			);
+			name = LuncheonTests;
+			productName = LuncheonTests;
+			productReference = 5921F428240183EA00739020 /* LuncheonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5921F432240183EA00739020 /* LuncheonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5921F442240183EA00739020 /* Build configuration list for PBXNativeTarget "LuncheonUITests" */;
+			buildPhases = (
+				5921F42F240183EA00739020 /* Sources */,
+				5921F430240183EA00739020 /* Frameworks */,
+				5921F431240183EA00739020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5921F435240183EA00739020 /* PBXTargetDependency */,
+			);
+			name = LuncheonUITests;
+			productName = LuncheonUITests;
+			productReference = 5921F433240183EA00739020 /* LuncheonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5921F407240183E700739020 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = ir.luncheon;
+				TargetAttributes = {
+					5921F40E240183E700739020 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					5921F427240183EA00739020 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5921F40E240183E700739020;
+					};
+					5921F432240183EA00739020 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5921F40E240183E700739020;
+					};
+				};
+			};
+			buildConfigurationList = 5921F40A240183E700739020 /* Build configuration list for PBXProject "Luncheon" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5921F406240183E700739020;
+			productRefGroup = 5921F410240183E700739020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5921F40E240183E700739020 /* Luncheon */,
+				5921F427240183EA00739020 /* LuncheonTests */,
+				5921F432240183EA00739020 /* LuncheonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5921F40D240183E700739020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5921F422240183EA00739020 /* LaunchScreen.storyboard in Resources */,
+				5921F41F240183EA00739020 /* Assets.xcassets in Resources */,
+				5921F41A240183E700739020 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F426240183EA00739020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F431240183EA00739020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5921F40B240183E700739020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5921F417240183E700739020 /* ViewController.swift in Sources */,
+				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
+				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
+				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F424240183EA00739020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5921F42D240183EA00739020 /* LuncheonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5921F42F240183EA00739020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5921F42A240183EA00739020 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5921F40E240183E700739020 /* Luncheon */;
+			targetProxy = 5921F429240183EA00739020 /* PBXContainerItemProxy */;
+		};
+		5921F435240183EA00739020 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5921F40E240183E700739020 /* Luncheon */;
+			targetProxy = 5921F434240183EA00739020 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5921F418240183E700739020 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5921F419240183E700739020 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5921F420240183EA00739020 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5921F421240183EA00739020 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5921F43A240183EA00739020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5921F43B240183EA00739020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5921F43D240183EA00739020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = Luncheon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.Luncheon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5921F43E240183EA00739020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = Luncheon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.Luncheon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5921F440240183EA00739020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = LuncheonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.LuncheonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Luncheon.app/Luncheon";
+			};
+			name = Debug;
+		};
+		5921F441240183EA00739020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = LuncheonTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.LuncheonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Luncheon.app/Luncheon";
+			};
+			name = Release;
+		};
+		5921F443240183EA00739020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = LuncheonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.LuncheonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Luncheon;
+			};
+			name = Debug;
+		};
+		5921F444240183EA00739020 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N53LWMN6N;
+				INFOPLIST_FILE = LuncheonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.LuncheonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Luncheon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5921F40A240183E700739020 /* Build configuration list for PBXProject "Luncheon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5921F43A240183EA00739020 /* Debug */,
+				5921F43B240183EA00739020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5921F43C240183EA00739020 /* Build configuration list for PBXNativeTarget "Luncheon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5921F43D240183EA00739020 /* Debug */,
+				5921F43E240183EA00739020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5921F43F240183EA00739020 /* Build configuration list for PBXNativeTarget "LuncheonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5921F440240183EA00739020 /* Debug */,
+				5921F441240183EA00739020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5921F442240183EA00739020 /* Build configuration list for PBXNativeTarget "LuncheonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5921F443240183EA00739020 /* Debug */,
+				5921F444240183EA00739020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5921F41B240183E700739020 /* Luncheon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5921F41C240183E700739020 /* Luncheon.xcdatamodel */,
+			);
+			currentVersion = 5921F41C240183E700739020 /* Luncheon.xcdatamodel */;
+			path = Luncheon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5921F407240183E700739020 /* Project object */;
+}
