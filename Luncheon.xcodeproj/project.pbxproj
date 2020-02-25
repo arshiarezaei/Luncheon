@@ -20,6 +20,7 @@
 		59833FDE24052F4500D131BF /* BYekan+ Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD924052F4500D131BF /* BYekan+ Bold.ttf */; };
 		59833FE4240535E100D131BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE3240535E100D131BF /* Alamofire */; };
 		59833FE72405368A00D131BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE62405368A00D131BF /* SwiftyJSON */; };
+		59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FEF2405646D00D131BF /* MainTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59833FD824052F4500D131BF /* BYekan+.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+.ttf"; sourceTree = "<group>"; };
 		59833FD924052F4500D131BF /* BYekan+ Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+ Bold.ttf"; sourceTree = "<group>"; };
+		59833FEF2405646D00D131BF /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		5921F411240183E700739020 /* Luncheon */ = {
 			isa = PBXGroup;
 			children = (
+				59833FEE2405643C00D131BF /* View Controllers */,
 				5921F412240183E700739020 /* AppDelegate.swift */,
 				5921F414240183E700739020 /* SceneDelegate.swift */,
 				5921F416240183E700739020 /* ViewController.swift */,
@@ -155,6 +158,14 @@
 				59833FD624052F4500D131BF /* BYekan */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		59833FEE2405643C00D131BF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59833FEF2405646D00D131BF /* MainTabBarViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,

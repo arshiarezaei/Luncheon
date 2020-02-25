@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="41o-fd-Mzc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--پروفایل-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Luncheon" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,10 +17,67 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="پروفایل" image="profile" id="xQa-8t-Gmv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--پیگیری-->
+        <scene sceneID="qwe-MG-5qh">
+            <objects>
+                <viewController id="acf-xK-Z3G" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GKA-gL-9kV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xtq-Pm-YxK"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="پیگیری" image="follow up" id="qan-jq-W8y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rrr-HE-oDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="920"/>
+        </scene>
+        <!--فود کورت-->
+        <scene sceneID="KaY-VT-FrC">
+            <objects>
+                <viewController id="KE5-j2-ry8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kan-Mx-iJK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xGQ-4y-6an"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="فود کورت" image="food court" id="cVE-0K-Crp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EO0-dk-Mkw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="1651"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Qvh-Ph-bzO">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="41o-fd-Mzc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IR6-N3-P6i">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nu3-Jb-kaL"/>
+                        <segue destination="acf-xK-Z3G" kind="relationship" relationship="viewControllers" id="Uc9-zg-DzA"/>
+                        <segue destination="KE5-j2-ry8" kind="relationship" relationship="viewControllers" id="OWW-N6-QeO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKb-WE-Z1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-299" y="1119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="follow up" width="20" height="19"/>
+        <image name="food court" width="24" height="15"/>
+        <image name="profile" width="14" height="17"/>
+    </resources>
 </document>
