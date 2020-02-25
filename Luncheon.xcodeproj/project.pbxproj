@@ -16,6 +16,8 @@
 		5921F422240183EA00739020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921F420240183EA00739020 /* LaunchScreen.storyboard */; };
 		5921F42D240183EA00739020 /* LuncheonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F42C240183EA00739020 /* LuncheonTests.swift */; };
 		5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F437240183EA00739020 /* LuncheonUITests.swift */; };
+		59833FDD24052F4500D131BF /* BYekan+.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD824052F4500D131BF /* BYekan+.ttf */; };
+		59833FDE24052F4500D131BF /* BYekan+ Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD924052F4500D131BF /* BYekan+ Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		5921F433240183EA00739020 /* LuncheonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuncheonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5921F437240183EA00739020 /* LuncheonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuncheonUITests.swift; sourceTree = "<group>"; };
 		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59833FD824052F4500D131BF /* BYekan+.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+.ttf"; sourceTree = "<group>"; };
+		59833FD924052F4500D131BF /* BYekan+ Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+ Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		5921F406240183E700739020 = {
 			isa = PBXGroup;
 			children = (
+				59833FE12405303C00D131BF /* Fonts */,
 				5921F411240183E700739020 /* Luncheon */,
 				5921F42B240183EA00739020 /* LuncheonTests */,
 				5921F436240183EA00739020 /* LuncheonUITests */,
@@ -129,6 +134,23 @@
 				5921F439240183EA00739020 /* Info.plist */,
 			);
 			path = LuncheonUITests;
+			sourceTree = "<group>";
+		};
+		59833FD624052F4500D131BF /* BYekan */ = {
+			isa = PBXGroup;
+			children = (
+				59833FD824052F4500D131BF /* BYekan+.ttf */,
+				59833FD924052F4500D131BF /* BYekan+ Bold.ttf */,
+			);
+			path = BYekan;
+			sourceTree = "<group>";
+		};
+		59833FE12405303C00D131BF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				59833FD624052F4500D131BF /* BYekan */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59833FDE24052F4500D131BF /* BYekan+ Bold.ttf in Resources */,
+				59833FDD24052F4500D131BF /* BYekan+.ttf in Resources */,
 				5921F422240183EA00739020 /* LaunchScreen.storyboard in Resources */,
 				5921F41F240183EA00739020 /* Assets.xcassets in Resources */,
 				5921F41A240183E700739020 /* Main.storyboard in Resources */,
