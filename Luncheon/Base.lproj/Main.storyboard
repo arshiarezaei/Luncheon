@@ -55,12 +55,13 @@
             </objects>
             <point key="canvasLocation" x="1048" y="1651"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="Qvh-Ph-bzO">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="41o-fd-Mzc" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="41o-fd-Mzc" customClass="MainTabBarViewController" customModule="Luncheon" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IR6-N3-P6i">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

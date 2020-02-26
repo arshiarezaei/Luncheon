@@ -7,12 +7,13 @@
 //
 
 import UIKit
-@IBDesignable
-class MainTabBarViewController: UITabBarController {
 
-    override func viewDidLoad() {
+class MainTabBarViewController: UITabBarController {
+        override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.tintColor = .red
+        tabBar.tintColor = .luncehonLogoTextColor
+            let fontAttributes = [NSAttributedString.Key.font: TextUtilities.font]
+            UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         // Do any additional setup after loading the view.
     }
     

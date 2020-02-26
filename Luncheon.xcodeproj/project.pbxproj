@@ -21,6 +21,8 @@
 		59833FE4240535E100D131BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE3240535E100D131BF /* Alamofire */; };
 		59833FE72405368A00D131BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE62405368A00D131BF /* SwiftyJSON */; };
 		59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FEF2405646D00D131BF /* MainTabBarViewController.swift */; };
+		59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FF3240589E600D131BF /* Extention UIColor.swift */; };
+		59833FF724059BD500D131BF /* TextUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FF624059BD500D131BF /* TextUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		59833FD824052F4500D131BF /* BYekan+.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+.ttf"; sourceTree = "<group>"; };
 		59833FD924052F4500D131BF /* BYekan+ Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+ Bold.ttf"; sourceTree = "<group>"; };
 		59833FEF2405646D00D131BF /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		59833FF3240589E600D131BF /* Extention UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIColor.swift"; sourceTree = "<group>"; };
+		59833FF624059BD500D131BF /* TextUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		5921F406240183E700739020 = {
 			isa = PBXGroup;
 			children = (
+				59833FF524059BB800D131BF /* Utilities */,
 				59833FE12405303C00D131BF /* Fonts */,
 				5921F411240183E700739020 /* Luncheon */,
 				5921F42B240183EA00739020 /* LuncheonTests */,
@@ -112,6 +117,7 @@
 		5921F411240183E700739020 /* Luncheon */ = {
 			isa = PBXGroup;
 			children = (
+				59833FF2240589BE00D131BF /* Extentions */,
 				59833FEE2405643C00D131BF /* View Controllers */,
 				5921F412240183E700739020 /* AppDelegate.swift */,
 				5921F414240183E700739020 /* SceneDelegate.swift */,
@@ -166,6 +172,22 @@
 				59833FEF2405646D00D131BF /* MainTabBarViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		59833FF2240589BE00D131BF /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				59833FF3240589E600D131BF /* Extention UIColor.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		59833FF524059BB800D131BF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				59833FF624059BD500D131BF /* TextUtilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +334,8 @@
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
+				59833FF724059BD500D131BF /* TextUtilities.swift in Sources */,
+				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
 			);
