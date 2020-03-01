@@ -14,8 +14,13 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         navigationBar.topItem?.titleView = UIImageView(image: UIImage(named: "Luncheon logo"))
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginButtonTapped), name: .loginButtonTapped, object: nil)
         // Do any additional setup after loading the view.
+    }
+    @objc private func loginButtonTapped() {
+     debugPrint("Notif : loginButtonTapped received")
+     self.present(LoginVC(), animated: true, completion: nil)
+        
     }
    
     

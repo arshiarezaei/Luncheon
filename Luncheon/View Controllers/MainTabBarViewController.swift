@@ -20,7 +20,7 @@ class MainTabBarViewController: UITabBarController {
     }
     @objc private func loginButtonTapped() {
         debugPrint("Notif : loginButtonTapped received")
-           
+        self.present(LoginVC(), animated: true, completion: nil)           
        }
     
     /*

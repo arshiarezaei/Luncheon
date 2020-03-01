@@ -29,6 +29,8 @@
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
 		59BC42F42409B00A00787A4F /* Extetion Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42F32409B00A00787A4F /* Extetion Notification.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
+		59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE1240ABA5C00DE55B8 /* LoginView.swift */; };
+		59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE3240ABB0800DE55B8 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		59BC42F32409B00A00787A4F /* Extetion Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extetion Notification.swift"; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
+		59D32DE1240ABA5C00DE55B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		59D32DE3240ABB0800DE55B8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				59833FEF2405646D00D131BF /* MainTabBarViewController.swift */,
 				59456BE924068C5B00B9F6C8 /* NavigationController.swift */,
 				59951B6224086861007CE646 /* ProfileViewController.swift */,
+				59D32DE3240ABB0800DE55B8 /* LoginVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				59951B652408875E007CE646 /* LoginOrSignUpView.swift */,
+				59D32DE1240ABA5C00DE55B8 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,11 +379,13 @@
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
 				59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */,
 				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
+				59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */,
 				59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */,
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				59BC42F42409B00A00787A4F /* Extetion Notification.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
