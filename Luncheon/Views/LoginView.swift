@@ -106,7 +106,7 @@ class LoginView: UIView {
     
     private func setupUsernameTextField() {
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.text = self.usernameTFtitle
+        usernameTextField.placeholder = self.usernameTFtitle
         usernameTextField.textAlignment = .center
         usernameTextField.font = UIFont.BYekan
         usernameTextField.layer.borderWidth = 1
@@ -137,13 +137,15 @@ class LoginView: UIView {
     
     private func setupPasswordTextField() {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.text = self.passwordTFtitle
+        passwordTextField.placeholder = self.passwordTFtitle
         passwordTextField.font = UIFont.BYekan
         passwordTextField.textAlignment = .center
         passwordTextField.layer.borderColor = UIColor.whiteBorder.cgColor
         passwordTextField.layer.cornerRadius = self.cornerRadius
         passwordTextField.layer.borderWidth = 1
-            
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.clearButtonMode = .always
+        
         NSLayoutConstraint.activate([
             passwordTextField.safeAreaLayoutGuide.topAnchor.constraint(equalTo: usernameIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 10),
             passwordTextField.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -154,7 +156,6 @@ class LoginView: UIView {
     }
     private func setupPasswordIsRequiredLabel() {
         passwordIsRequiredLabel.translatesAutoresizingMaskIntoConstraints = false
-        //        passwordIsRequiredLabel.text = self.passwordIsRequired
         passwordIsRequiredLabel.font = UIFont(name: UIFont.BYekanName, size: 16)
         passwordIsRequiredLabel.textColor = UIColor.luncehonLogoText
         passwordIsRequiredLabel.textAlignment = .right
@@ -197,37 +198,25 @@ class LoginView: UIView {
         ])
     }
     
-    //    @objc private func closeButtonTapped(_ sender:UIButton) {
-    //
-    //    }
-    
     @objc private func loginButtonTapped(_ sender:UIButton) {
-        guard usernameTextField.text != usernameTFtitle || passwordTextField.text != passwordTFtitle else {
-            usernameIsRequiredLabel.text = usernameIsRequired
-            passwordIsRequiredLabel.text = passwordIsRequired
+        guard usernameTextField.text != "" && passwordTextField.text != ""  else {
+            if usernameTextField.text == "" {
+                usernameIsRequiredLabel.text = usernameIsRequired
+                passwordIsRequiredLabel.text = String()
+            }
+            if passwordTextField.text == ""  {
+                usernameIsRequiredLabel.text = String()
+                passwordIsRequiredLabel.text = passwordIsRequired
+            }
+            if usernameTextField.text == "" && passwordTextField.text == ""{
+                usernameIsRequiredLabel.text = usernameIsRequired
+                passwordIsRequiredLabel.text = passwordIsRequired
+            }
             return
         }
-        guard usernameTextField.text != usernameTFtitle else {
-            passwordIsRequiredLabel.text = String()
-            usernameIsRequiredLabel.text = usernameIsRequired
-            return
-        }
-        guard passwordTextField.text != passwordTFtitle else {
-            passwordIsRequiredLabel.text = passwordIsRequired
-            usernameIsRequiredLabel.text = String()
-            return
-        }
-        passwordIsRequiredLabel.text = String()
         usernameIsRequiredLabel.text = String()
+        passwordIsRequiredLabel.text = String()
+        
+        debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
     }
-    //
-    //    @objc private func clearField(_ sender:UIButton) {
-    //        debugPrint("usernameTextField touch")
-    //        usernameTextField.text = String()
-    //    }
-    //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    //        usernameTextField.resignFirstResponder()
-    //        self.becomeFirstResponder()
-    //    }
-    
 }
