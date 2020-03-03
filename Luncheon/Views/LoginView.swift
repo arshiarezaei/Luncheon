@@ -24,8 +24,8 @@ class LoginView: UIView {
     
     private let cornerRadius:CGFloat = CGFloat(20.0)
     
-    private let usernameTFtitle = "نام کاربری"
-    private let passwordTFtitle =  "گذر واژه"
+    private let usernameTFtitle:String = "نام کاربری"
+    private let passwordTFtitle:String =  "گذر واژه"
     private let usernameIsRequired:String = "نام کاربری الزامی است."
     private let passwordIsRequired:String = "وارد کردن گذر واژه الزامی است"
     
@@ -105,14 +105,18 @@ class LoginView: UIView {
     }
     
     private func setupUsernameTextField() {
+        usernameTextField.delegate = self
+        usernameTextField.tag = 1
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.placeholder = self.usernameTFtitle
+        usernameTextField.placeholder = usernameTFtitle
         usernameTextField.textAlignment = .center
         usernameTextField.font = UIFont.BYekan
         usernameTextField.layer.borderWidth = 1
-        usernameTextField.clearButtonMode = .always
         usernameTextField.layer.borderColor = UIColor.whiteBorder.cgColor
         usernameTextField.layer.cornerRadius = self.cornerRadius
+        usernameTextField.returnKeyType = .next
+        usernameTextField.clearButtonMode = .always
+        usernameTextField.keyboardType = .emailAddress
         
         NSLayoutConstraint.activate([
             usernameTextField.safeAreaLayoutGuide.topAnchor.constraint(equalTo: askToEnterInfoLabel.safeAreaLayoutGuide.bottomAnchor, constant: 20),
@@ -125,10 +129,11 @@ class LoginView: UIView {
     
     private func setupUsernameIsRequiredLabel() {
         usernameIsRequiredLabel.translatesAutoresizingMaskIntoConstraints = false
-        usernameIsRequiredLabel.textColor = UIColor.luncehonLogoText
+        usernameIsRequiredLabel.textColor = .luncehonLogoText
         usernameIsRequiredLabel.font = UIFont(name: UIFont.BYekanName, size: 16)
         usernameIsRequiredLabel.textAlignment = .right
         usernameIsRequiredLabel.semanticContentAttribute = .forceRightToLeft
+        
         NSLayoutConstraint.activate([
             usernameIsRequiredLabel.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: usernameTextField.safeAreaLayoutGuide.trailingAnchor),
             usernameIsRequiredLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: usernameTextField.safeAreaLayoutGuide.bottomAnchor, constant: 8),
@@ -136,6 +141,8 @@ class LoginView: UIView {
     }
     
     private func setupPasswordTextField() {
+        passwordTextField.delegate = self
+        passwordTextField.tag = usernameTextField.tag + 1
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = self.passwordTFtitle
         passwordTextField.font = UIFont.BYekan
@@ -145,6 +152,7 @@ class LoginView: UIView {
         passwordTextField.layer.borderWidth = 1
         passwordTextField.isSecureTextEntry = true
         passwordTextField.clearButtonMode = .always
+        passwordTextField.returnKeyType = .go
         
         NSLayoutConstraint.activate([
             passwordTextField.safeAreaLayoutGuide.topAnchor.constraint(equalTo: usernameIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 10),
@@ -169,6 +177,7 @@ class LoginView: UIView {
         
     }
     private func setupLoginButton() {
+        loginButton.tag = 3
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.backgroundColor = UIColor.luncehonLogoText
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -176,6 +185,8 @@ class LoginView: UIView {
         loginButton.setAttributedTitle(title, for: .normal)
         loginButton.layer.cornerRadius = self.cornerRadius
         loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+//        loginButton.isEnabled = false
+//        loginButton.alpha = 0.5
         
         NSLayoutConstraint.activate([
             loginButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: passwordIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 30),

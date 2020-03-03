@@ -23,6 +23,7 @@
 		59833FE72405368A00D131BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE62405368A00D131BF /* SwiftyJSON */; };
 		59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FEF2405646D00D131BF /* MainTabBarViewController.swift */; };
 		59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59833FF3240589E600D131BF /* Extention UIColor.swift */; };
+		598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598CBC22240EE7D600D25405 /* Extention LoginView.swift */; };
 		59951B6324086861007CE646 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B6224086861007CE646 /* ProfileViewController.swift */; };
 		59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B652408875E007CE646 /* LoginOrSignUpView.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
@@ -71,6 +72,7 @@
 		59833FD924052F4500D131BF /* BYekan+ Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+ Bold.ttf"; sourceTree = "<group>"; };
 		59833FEF2405646D00D131BF /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		59833FF3240589E600D131BF /* Extention UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIColor.swift"; sourceTree = "<group>"; };
+		598CBC22240EE7D600D25405 /* Extention LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention LoginView.swift"; sourceTree = "<group>"; };
 		59951B6224086861007CE646 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59951B652408875E007CE646 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				59833FF3240589E600D131BF /* Extention UIColor.swift */,
 				59BC42F32409B00A00787A4F /* Extetion Notification.swift */,
 				59D32DDF240A950000DE55B8 /* Extention UIFont.swift */,
+				598CBC22240EE7D600D25405 /* Extention LoginView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				59BC42F42409B00A00787A4F /* Extetion Notification.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
