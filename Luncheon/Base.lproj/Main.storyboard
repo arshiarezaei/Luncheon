@@ -26,7 +26,7 @@
         <!--پیگیری-->
         <scene sceneID="qwe-MG-5qh">
             <objects>
-                <viewController id="acf-xK-Z3G" sceneMemberID="viewController">
+                <viewController id="acf-xK-Z3G" customClass="FollowUpVC" customModule="Luncheon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GKA-gL-9kV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

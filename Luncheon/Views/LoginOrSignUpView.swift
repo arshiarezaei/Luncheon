@@ -12,7 +12,7 @@ class LoginOrSignUpView: UIView {
     
     
     private let askToLoginLabel:UILabel = UILabel(frame: .zero)
-    private let loginButton:UIButton = UIButton(frame: .zero)
+    private let askForloginButton:UIButton = UIButton(frame: .zero)
     private let askForSingupLabel:UILabel = UILabel(frame: .zero)
     private let signupButton:UIButton = UIButton(frame: .zero)
     private let cornerRadius:CGFloat = CGFloat(20.0)
@@ -26,8 +26,8 @@ class LoginOrSignUpView: UIView {
         self.addSubview(askToLoginLabel)
         setupAskToLoginLabel()
         
-        self.addSubview(loginButton)
-        setupLoginButton()
+        self.addSubview(askForloginButton)
+        setupAskForLoginButton()
         
         self.addSubview(askForSingupLabel)
         setupAskForSingupLabel()
@@ -57,26 +57,26 @@ class LoginOrSignUpView: UIView {
         ])
         
     }
-    private func setupLoginButton() {
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.setTitle("ورود", for: .normal)
-        loginButton.setTitleColor(.luncehonLogoText, for: .normal)
-        loginButton.setTitleColor(.white, for: .normal)
-        loginButton.titleLabel?.font = UIFont(name:UIFont.BYekanName,size:20)
-        loginButton.backgroundColor = .luncehonLogoText
-        loginButton.layer.borderWidth = 2
-        loginButton.titleLabel?.textAlignment = .center
-        loginButton.titleLabel?.semanticContentAttribute = .forceRightToLeft
-        loginButton.layer.cornerRadius = self.cornerRadius
-        loginButton.titleLabel?.baselineAdjustment = .alignCenters
-        loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        loginButton.layer.masksToBounds = true
-        loginButton.layer.borderColor = UIColor.luncehonLogoText.cgColor
-        loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
+    private func setupAskForLoginButton() {
+        askForloginButton.translatesAutoresizingMaskIntoConstraints = false
+        askForloginButton.setTitle("ورود", for: .normal)
+        askForloginButton.setTitleColor(.luncehonLogoText, for: .normal)
+        askForloginButton.setTitleColor(.white, for: .normal)
+        askForloginButton.titleLabel?.font = UIFont(name:UIFont.BYekanName,size:20)
+        askForloginButton.backgroundColor = .luncehonLogoText
+        askForloginButton.layer.borderWidth = 2
+        askForloginButton.titleLabel?.textAlignment = .center
+        askForloginButton.titleLabel?.semanticContentAttribute = .forceRightToLeft
+        askForloginButton.layer.cornerRadius = self.cornerRadius
+        askForloginButton.titleLabel?.baselineAdjustment = .alignCenters
+        askForloginButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        askForloginButton.layer.masksToBounds = true
+        askForloginButton.layer.borderColor = UIColor.luncehonLogoText.cgColor
+        askForloginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
         NSLayoutConstraint.activate([
-            loginButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5),
-            loginButton.topAnchor.constraint(equalTo: self.askToLoginLabel.bottomAnchor, constant: 32)
+            askForloginButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            askForloginButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5),
+            askForloginButton.topAnchor.constraint(equalTo: self.askToLoginLabel.bottomAnchor, constant: 32)
         ])
         
     }
@@ -90,7 +90,7 @@ class LoginOrSignUpView: UIView {
         askForSingupLabel.font = UIFont(name: UIFont.BYekan.fontName, size: 15)
         
         NSLayoutConstraint.activate([
-            askForSingupLabel.topAnchor.constraint(equalTo: self.loginButton.safeAreaLayoutGuide.bottomAnchor, constant: 32),
+            askForSingupLabel.topAnchor.constraint(equalTo: self.askForloginButton.safeAreaLayoutGuide.bottomAnchor, constant: 32),
             askForSingupLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             askForSingupLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
         ])
@@ -104,28 +104,23 @@ class LoginOrSignUpView: UIView {
         signupButton.layer.cornerRadius = self.cornerRadius
         signupButton.setTitleColor(.luncehonLogoText, for: .normal)
         signupButton.titleLabel?.font = UIFont(name: UIFont.BYekanName, size: 20)
+        signupButton.addTarget(self, action: #selector(askForSignUpbutton), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             signupButton.topAnchor.constraint(equalTo: askForSingupLabel.safeAreaLayoutGuide.bottomAnchor, constant: 32),
             signupButton.centerXAnchor.constraint(equalTo: askForSingupLabel.safeAreaLayoutGuide.centerXAnchor, constant: 0),
-            signupButton.widthAnchor.constraint(equalTo: loginButton.safeAreaLayoutGuide.widthAnchor, constant: 0)
+            signupButton.widthAnchor.constraint(equalTo: askForloginButton.safeAreaLayoutGuide.widthAnchor, constant: 0)
         ])
         
     }
     
     @objc private func loginButtonTapped(_ sender:UIButton)  {
-        debugPrint("login button tapped")
-        NotificationCenter.default.post(name: .loginButtonTapped, object: nil)
-        debugPrint("Notif : login button tapped broadcast")
-        
+        debugPrint("askForlogin button tapped")
+        window?.rootViewController?.present(LoginVC(), animated: true, completion: nil)
+    }
+    @objc private func askForSignUpbutton()  {
+        debugPrint("askSignup button tapped")
+        window?.rootViewController?.present(SignUpVC(), animated: true, completion: nil)
         
     }
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    
 }

@@ -229,5 +229,6 @@ class LoginView: UIView {
         passwordIsRequiredLabel.text = String()
         
         debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
+        window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
