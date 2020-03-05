@@ -177,7 +177,7 @@ class LoginView: UIView {
         
     }
     private func setupLoginButton() {
-        loginButton.tag = 3
+//        loginButton.tag = 3
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.backgroundColor = UIColor.luncehonLogoText
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.white]
