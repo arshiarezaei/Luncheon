@@ -9,23 +9,24 @@
 import UIKit
 
 class SignUpVC: UINavigationController {
+    
+    
+    private let mobileNumber:String? = nil
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .whiteBackgroud
-
         // Do any additional setup after loading the view.
+        
+        
+        self.view.backgroundColor = .red
+        navigationBar.backgroundColor = .whiteBackgroud
+        self.view.semanticContentAttribute = .forceRightToLeft
+        self.navigationBar.isHidden = false
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
