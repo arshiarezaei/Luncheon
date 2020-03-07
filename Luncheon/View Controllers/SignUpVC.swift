@@ -19,11 +19,11 @@ class SignUpVC: UINavigationController {
         // Do any additional setup after loading the view.
         
         
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .whiteBackgroud
         navigationBar.backgroundColor = .whiteBackgroud
         self.view.semanticContentAttribute = .forceRightToLeft
-        self.navigationBar.isHidden = false
-        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationBar.isHidden = true
+        self.show(EnterMobileNumberVC(), sender: self)
 
     }
     
