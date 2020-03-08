@@ -37,8 +37,8 @@ class LoginVC: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            closeButton.safeAreaLayoutGuide.widthAnchor.constraint(equalToConstant: 16),
-            closeButton.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 16),
+            closeButton.safeAreaLayoutGuide.widthAnchor.constraint(equalToConstant: 29),
+            closeButton.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 29),
             closeButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
             closeButton.safeAreaLayoutGuide.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -16),
         ])

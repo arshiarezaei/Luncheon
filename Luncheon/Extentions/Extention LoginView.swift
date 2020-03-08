@@ -12,6 +12,7 @@ import UIKit
 extension LoginView:UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        debugPrint("extension LoginView textFieldShouldReturn")
         if let nextTF = textField.superview?.viewWithTag(textField.tag + 1) {
             nextTF.becomeFirstResponder()
         }else{

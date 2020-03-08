@@ -29,6 +29,8 @@
 		598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598CBC22240EE7D600D25405 /* Extention LoginView.swift */; };
 		59951B6324086861007CE646 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B6224086861007CE646 /* ProfileViewController.swift */; };
 		59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B652408875E007CE646 /* LoginOrSignUpView.swift */; };
+		59A3066D2413FD870088E463 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066C2413FD870088E463 /* Utilities.swift */; };
+		59A3066F241409E60088E463 /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
@@ -81,6 +83,8 @@
 		598CBC22240EE7D600D25405 /* Extention LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention LoginView.swift"; sourceTree = "<group>"; };
 		59951B6224086861007CE646 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59951B652408875E007CE646 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
+		59A3066C2413FD870088E463 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		59788111241289C1008A694E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				59A3066C2413FD870088E463 /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				59D373B224114D15002F6763 /* FollowUpVC.swift */,
 				59021A66241167CB00F633E2 /* SignUpVC.swift */,
 				597881142412A5F8008A694E /* EnterMobileNumberVC.swift */,
+				59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
+				59A3066F241409E60088E463 /* EnterVerificationCodeVC.swift in Sources */,
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
 				59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
@@ -409,6 +416,7 @@
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
+				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

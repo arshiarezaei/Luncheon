@@ -15,6 +15,7 @@ class MainTabBarViewController: UITabBarController {
         tabBar.tintColor = .luncehonLogoText
         let fontAttributes = [NSAttributedString.Key.font: UIFont.BYekan]
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        
 
     }
 }

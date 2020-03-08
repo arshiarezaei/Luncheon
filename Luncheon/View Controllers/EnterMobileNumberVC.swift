@@ -25,21 +25,24 @@ class EnterMobileNumberVC: UIViewController {
     
     private let cornerRadius:CGFloat = CGFloat(20.0)
     
-    private let mobileNumber:String? = nil
-    private let mobileNumberIsRequiredLabelTitle:String =  "وارد کردن شماره موبایل برای ثبت نام الزامی است."
-    private let mobileNumberIsRequiredLabelTitle2:String =  "شماره موبایل فقط شامل اعداد می باشد."
-    private let mobileNumberIsRequiredLabelTitle3:String =  "شماره وارد شده معتبر نمیباشد."
+    private let mobileNumberIsRequiredLabelError:String =  "وارد کردن شماره موبایل برای ثبت نام الزامی است."
+    private let mobileNumberIsRequiredLabelError2:String =  "شماره موبایل فقط شامل اعداد می باشد."
+    private let mobileNumberIsRequiredLabelError3:String =  "شماره وارد شده معتبر نمیباشد."
+    private let mobileNumberIsRequiredLabelError4:String =  "شماره موبایل تنها میتواند شامل عدد باشد."
+    
+
+     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        setupNavigationBar()
         
         self.view.backgroundColor = .whiteBackgroud
         self.view.semanticContentAttribute = .forceRightToLeft
         
-        //self.view = EnterMobileNumberView(frame: self.view.frame)
         
         self.view.addSubview(luncheonLogo)
         setupLuncheonLogo()
@@ -58,9 +61,36 @@ class EnterMobileNumberVC: UIViewController {
         self.view.addSubview(requestForSMSButton)
         setupRequestForSMSButton()
         
+        let backBarBtnItem = UIBarButtonItem()
+        backBarBtnItem.title = "بازگشت"
+        backBarBtnItem.tintColor = .luncehonLogoText
+        navigationItem.backBarButtonItem = backBarBtnItem
+        
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        let backBarBtnItem = UIBarButtonItem()
+//        backBarBtnItem.title = "back"
+//        navigationController?.navigationBar.tintColor = .luncehonLogoText
+//        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close2"), style: .plain, target: self , action: #selector(closeButtonTapped))
+////            UIBarButtonItem(title:"X", style: .plain, target: nil, action: nil)
+//    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           mobileNumberTF.resignFirstResponder()
+           self.view.becomeFirstResponder()
+       }
+    
+    private func setupNavigationBar() {
+        let title = [NSAttributedString.Key.font:UIFont(name: UIFont.BYekanName, size: 30),NSAttributedString.Key.foregroundColor:UIColor.luncehonLogoText]
+               self.navigationController?.navigationBar.titleTextAttributes = title as [NSAttributedString.Key : Any]
+               self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target:self, action: #selector(closeButtonTapped))
+               self.navigationController?.navigationBar.tintColor  = .luncehonLogoText
+               self.navigationController?.navigationBar.shadowImage = UIImage()
+               self.navigationController?.navigationBar.backgroundColor = .whiteBackgroud
+        
+    }
     
     private func setupLuncheonLogo() {
         luncheonLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +122,7 @@ class EnterMobileNumberVC: UIViewController {
     }
     
     private func setupMobileNumberTF(){
-        
+//        mobileNumberTF.delegate = self
         mobileNumberTF.translatesAutoresizingMaskIntoConstraints = false
         mobileNumberTF.placeholder = "شماره موبایل ... ۰۹"
         mobileNumberTF.layer.cornerRadius = 20.0
@@ -142,7 +172,7 @@ class EnterMobileNumberVC: UIViewController {
         requestForSMSButton.addTarget(self, action: #selector(requestForSMSButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            requestForSMSButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: mobileNumberIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 30),
+            requestForSMSButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: mobileNumberIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 16),
             requestForSMSButton.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             requestForSMSButton.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.mobileNumberTF.safeAreaLayoutGuide.widthAnchor),
             requestForSMSButton.safeAreaLayoutGuide.heightAnchor.constraint(equalTo:mobileNumberTF.safeAreaLayoutGuide.heightAnchor),
@@ -151,19 +181,32 @@ class EnterMobileNumberVC: UIViewController {
     
     @objc private func requestForSMSButtonTapped() {
         debugPrint("requestForSMSButtonTapped")
-        guard  !(mobileNumberTF.text!.isEmpty) else { mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelTitle
+        guard  !(mobileNumberTF.text!.isEmpty) else { mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError
             return}
-        guard mobileNumberTF.text?.count == 11 else {mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelTitle3 ;
-            
+        guard mobileNumberTF.text?.count == 11 else {mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError3 ;
             return}
+        guard let  _ = Utilities.phoneNumberValidation(phoneNumber: mobileNumberTF.text!) else {
+            mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError4
+            return
+        }
         mobileNumberIsRequiredLabel.text = String()
+        mobileNumberTF.resignFirstResponder()
+        self.view.becomeFirstResponder()
+        
+        
+        // just for testing purpose
+        let vc = EnterVerificationCodeVC()
+        vc.view.backgroundColor = .green
+        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
         
        
-        
     }
     
+    @objc private func closeButtonTapped()  {
+        self.dismiss(animated: true, completion: nil)
+    }
+   
+
     
-    
-    
-    
+
 }

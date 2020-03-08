@@ -13,7 +13,7 @@ class SignUpVC: UINavigationController {
     
     private let mobileNumber:String? = nil
 
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,8 +21,8 @@ class SignUpVC: UINavigationController {
         
         self.view.backgroundColor = .whiteBackgroud
         navigationBar.backgroundColor = .whiteBackgroud
-        self.view.semanticContentAttribute = .forceRightToLeft
-        self.navigationBar.isHidden = true
+//        self.view.semanticContentAttribute = .forceRightToLeft
+        self.navigationBar.isHidden = false
         self.show(EnterMobileNumberVC(), sender: self)
 
     }
