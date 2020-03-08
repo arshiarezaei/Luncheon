@@ -9,33 +9,67 @@
 import UIKit
 
 class EnterVerificationCodeVC: UIViewController {
-
+    
+    private let luncheonLogo:UIImageView = UIImageView(image: UIImage(named: "Luncheon logo"))
+    
+    private let askToVerificationCodeLabel:UILabel = UILabel(frame: .zero)
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = ""
-//        self.navigationItem.backBarButtonItem?.title = "بازگشت"
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .whiteBackgroud
         
-
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        let backBarBtnItem = UIBarButtonItem()
-//        backBarBtnItem.title = "back"
-//        navigationController?.navigationBar.backItem?.backBarButtonItem = backBarBtnItem
+        self.view.addSubview(luncheonLogo)
+        setupLuncheonLogo()
+        
+        self.view.addSubview(askToVerificationCodeLabel)
+        setupAskToEnterVerificationCodeLabel()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func setupLuncheonLogo() {
+        luncheonLogo.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            luncheonLogo.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: 70),
+            luncheonLogo.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+            luncheonLogo.safeAreaLayoutGuide.widthAnchor.constraint(equalToConstant: 78.0),
+            luncheonLogo.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 78.0),
+        ])
     }
-    */
-
+    
+    
+    
+    
+    private func setupAskToEnterVerificationCodeLabel() {
+        askToVerificationCodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        askToVerificationCodeLabel.text = "یک کد برای شما پیامک شده است لطفا آن را وارد کنید"
+        askToVerificationCodeLabel.font = UIFont(name: UIFont.BYekanName, size: 16)
+        askToVerificationCodeLabel.textAlignment = .center
+        askToVerificationCodeLabel.semanticContentAttribute = .forceRightToLeft
+        
+        
+        
+        NSLayoutConstraint.activate([
+            askToVerificationCodeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: luncheonLogo.bottomAnchor, constant:20),
+            askToVerificationCodeLabel.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+        ])
+        
+        
+    }
+    
+    
+    
 }
+
+
+//        self.navigationItem.title = ""
+//        self.navigationItem.backBarButtonItem?.title = "بازگشت"
+//        self.view.backgroundColor = .red
+//        self.navigationItem.title = "sss"
+//        self.navigationItem.backBarButtonItem?.title = "بازگشت"
+//        navigationController?.navigationBar.backItem?.backBarButtonItem?.isEnabled = false
+//        navigationController?.navigationBar.isUserInteractionEnabled = false
+//        self.navigationController?.navigationBar.topItem?.backBarButtonItem

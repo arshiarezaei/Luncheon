@@ -11,9 +11,6 @@ import UIKit
 class EnterMobileNumberVC: UIViewController {
     
     
-    
-    
-    
     private let luncheonLogo:UIImageView = UIImageView(image: UIImage(named: "Luncheon logo"))
     
     private let askToEnterPhoneNumberLabel:UILabel = UILabel(frame: .zero)
@@ -30,14 +27,14 @@ class EnterMobileNumberVC: UIViewController {
     private let mobileNumberIsRequiredLabelError3:String =  "شماره وارد شده معتبر نمیباشد."
     private let mobileNumberIsRequiredLabelError4:String =  "شماره موبایل تنها میتواند شامل عدد باشد."
     
-
-     
+    
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setupNavigationBar()
         
         self.view.backgroundColor = .whiteBackgroud
@@ -61,34 +58,41 @@ class EnterMobileNumberVC: UIViewController {
         self.view.addSubview(requestForSMSButton)
         setupRequestForSMSButton()
         
+        //        let backBarBtnItem = UIBarButtonItem()
+        //        backBarBtnItem.title = "بازگشت"
+        //        backBarBtnItem.tintColor = .luncehonLogoText
+        //        navigationItem.backBarButtonItem = backBarBtnItem
+        
+    }
+    
+    //    override func viewDidAppear(_ animated: Bool) {
+    //        super.viewDidAppear(animated)
+    //        let backBarBtnItem = UIBarButtonItem()
+    //        backBarBtnItem.title = "back"
+    //        navigationController?.navigationBar.tintColor = .luncehonLogoText
+    //        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close2"), style: .plain, target: self , action: #selector(closeButtonTapped))
+    ////            UIBarButtonItem(title:"X", style: .plain, target: nil, action: nil)
+    //    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        mobileNumberTF.resignFirstResponder()
+        self.view.becomeFirstResponder()
+    }
+    
+    private func setupNavigationBar() {
+        let title = [NSAttributedString.Key.font:UIFont(name: UIFont.BYekanName, size: 30),NSAttributedString.Key.foregroundColor:UIColor.luncehonLogoText]
+        self.navigationController?.navigationBar.titleTextAttributes = title as [NSAttributedString.Key : Any]
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target:self, action: #selector(closeButtonTapped))
+        self.navigationController?.navigationBar.tintColor  = .luncehonLogoText
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .whiteBackgroud
+        
+        //setup backBarButtonItem
+        
         let backBarBtnItem = UIBarButtonItem()
         backBarBtnItem.title = "بازگشت"
         backBarBtnItem.tintColor = .luncehonLogoText
         navigationItem.backBarButtonItem = backBarBtnItem
-        
-    }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let backBarBtnItem = UIBarButtonItem()
-//        backBarBtnItem.title = "back"
-//        navigationController?.navigationBar.tintColor = .luncehonLogoText
-//        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close2"), style: .plain, target: self , action: #selector(closeButtonTapped))
-////            UIBarButtonItem(title:"X", style: .plain, target: nil, action: nil)
-//    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           mobileNumberTF.resignFirstResponder()
-           self.view.becomeFirstResponder()
-       }
-    
-    private func setupNavigationBar() {
-        let title = [NSAttributedString.Key.font:UIFont(name: UIFont.BYekanName, size: 30),NSAttributedString.Key.foregroundColor:UIColor.luncehonLogoText]
-               self.navigationController?.navigationBar.titleTextAttributes = title as [NSAttributedString.Key : Any]
-               self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target:self, action: #selector(closeButtonTapped))
-               self.navigationController?.navigationBar.tintColor  = .luncehonLogoText
-               self.navigationController?.navigationBar.shadowImage = UIImage()
-               self.navigationController?.navigationBar.backgroundColor = .whiteBackgroud
         
     }
     
@@ -122,7 +126,7 @@ class EnterMobileNumberVC: UIViewController {
     }
     
     private func setupMobileNumberTF(){
-//        mobileNumberTF.delegate = self
+        //        mobileNumberTF.delegate = self
         mobileNumberTF.translatesAutoresizingMaskIntoConstraints = false
         mobileNumberTF.placeholder = "شماره موبایل ... ۰۹"
         mobileNumberTF.layer.cornerRadius = 20.0
@@ -196,17 +200,16 @@ class EnterMobileNumberVC: UIViewController {
         
         // just for testing purpose
         let vc = EnterVerificationCodeVC()
-        vc.view.backgroundColor = .green
         ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
         
-       
+        
     }
     
     @objc private func closeButtonTapped()  {
         self.dismiss(animated: true, completion: nil)
     }
-   
-
     
-
+    
+    
+    
 }
