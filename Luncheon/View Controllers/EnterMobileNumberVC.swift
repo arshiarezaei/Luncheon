@@ -75,9 +75,12 @@ class EnterMobileNumberVC: UIViewController {
     //    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        debugPrint("EnterMobileNumberVC touchesBegan called")
         mobileNumberTF.resignFirstResponder()
         self.view.becomeFirstResponder()
     }
+    
+    
     
     private func setupNavigationBar() {
         let title = [NSAttributedString.Key.font:UIFont(name: UIFont.BYekanName, size: 30),NSAttributedString.Key.foregroundColor:UIColor.luncehonLogoText]

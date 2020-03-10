@@ -104,7 +104,7 @@ class EnterVerificationCodeVC: UIViewController {
     
         NSLayoutConstraint.activate([
             verficationCodeTF.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
-            verficationCodeTF.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.6),
+            verficationCodeTF.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             verficationCodeTF.safeAreaLayoutGuide.topAnchor.constraint(equalTo: askToVerificationCodeLabel.safeAreaLayoutGuide.bottomAnchor, constant: 32),
             verficationCodeTF.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 42),
         ])
@@ -116,10 +116,11 @@ class EnterVerificationCodeVC: UIViewController {
         errorInEnteredVerificationCodeLabel.textColor = .luncehonLogoText
         errorInEnteredVerificationCodeLabel.textAlignment = .right
         errorInEnteredVerificationCodeLabel.semanticContentAttribute = .forceRightToLeft
+        errorInEnteredVerificationCodeLabel.font = UIFont(name: UIFont.BYekanName, size: 16)
         
         NSLayoutConstraint.activate([
             errorInEnteredVerificationCodeLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: verficationCodeTF.safeAreaLayoutGuide.bottomAnchor, constant: 8),
-            errorInEnteredVerificationCodeLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 8),
+            errorInEnteredVerificationCodeLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
 //            errorInEnteredVerificationCodeLabel.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 42)
             
             
@@ -140,7 +141,7 @@ class EnterVerificationCodeVC: UIViewController {
         
         NSLayoutConstraint.activate([
             confirmVerificationCodeButton.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
-            confirmVerificationCodeButton.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.6),
+            confirmVerificationCodeButton.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
             confirmVerificationCodeButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: errorInEnteredVerificationCodeLabel.safeAreaLayoutGuide.bottomAnchor, constant: 16),
             confirmVerificationCodeButton.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 42),
         ])
