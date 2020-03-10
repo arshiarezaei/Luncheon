@@ -33,6 +33,7 @@
 		59A3066F241409E60088E463 /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
+		59C604662417B7D900C21A48 /* NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
 		59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE1240ABA5C00DE55B8 /* LoginView.swift */; };
 		59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE3240ABB0800DE55B8 /* LoginVC.swift */; };
@@ -87,6 +88,7 @@
 		59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInformationsVC.swift; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
 		59D32DE1240ABA5C00DE55B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		59D32DE3240ABB0800DE55B8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				59021A66241167CB00F633E2 /* SignUpVC.swift */,
 				597881142412A5F8008A694E /* EnterMobileNumberVC.swift */,
 				59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */,
+				59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */,
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
+				59C604662417B7D900C21A48 /* NewUserInformationsVC.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,

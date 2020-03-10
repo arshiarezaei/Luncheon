@@ -161,6 +161,9 @@ class EnterVerificationCodeVC: UIViewController {
         errorInEnteredVerificationCodeLabel.text = String()
         verficationCodeTF.resignFirstResponder()
         self.view.becomeFirstResponder()
+        
+         ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+        
         }
     
     
