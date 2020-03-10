@@ -18,6 +18,7 @@
 		5921F42D240183EA00739020 /* LuncheonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F42C240183EA00739020 /* LuncheonTests.swift */; };
 		5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F437240183EA00739020 /* LuncheonUITests.swift */; };
 		59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59456BE924068C5B00B9F6C8 /* NavigationController.swift */; };
+		5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */; };
 		59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59788112241298EF008A694E /* EnterMobileNumberView.swift */; };
 		597881152412A5F8008A694E /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597881142412A5F8008A694E /* EnterMobileNumberVC.swift */; };
 		59833FDD24052F4500D131BF /* BYekan+.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD824052F4500D131BF /* BYekan+.ttf */; };
@@ -75,6 +76,7 @@
 		5921F437240183EA00739020 /* LuncheonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuncheonUITests.swift; sourceTree = "<group>"; };
 		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59456BE924068C5B00B9F6C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NewUserInformationsVC.swift"; sourceTree = "<group>"; };
 		59788112241298EF008A694E /* EnterMobileNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberView.swift; sourceTree = "<group>"; };
 		597881142412A5F8008A694E /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberVC.swift; sourceTree = "<group>"; };
 		59833FD824052F4500D131BF /* BYekan+.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+.ttf"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				59833FF3240589E600D131BF /* Extention UIColor.swift */,
 				59D32DDF240A950000DE55B8 /* Extention UIFont.swift */,
 				598CBC22240EE7D600D25405 /* Extention LoginView.swift */,
+				5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				597881152412A5F8008A694E /* EnterMobileNumberVC.swift in Sources */,
 				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
 				59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */,
+				5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */,
 				59021A67241167CB00F633E2 /* SignUpVC.swift in Sources */,
 				59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */,
 				59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */,
