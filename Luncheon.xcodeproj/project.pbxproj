@@ -20,7 +20,6 @@
 		59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59456BE924068C5B00B9F6C8 /* NavigationController.swift */; };
 		5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */; };
 		59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59788112241298EF008A694E /* EnterMobileNumberView.swift */; };
-		597881152412A5F8008A694E /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597881142412A5F8008A694E /* EnterMobileNumberVC.swift */; };
 		59833FDD24052F4500D131BF /* BYekan+.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD824052F4500D131BF /* BYekan+.ttf */; };
 		59833FDE24052F4500D131BF /* BYekan+ Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59833FD924052F4500D131BF /* BYekan+ Bold.ttf */; };
 		59833FE4240535E100D131BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59833FE3240535E100D131BF /* Alamofire */; };
@@ -31,14 +30,15 @@
 		59951B6324086861007CE646 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B6224086861007CE646 /* ProfileViewController.swift */; };
 		59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B652408875E007CE646 /* LoginOrSignUpView.swift */; };
 		59A3066D2413FD870088E463 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066C2413FD870088E463 /* Utilities.swift */; };
-		59A3066F241409E60088E463 /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
-		59C604662417B7D900C21A48 /* NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
 		59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE1240ABA5C00DE55B8 /* LoginView.swift */; };
 		59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE3240ABB0800DE55B8 /* LoginVC.swift */; };
 		59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D373B224114D15002F6763 /* FollowUpVC.swift */; };
+		59F0A7F724201AAF00F8185F /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A7F424201AAE00F8185F /* EnterMobileNumberVC.swift */; };
+		59F0A7F824201AAF00F8185F /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A7F524201AAF00F8185F /* EnterVerificationCodeVC.swift */; };
+		59F0A7F924201AAF00F8185F /* NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A7F624201AAF00F8185F /* NewUserInformationsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,6 @@
 		59456BE924068C5B00B9F6C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NewUserInformationsVC.swift"; sourceTree = "<group>"; };
 		59788112241298EF008A694E /* EnterMobileNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberView.swift; sourceTree = "<group>"; };
-		597881142412A5F8008A694E /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberVC.swift; sourceTree = "<group>"; };
 		59833FD824052F4500D131BF /* BYekan+.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+.ttf"; sourceTree = "<group>"; };
 		59833FD924052F4500D131BF /* BYekan+ Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BYekan+ Bold.ttf"; sourceTree = "<group>"; };
 		59833FEF2405646D00D131BF /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -87,14 +86,15 @@
 		59951B6224086861007CE646 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59951B652408875E007CE646 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
 		59A3066C2413FD870088E463 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInformationsVC.swift; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
 		59D32DE1240ABA5C00DE55B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		59D32DE3240ABB0800DE55B8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		59D373B224114D15002F6763 /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
+		59F0A7F424201AAE00F8185F /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterMobileNumberVC.swift; path = "../../../../../../Desktop/untitled folder/EnterMobileNumberVC.swift"; sourceTree = "<group>"; };
+		59F0A7F524201AAF00F8185F /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterVerificationCodeVC.swift; path = "../../../../../../Desktop/untitled folder/EnterVerificationCodeVC.swift"; sourceTree = "<group>"; };
+		59F0A7F624201AAF00F8185F /* NewUserInformationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewUserInformationsVC.swift; path = "../../../../../../Desktop/untitled folder/NewUserInformationsVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +148,7 @@
 		5921F411240183E700739020 /* Luncheon */ = {
 			isa = PBXGroup;
 			children = (
+				59F0A7F3242019FE00F8185F /* Network */,
 				59788111241289C1008A694E /* Utilities */,
 				59BC42EB240978AE00787A4F /* Models */,
 				59951B6424088721007CE646 /* Views */,
@@ -211,15 +212,15 @@
 		59833FEE2405643C00D131BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				59F0A7F424201AAE00F8185F /* EnterMobileNumberVC.swift */,
+				59F0A7F524201AAF00F8185F /* EnterVerificationCodeVC.swift */,
+				59F0A7F624201AAF00F8185F /* NewUserInformationsVC.swift */,
 				59833FEF2405646D00D131BF /* MainTabBarViewController.swift */,
 				59456BE924068C5B00B9F6C8 /* NavigationController.swift */,
 				59951B6224086861007CE646 /* ProfileViewController.swift */,
 				59D32DE3240ABB0800DE55B8 /* LoginVC.swift */,
 				59D373B224114D15002F6763 /* FollowUpVC.swift */,
 				59021A66241167CB00F633E2 /* SignUpVC.swift */,
-				597881142412A5F8008A694E /* EnterMobileNumberVC.swift */,
-				59A3066E241409E60088E463 /* EnterVerificationCodeVC.swift */,
-				59C604652417B7D900C21A48 /* NewUserInformationsVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -260,6 +261,13 @@
 				59BC42EE240978AE00787A4F /* UserProfile.swift */,
 			);
 			path = UserModels;
+			sourceTree = "<group>";
+		};
+		59F0A7F3242019FE00F8185F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,15 +412,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
-				59A3066F241409E60088E463 /* EnterVerificationCodeVC.swift in Sources */,
+				59F0A7F824201AAF00F8185F /* EnterVerificationCodeVC.swift in Sources */,
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
 				59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */,
+				59F0A7F924201AAF00F8185F /* NewUserInformationsVC.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */,
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
 				59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */,
-				597881152412A5F8008A694E /* EnterMobileNumberVC.swift in Sources */,
 				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
 				59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */,
 				5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */,
@@ -421,8 +429,8 @@
 				59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */,
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
-				59C604662417B7D900C21A48 /* NewUserInformationsVC.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+				59F0A7F724201AAF00F8185F /* EnterMobileNumberVC.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
