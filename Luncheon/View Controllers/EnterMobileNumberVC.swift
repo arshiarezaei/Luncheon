@@ -203,7 +203,7 @@ class EnterMobileNumberVC: UIViewController {
         
         // just for testing purpose
         
-        Network.RequesteSMS(phoneNumber: mobileNumberTF.text!){ error in
+        Network.requesteSMS(clientNumber: mobileNumberTF.text!){ error in
             if let error = error {
                 self.mobileNumberIsRequiredLabel.text = error.localizedDescription
             }

@@ -101,7 +101,7 @@ class EnterVerificationCodeVC: UIViewController {
         if #available(iOS 12.0, *){
             verficationCodeTF.textContentType = .oneTimeCode
         }
-    
+        
         NSLayoutConstraint.activate([
             verficationCodeTF.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
             verficationCodeTF.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: 0.8),
@@ -162,20 +162,38 @@ class EnterVerificationCodeVC: UIViewController {
         verficationCodeTF.resignFirstResponder()
         self.view.becomeFirstResponder()
         
-        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+        //        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+        
+        
+        
+        Network.validatingSMS(code: verficationCodeTF.text!){response in
+            if let error = response{
+                debugPrint("error in code verification \(error)")
+                self.errorInEnteredVerificationCodeLabel.textAlignment  = .right
+                self.errorInEnteredVerificationCodeLabel.semanticContentAttribute = .forceRightToLeft
+                self.errorInEnteredVerificationCodeLabel.text = error.localizedDescription
+            }
+            else{
+                DispatchQueue.main.async {
+                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+                }
+            }
+        }
+        
+        
         
         //        debugPrint("veri txt \(verficationCodeTF.text!)")
-//        Networking.validatingSMS(code: verficationCodeTF.text!){error in
-//            debugPrint("escaping closoure")
-//            if error == nil{
-//                DispatchQueue.main.async {
-//                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
-//                }
-//            }
-//            else{
-//                debugPrint(error!)
-//            }
-//        }
+        //        Networking.validatingSMS(code: verficationCodeTF.text!){error in
+        //            debugPrint("escaping closoure")
+        //            if error == nil{
+        //                DispatchQueue.main.async {
+        //                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+        //                }
+        //            }
+        //            else{
+        //                debugPrint(error!)
+        //            }
+        //        }
         
     }
     
