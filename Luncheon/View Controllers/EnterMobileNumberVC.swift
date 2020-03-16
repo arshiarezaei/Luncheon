@@ -199,12 +199,22 @@ class EnterMobileNumberVC: UIViewController {
         mobileNumberIsRequiredLabel.text = String()
         mobileNumberTF.resignFirstResponder()
         self.view.becomeFirstResponder()
-//        Networking.requestSMS(phoneNumber: mobileNumberTF.text!)
+        //        Networking.requestSMS(phoneNumber: mobileNumberTF.text!)
         
         // just for testing purpose
-        let vc = EnterVerificationCodeVC()
-        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
         
+        Network.RequesteSMS(phoneNumber: mobileNumberTF.text!){ error in
+            if let error = error {
+                self.mobileNumberIsRequiredLabel.text = error.localizedDescription
+            }
+            else{
+                DispatchQueue.main.async {
+                    let vc = EnterVerificationCodeVC()
+                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
+                }
+            }
+            
+        }
         
     }
     
