@@ -251,6 +251,8 @@ class NewUserInformationsVC: UIViewController {
         let password = passwordTF.text!
         
         debugPrint("\(name) \(familyName) \(email) \(password)")
+        let info :[String:String] = ["email": email, "familyName": familyName, "name": name, "password": password, "username":email]
+        debugPrint(info)
 //        Networking.UserRegistration(email: email, familyName: familyName, name: name, password: password, username: email){ error in
 //            if error == nil{
 //                debugPrint("registration successful")

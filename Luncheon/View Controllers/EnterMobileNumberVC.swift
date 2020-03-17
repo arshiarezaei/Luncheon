@@ -171,7 +171,6 @@ class EnterMobileNumberVC: UIViewController {
     private func setupRequestForSMSButton(){
         requestForSMSButton.translatesAutoresizingMaskIntoConstraints = false
         requestForSMSButton.backgroundColor = UIColor.luncehonLogoText
-        requestForSMSButton.backgroundColor = UIColor.luncehonLogoText
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.white]
         let title = NSAttributedString(string: "تایید", attributes: fontAttributes as [NSAttributedString.Key : Any])
         requestForSMSButton.setAttributedTitle(title, for: .normal)
@@ -188,22 +187,28 @@ class EnterMobileNumberVC: UIViewController {
     
     @objc private func requestForSMSButtonTapped() {
         debugPrint("requestForSMSButtonTapped")
-        guard  !(mobileNumberTF.text!.isEmpty) else { mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError
-            return}
-        guard mobileNumberTF.text?.count == 11 else {mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError3 ;
-            return}
-        guard let  _ = Utilities.phoneNumberValidation(phoneNumber: mobileNumberTF.text!) else {
-            mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError4
-            return
+        guard  !(mobileNumberTF.text!.isEmpty)
+            else {
+                mobileNumberTF.layer.borderColor = UIColor.luncehonLogoText.cgColor
+                mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError
+                return}
+        guard mobileNumberTF.text?.count == 11
+            else {
+                mobileNumberTF.layer.borderColor = UIColor.luncehonLogoText.cgColor
+                mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError3 ;
+                return}
+        guard let  _ = Utilities.phoneNumberValidation(phoneNumber: mobileNumberTF.text!)
+            else {
+                mobileNumberTF.layer.borderColor = UIColor.luncehonLogoText.cgColor
+                mobileNumberIsRequiredLabel.text = mobileNumberIsRequiredLabelError4
+                return
         }
         mobileNumberIsRequiredLabel.text = String()
         mobileNumberTF.resignFirstResponder()
         self.view.becomeFirstResponder()
-        //        Networking.requestSMS(phoneNumber: mobileNumberTF.text!)
+        mobileNumberTF.layer.borderColor = UIColor.lightGray.cgColor
         
-        // just for testing purpose
-        
-        Network.requesteSMS(clientNumber: mobileNumberTF.text!){ error in
+        Network.requesteSMS(clientNumber: mobileNumberTF.text!.persianToEnglishDigits){ error in
             if let error = error {
                 self.mobileNumberIsRequiredLabel.text = error.localizedDescription
             }
