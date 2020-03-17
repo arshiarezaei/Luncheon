@@ -113,6 +113,7 @@ class NewUserInformationsVC: UIViewController {
         nameTF.layer.cornerRadius = cornerRadius
         nameTF.font = UIFont.BYekan
         nameTF.returnKeyType = .next
+        nameTF.clearButtonMode = .always
         
         NSLayoutConstraint.activate([
             nameTF.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
@@ -135,7 +136,7 @@ class NewUserInformationsVC: UIViewController {
         lastNameTF.layer.cornerRadius = cornerRadius
         lastNameTF.font = UIFont.BYekan
         lastNameTF.returnKeyType = .next
-        
+        lastNameTF.clearButtonMode = .always
         
         
         NSLayoutConstraint.activate([
@@ -160,6 +161,8 @@ class NewUserInformationsVC: UIViewController {
         emailTF.returnKeyType = .next
         emailTF.layer.cornerRadius = cornerRadius
         emailTF.font = UIFont.BYekan
+        emailTF.keyboardType = .emailAddress
+        emailTF.clearButtonMode = .always
         
         NSLayoutConstraint.activate([
             emailTF.safeAreaLayoutGuide.topAnchor.constraint(equalTo: lastNameTF.safeAreaLayoutGuide.bottomAnchor, constant: verticalSpacepaceBetweenTFs),
@@ -184,6 +187,7 @@ class NewUserInformationsVC: UIViewController {
         passwordTF.layer.cornerRadius = cornerRadius
         passwordTF.font = UIFont.BYekan
         passwordTF.isSecureTextEntry = true
+        passwordTF.clearButtonMode = .always
         
         NSLayoutConstraint.activate([
             passwordTF.safeAreaLayoutGuide.topAnchor.constraint(equalTo: emailTF.safeAreaLayoutGuide.bottomAnchor, constant: verticalSpacepaceBetweenTFs),
@@ -208,6 +212,7 @@ class NewUserInformationsVC: UIViewController {
         confirmPassowrdTF.font = UIFont.BYekan
         confirmPassowrdTF.returnKeyType = .go
         confirmPassowrdTF.isSecureTextEntry = true
+        confirmPassowrdTF.clearButtonMode = .always
         
         NSLayoutConstraint.activate([
             confirmPassowrdTF.safeAreaLayoutGuide.topAnchor.constraint(equalTo: passwordTF.safeAreaLayoutGuide.bottomAnchor, constant: verticalSpacepaceBetweenTFs),
@@ -243,8 +248,14 @@ class NewUserInformationsVC: UIViewController {
         
     }
     
+    private func formValidator() -> Bool {
+        assertionFailure("not implemented")
+        return false
+    }
+    
     @objc private func confirmInformationButtonTapped() {
         debugPrint("executing NewUserInformationsVC->confirmInformationButtonTapped")
+        precondition(formValidator(), "check inputs")
         let name = nameTF.text!
         let familyName = lastNameTF.text!
         let email = emailTF.text!
@@ -253,25 +264,10 @@ class NewUserInformationsVC: UIViewController {
         debugPrint("\(name) \(familyName) \(email) \(password)")
         let info :[String:String] = ["email": email, "familyName": familyName, "name": name, "password": password, "username":email]
         debugPrint(info)
-//        Networking.UserRegistration(email: email, familyName: familyName, name: name, password: password, username: email){ error in
-//            if error == nil{
-//                debugPrint("registration successful")
-//            }
-//            else{
-//                debugPrint(error!)
-//            }
-//
-//        }
+
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
+    
     
 }
