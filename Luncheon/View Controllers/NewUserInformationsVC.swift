@@ -114,6 +114,7 @@ class NewUserInformationsVC: UIViewController {
         nameTF.font = UIFont.BYekan
         nameTF.returnKeyType = .next
         nameTF.clearButtonMode = .always
+        nameTF.semanticContentAttribute = .forceLeftToRight
         
         NSLayoutConstraint.activate([
             nameTF.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
@@ -130,7 +131,7 @@ class NewUserInformationsVC: UIViewController {
         lastNameTF.translatesAutoresizingMaskIntoConstraints = false
         lastNameTF.placeholder = "نام خانوادگی"
         lastNameTF.textAlignment = .center
-        lastNameTF.semanticContentAttribute = .forceRightToLeft
+        lastNameTF.semanticContentAttribute = .forceLeftToRight
         lastNameTF.layer.borderWidth = 1
         lastNameTF.layer.borderColor = UIColor.lightGray.cgColor
         lastNameTF.layer.cornerRadius = cornerRadius
@@ -154,7 +155,7 @@ class NewUserInformationsVC: UIViewController {
         emailTF.translatesAutoresizingMaskIntoConstraints = false
         emailTF.placeholder = "رایانامه"
         emailTF.textAlignment = .center
-        emailTF.semanticContentAttribute = .forceRightToLeft
+        emailTF.semanticContentAttribute = .forceLeftToRight
         emailTF.layer.borderWidth = 1
         emailTF.layer.borderColor = UIColor.lightGray.cgColor
         emailTF.textContentType = .emailAddress
@@ -180,7 +181,7 @@ class NewUserInformationsVC: UIViewController {
         passwordTF.translatesAutoresizingMaskIntoConstraints = false
         passwordTF.placeholder = "کلمه عبور"
         passwordTF.textAlignment = .center
-        passwordTF.semanticContentAttribute = .forceRightToLeft
+        passwordTF.semanticContentAttribute = .forceLeftToRight
         passwordTF.layer.borderWidth = 1
         passwordTF.layer.borderColor = UIColor.lightGray.cgColor
         passwordTF.textContentType = .password
@@ -204,7 +205,7 @@ class NewUserInformationsVC: UIViewController {
         confirmPassowrdTF.translatesAutoresizingMaskIntoConstraints = false
         confirmPassowrdTF.placeholder = "تایید کلمه عبور"
         confirmPassowrdTF.textAlignment = .center
-        confirmPassowrdTF.semanticContentAttribute = .forceRightToLeft
+        confirmPassowrdTF.semanticContentAttribute = .forceLeftToRight
         confirmPassowrdTF.layer.borderWidth = 1
         confirmPassowrdTF.layer.borderColor = UIColor.lightGray.cgColor
         confirmPassowrdTF.textContentType = .password
