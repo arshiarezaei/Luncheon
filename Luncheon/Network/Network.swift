@@ -14,6 +14,8 @@ struct Network {
     
     static private let baseURL:URL = URL(string: "http://81.31.168.254:8080")!
     static private let requestSMSURL:URL = baseURL.appendingPathComponent("auth/users/sms")
+    static private let APIs:URL = baseURL.appendingPathComponent("api/api/v1/")
+    static private let userRegistration:URL  = APIs.appendingPathComponent("users")
     static private var id:String? //one time token
     
     static  var clientNumber:String?
@@ -53,6 +55,35 @@ struct Network {
 //                debugPrint("request failed \(error)")
                 completion(error)
             }
+        }
+    }
+    
+    static func newUserRegistraion(infoItems:[String:String],completion : @escaping (Error?)->Void) {
+        let url :URLComponents = {
+               var urlc = URLComponents(string:userRegistration.absoluteString+"/")
+               urlc?.queryItems = [URLQueryItem(name: "token", value:"e35bf479-b6af-4c3c-b444-eec8e5a20a9e" )]
+               return urlc!
+           }()
+        debugPrint("url : \(url.string!)")
+        print("param \(infoItems)")
+        AF.request(url,method: .post,parameters:infoItems,encoder: JSONParameterEncoder.default).response{ response in
+            print("raw request")
+            print(String(data: (response.request?.httpBody)!, encoding: String.Encoding.utf8) ?? "ridi")
+            print("end")
+            
+            print("raw respnse data")
+            print(JSON(response.data!)["message"])
+            print(JSON(response.data!)["errorCode"])
+
+            print("ended")
+            
+            print("raw response")
+            print(response.response as Any)
+            print("ended")
+         
+            
+    
+            print(response)
         }
     }
     
