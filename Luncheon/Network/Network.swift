@@ -18,6 +18,8 @@ struct Network {
     static private let userRegistrationURL:URL  = APIs.appendingPathComponent("users")
     static private let loginURL:URL = baseURL.appendingPathComponent("auth/oauth/token")
     static private var id:String? //one time token
+
+    static private var accessToken:String?
     
     static  var clientNumber:String?
     
@@ -97,7 +99,9 @@ struct Network {
             switch response.result{
             case .success(let value):
                 debugPrint("request successed")
-                debugPrint(value as! [String:Any])
+                self.accessToken = ((value as! [String:Any])["access_token"]! as? String)!
+                debugPrint(accessToken!)
+                
                 completion(nil)
             case .failure(_):
                 assertionFailure("not implemented")
