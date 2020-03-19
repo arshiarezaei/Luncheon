@@ -15,6 +15,7 @@ enum UserStates :Equatable {
     static var currentState:UserStates = .LoggedOut
     
     static func changeStateToLogin(profile:UserProfile) {
+        NotificationCenter.default.post(name: .userLoggedIn , object: nil)
         currentState = .LoggedIn(profile)
     }
     static func changeStateToLoggedOut() {

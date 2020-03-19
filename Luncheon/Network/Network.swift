@@ -16,11 +16,15 @@ struct Network {
     static private let requestSMSURL:URL = baseURL.appendingPathComponent("auth/users/sms")
     static private let APIs:URL = baseURL.appendingPathComponent("api/api/v1/")
     static private let userRegistrationURL:URL  = APIs.appendingPathComponent("users")
+    static private let currentUserProfile:URL = userRegistrationURL.appendingPathComponent("me")
+    
     static private let loginURL:URL = baseURL.appendingPathComponent("auth/oauth/token")
     static private var id:String? //one time token
 
     static private var accessToken:String?
+    static private var userID:String?
     
+    static private let authorizationHeader:HTTPHeaders = HTTPHeaders(["Authorization":"Bearer \(accessToken!)"])
     static  var clientNumber:String?
     
     static func requesteSMS(clientNumber:String , completion : @escaping (Error?)->Void){
@@ -100,14 +104,24 @@ struct Network {
             case .success(let value):
                 debugPrint("request successed")
                 self.accessToken = ((value as! [String:Any])["access_token"]! as? String)!
-                debugPrint(accessToken!)
-                
+                self.userID = ((value as! [String:Any])["userId"]! as? String)!
+                debugPrint("access topken :\(accessToken!)")
+                debugPrint("userid  :\(userID!)")
+                UserStates.changeStateToLogin(profile: UserProfile())
                 completion(nil)
             case .failure(_):
                 assertionFailure("not implemented")
-                debugPrint(response.data!)
+                print(response.error!)
+                print("data")
+                print(JSON(response.data!)["message"])
             }
             
+        }
+    }
+    
+    static func getCurrentUserProfile(){
+        AF.request(currentUserProfile,headers: authorizationHeader).responseJSON{ response in
+            print(response)
         }
     }
     
