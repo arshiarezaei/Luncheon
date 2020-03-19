@@ -13,6 +13,8 @@ import UIKit
 struct UserProfile {
     private static var _profilePic:UIImage?
     private static var _name:String?
+    private static var _Credit:Int?
+    
     static var profilePic: UIImage{
         get {
             if let pic = self._profilePic{
@@ -32,6 +34,14 @@ struct UserProfile {
         }
         set {
             self._name = newValue
+        }
+    }
+    static var credit: Int {
+        get {
+            return _Credit!
+        }
+        set {
+            self._Credit = newValue
         }
     }
 

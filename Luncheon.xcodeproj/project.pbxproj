@@ -18,6 +18,7 @@
 		5921F42D240183EA00739020 /* LuncheonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F42C240183EA00739020 /* LuncheonTests.swift */; };
 		5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F437240183EA00739020 /* LuncheonUITests.swift */; };
 		5925A4CF2423BE3600130990 /* NameAndPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4CE2423BE3600130990 /* NameAndPicView.swift */; };
+		5925A4D12423E9F800130990 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4D02423E9F800130990 /* CreditView.swift */; };
 		59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59456BE924068C5B00B9F6C8 /* NavigationController.swift */; };
 		5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */; };
 		5974539624213E8800CAAB32 /* Extention String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974539524213E8800CAAB32 /* Extention String.swift */; };
@@ -81,6 +82,7 @@
 		5921F437240183EA00739020 /* LuncheonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuncheonUITests.swift; sourceTree = "<group>"; };
 		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5925A4CE2423BE3600130990 /* NameAndPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndPicView.swift; sourceTree = "<group>"; };
+		5925A4D02423E9F800130990 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		59456BE924068C5B00B9F6C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NewUserInformationsVC.swift"; sourceTree = "<group>"; };
 		5974539524213E8800CAAB32 /* Extention String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention String.swift"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				59788112241298EF008A694E /* EnterMobileNumberView.swift */,
 				59C2763324238AEC00B69D22 /* ProfileView.swift */,
 				5925A4CE2423BE3600130990 /* NameAndPicView.swift */,
+				5925A4D02423E9F800130990 /* CreditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */,
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
+				5925A4D12423E9F800130990 /* CreditView.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
 				59F0A8052420216A00F8185F /* NewUserInformationsVC.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
