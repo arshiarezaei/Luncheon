@@ -177,7 +177,7 @@ class LoginView: UIView {
         
     }
     private func setupLoginButton() {
-//        loginButton.tag = 3
+        //        loginButton.tag = 3
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.backgroundColor = UIColor.luncehonLogoText
         let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.white]
@@ -185,8 +185,8 @@ class LoginView: UIView {
         loginButton.setAttributedTitle(title, for: .normal)
         loginButton.layer.cornerRadius = self.cornerRadius
         loginButton.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
-//        loginButton.isEnabled = false
-//        loginButton.alpha = 0.5
+        //        loginButton.isEnabled = false
+        //        loginButton.alpha = 0.5
         
         NSLayoutConstraint.activate([
             loginButton.safeAreaLayoutGuide.topAnchor.constraint(equalTo: passwordIsRequiredLabel.safeAreaLayoutGuide.bottomAnchor, constant: 30),
@@ -212,10 +212,12 @@ class LoginView: UIView {
     @objc private func loginButtonTapped(_ sender:UIButton) {
         guard usernameTextField.text != "" && passwordTextField.text != ""  else {
             if usernameTextField.text == "" {
+//                usernameTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
                 usernameIsRequiredLabel.text = usernameIsRequired
                 passwordIsRequiredLabel.text = String()
             }
             if passwordTextField.text == ""  {
+//                passwordTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
                 usernameIsRequiredLabel.text = String()
                 passwordIsRequiredLabel.text = passwordIsRequired
             }
@@ -225,10 +227,23 @@ class LoginView: UIView {
             }
             return
         }
+//        usernameTextField.layer.borderColor = UIColor.whiteBorder.cgColor
+//        passwordTextField.layer.borderColor = UIColor.whiteBorder.cgColor
         usernameIsRequiredLabel.text = String()
         passwordIsRequiredLabel.text = String()
         
         debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
-        window?.rootViewController?.dismiss(animated: true, completion: nil)
+        Network.loginRequest(loginParameteres: ["username":usernameTextField.text!,"password":passwordTextField.text!]){
+            error in
+            if error == nil{
+                DispatchQueue.main.async {
+                    self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                }
+            }
+            else{
+                assertionFailure("not implemented")
+            }
+        }
+       
     }
 }
