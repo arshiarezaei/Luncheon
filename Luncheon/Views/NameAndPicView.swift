@@ -39,7 +39,8 @@ class NameAndPicView: UIView {
         profilePic.backgroundColor = .white
         profilePic.clipsToBounds = true
         profilePic.layer.borderColor = UIColor.lightGray.cgColor
-        profilePic.image = UserProfile.profilePic
+        profilePic.image = UserProfile.profilePic.withRenderingMode(.alwaysTemplate)
+        profilePic.tintColor = .lightGray
         
         NSLayoutConstraint.activate([
             profilePic.widthAnchor.constraint(equalToConstant: 64),
@@ -52,7 +53,7 @@ class NameAndPicView: UIView {
     private func setupName() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = {
-            if let name = UserProfile.name {
+            if let name = UserProfile.fullName {
                 return name
             }
             else{
@@ -82,7 +83,7 @@ class NameAndPicView: UIView {
     func updateContent() {
         profilePic.image = UserProfile.profilePic
         nameLabel.text = {
-            if let name = UserProfile.name {
+            if let name = UserProfile.fullName {
                 return name
             }
             else{

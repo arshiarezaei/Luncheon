@@ -56,7 +56,10 @@ class CreditView: UIView {
         yourCreditValue.font = UIFont(name: UIFont.BYekanName, size: 20)
         yourCreditValue.textAlignment = .right
         yourCreditValue.semanticContentAttribute = .forceRightToLeft
-        yourCreditValue.text = "اعتبار شما"
+        yourCreditValue.text = {
+            let balance = UserProfile.credit / 10
+            return "\(balance) تومان"
+        }()
         
         
         NSLayoutConstraint.activate([

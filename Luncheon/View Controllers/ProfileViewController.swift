@@ -46,6 +46,6 @@ class ProfileViewController: UIViewController {
         debugPrint("ProfileViewController user Logeed in")
         view.addSubview(profileView)
         setupProfileView()
-        Network.getCurrentUserProfile()
+        
     }
 }

@@ -20,7 +20,7 @@ struct Network {
     
     static private let loginURL:URL = baseURL.appendingPathComponent("auth/oauth/token")
     static private var id:String? //one time token
-
+    
     static private var accessToken:String?
     static private var userID:String?
     
@@ -48,7 +48,7 @@ struct Network {
             urlc?.queryItems = q
             return urlc!
         }()
-        debugPrint("inam az url \(url)")
+        debugPrint("this is \(url)")
         AF.request(url,method: .put).responseJSON{ response in
             switch response.result{
             case .success(let value):
@@ -105,9 +105,10 @@ struct Network {
                 debugPrint("request successed")
                 self.accessToken = ((value as! [String:Any])["access_token"]! as? String)!
                 self.userID = ((value as! [String:Any])["userId"]! as? String)!
-                debugPrint("access topken :\(accessToken!)")
-                debugPrint("userid  :\(userID!)")
-                UserStates.changeStateToLogin(profile: UserProfile())
+                //                debugPrint("access topken :\(accessToken!)")
+                //                debugPrint("userid  :\(userID!)")
+                UserStates.changeStateToLogin()
+                //                NotificationCenter.default.post(name: .userLoggedIn, object: nil)
                 completion(nil)
             case .failure(_):
                 assertionFailure("not implemented")
@@ -119,9 +120,21 @@ struct Network {
         }
     }
     
-    static func getCurrentUserProfile(){
+    static func getCurrentUserProfile(completion: @escaping (JSON?,Error?)->Void ){
         AF.request(currentUserProfile,headers: authorizationHeader).responseJSON{ response in
             print(response)
+            switch response.result{
+            case .success(let value):
+                if let data = value as? [String:Any] {
+                    let json = JSON(data)
+                    debugPrint("current User")
+                    completion(json,nil)
+                }
+            case .failure(let error):
+                print("error ocurred in getCurrentUserProfile")
+                completion(nil,error)
+                
+            }
         }
     }
     

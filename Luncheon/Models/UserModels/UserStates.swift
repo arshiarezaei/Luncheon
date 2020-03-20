@@ -14,9 +14,25 @@ enum UserStates :Equatable {
     
     static var currentState:UserStates = .LoggedOut
     
-    static func changeStateToLogin(profile:UserProfile) {
-        NotificationCenter.default.post(name: .userLoggedIn , object: nil)
-        currentState = .LoggedIn(profile)
+    
+    static func changeStateToLogin() {
+        var profile : UserProfile?
+        Network.getCurrentUserProfile{
+            (json,error) in
+            if let _ = json {
+                let name = json?["name"].string
+                let familyName = json?["familyName"].string
+                let credit = json?["balance"].int
+                profile = UserProfile(name: name!, familyName: familyName!, credit: credit!)
+                currentState = .LoggedIn(profile!)
+                print(profile!)
+                NotificationCenter.default.post(name: .userLoggedIn, object: profile)
+            }
+            else{
+                debugPrint("UserStates->changeStateToLogin else")
+            }
+        }
+        
     }
     static func changeStateToLoggedOut() {
         currentState = .LoggedOut
