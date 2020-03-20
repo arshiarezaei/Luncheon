@@ -11,7 +11,8 @@ import UIKit
 class ProfileView: UIView {
     
     private let nameAndPicView:NameAndPicView = NameAndPicView(frame: .zero)
-    private let credit : CreditView = CreditView(frame: .zero)
+    private let creditView : CreditView = CreditView(frame: .zero)
+    private let logoutButton:UIButton = UIButton(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -20,8 +21,11 @@ class ProfileView: UIView {
         self.addSubview(nameAndPicView)
         setupNameAndPicView()
         
-        self.addSubview(credit)
+        self.addSubview(creditView)
         setupCreditView()
+        
+        self.addSubview(logoutButton)
+        setupLogoutButton()
     }
     
     required init?(coder: NSCoder) {
@@ -45,19 +49,43 @@ class ProfileView: UIView {
     }
     
     private func setupCreditView() {
-        credit.translatesAutoresizingMaskIntoConstraints = false
-        credit.backgroundColor = .white
-        credit.layer.borderWidth = 1
-        credit.layer.borderColor = UIColor.lightGray.cgColor
-        credit.layer.cornerRadius = 16
+        creditView.translatesAutoresizingMaskIntoConstraints = false
+        creditView.backgroundColor = .white
+        creditView.layer.borderWidth = 1
+        creditView.layer.borderColor = UIColor.lightGray.cgColor
+        creditView.layer.cornerRadius = 16
         
         
         NSLayoutConstraint.activate([
-            credit.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
-            credit.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            credit.topAnchor.constraint(equalTo: nameAndPicView.bottomAnchor, constant: 16),
-            credit.heightAnchor.constraint(equalToConstant: 86)
+            creditView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
+            creditView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            creditView.topAnchor.constraint(equalTo: nameAndPicView.bottomAnchor, constant: 16),
+            creditView.heightAnchor.constraint(equalToConstant: 86)
         ])
+    }
+    
+    private func setupLogoutButton() {
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        logoutButton.backgroundColor = .luncehonLogoText
+        logoutButton.layer.cornerRadius = 20
+        let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.white]
+        let title = NSAttributedString(string:"خروج", attributes: fontAttributes as [NSAttributedString.Key : Any])
+        logoutButton.setAttributedTitle(title, for: .normal)
+        
+        logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+        
+        
+        NSLayoutConstraint.activate([
+            logoutButton.topAnchor.constraint(equalTo: creditView.bottomAnchor, constant: 16),
+            logoutButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
+            logoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            
+        ])
+        
+    }
+    
+    @objc private func logoutButtonTapped() {
+        NotificationCenter.default.post(name: .userLoggedOut, object: nil)
     }
     
 }

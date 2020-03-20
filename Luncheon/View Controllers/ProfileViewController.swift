@@ -18,8 +18,10 @@ class ProfileViewController: UIViewController {
         UserStates.currentState == .LoggedOut ? setupLoginOrSignUpView() : userLoggedIn()
         view.backgroundColor = .whiteBackgroud
         NotificationCenter.default.addObserver(self, selector: #selector(userLoggedIn), name: .userLoggedIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setupLoginOrSignUpView), name: .userLoggedOut, object: nil)
     }
-    func setupLoginOrSignUpView() {
+    @objc private func setupLoginOrSignUpView() {
+        debugPrint("class ProfileViewController->setupLoginOrSignUpView ")
         view.addSubview(loginOrSignUpView)
         loginOrSignUpView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -44,6 +46,7 @@ class ProfileViewController: UIViewController {
     }
     @objc private func userLoggedIn()  {
         debugPrint("ProfileViewController user Logeed in")
+        loginOrSignUpView.removeFromSuperview()
         view.addSubview(profileView)
         setupProfileView()
         
