@@ -85,7 +85,7 @@ class ProfileView: UIView {
     }
     
     @objc private func logoutButtonTapped() {
-        NotificationCenter.default.post(name: .userLoggedOut, object: nil)
+        UserStates.changeStateToLoggedOut()
     }
     
 }

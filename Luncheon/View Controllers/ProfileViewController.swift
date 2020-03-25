@@ -18,7 +18,7 @@ class ProfileViewController: UIViewController {
         UserStates.currentState == .LoggedOut ? setupLoginOrSignUpView() : userLoggedIn()
         view.backgroundColor = .whiteBackgroud
         NotificationCenter.default.addObserver(self, selector: #selector(userLoggedIn), name: .userLoggedIn, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(setupLoginOrSignUpView), name: .userLoggedOut, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLoggedout), name: .userLoggedOut, object: nil)
     }
     @objc private func setupLoginOrSignUpView() {
         debugPrint("class ProfileViewController->setupLoginOrSignUpView ")
@@ -49,6 +49,13 @@ class ProfileViewController: UIViewController {
         loginOrSignUpView.removeFromSuperview()
         view.addSubview(profileView)
         setupProfileView()
+        
+    }
+    @objc private func userLoggedout()  {
+        debugPrint("ProfileViewController user Logeed out")
+        profileView.removeFromSuperview()
+        view.addSubview(loginOrSignUpView)
+        setupLoginOrSignUpView()
         
     }
 }

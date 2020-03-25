@@ -138,6 +138,13 @@ struct Network {
         }
     }
     
+    static func userloggedOut(){
+        self.id = nil
+        self.accessToken = nil
+        self.clientNumber = nil
+        self.userID = nil
+    }
+    
     
     
 }

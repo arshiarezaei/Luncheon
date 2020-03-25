@@ -11,43 +11,21 @@ import UIKit
 
 
 struct UserProfile {
-    static private var _profilePic:UIImage?
-    static private var _name:String?
-    static private var _Credit:Int?
-    static private var _familyName:String?
+    let  profilePic:UIImage? = UIImage(named: "profile")
+    let  name:String
+    let credit:Int
+    let familyName:String
     
-    static var profilePic: UIImage{
-        get {
-            if let pic = self._profilePic{
-                return pic
-            }
-            else {
-                return UIImage(named: "profile")!
-            }
-        }
-        set {
-            _profilePic = newValue
-        }
+    var fullName: String {
+        return "\(name) \(familyName)"
     }
-    static var fullName: String? {
-        get {
-            return String("\(_name!) \(_familyName!)")
-        }
-    }
-    static var credit: Int {
-        get {
-            return _Credit!
-        }
-        set {
-            self._Credit = newValue
-        }
-    }
+    
     
     init(name:String,familyName:String,credit:Int) {
         debugPrint("\(name) \(familyName)  \(credit)")
-        UserProfile._name = name
-        UserProfile._familyName = familyName
-        UserProfile._Credit = credit
+        self.name = name
+        self.familyName = familyName
+        self.credit = credit
     }
 
 }

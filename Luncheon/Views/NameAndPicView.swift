@@ -39,7 +39,7 @@ class NameAndPicView: UIView {
         profilePic.backgroundColor = .white
         profilePic.clipsToBounds = true
         profilePic.layer.borderColor = UIColor.lightGray.cgColor
-        profilePic.image = UserProfile.profilePic.withRenderingMode(.alwaysTemplate)
+        profilePic.image = UserStates.currentUserProfile?.profilePic?.withRenderingMode(.alwaysTemplate)
         profilePic.tintColor = .lightGray
         
         NSLayoutConstraint.activate([
@@ -53,8 +53,9 @@ class NameAndPicView: UIView {
     private func setupName() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = {
-            if let name = UserProfile.fullName {
-                return name
+            if let name = UserStates.currentUserProfile?.fullName {
+                debugPrint("class NameAndPicView->setupName if let ")
+            return name
             }
             else{
                 return "نام و نام خانوادگی"
@@ -81,14 +82,14 @@ class NameAndPicView: UIView {
         ])
     }
     func updateContent() {
-        profilePic.image = UserProfile.profilePic
+        profilePic.image = UserStates.currentUserProfile?.profilePic
         nameLabel.text = {
-            if let name = UserProfile.fullName {
-                return name
-            }
-            else{
-                return "نام و نام خانوادگی"
-            }
+//            if let name = UserProfile.fullName {
+            return UserStates.currentUserProfile?.fullName
+//            }
+//            else{
+//                return "نام و نام خانوادگی"
+//            }
         }()
     }
     
