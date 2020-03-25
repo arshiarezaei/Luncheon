@@ -44,7 +44,7 @@ enum UserStates :Equatable {
                 currentState = .LoggedIn
                 
                 print("\(profile!)")
-                NotificationCenter.default.post(name: .userLoggedIn, object: profile)
+                NotificationCenter.default.post(name: .userProfileRecevied, object: nil)
             }
             else{
                 debugPrint("UserStates->changeStateToLogin else")
@@ -53,6 +53,8 @@ enum UserStates :Equatable {
     }
     static func changeStateToLoggedOut() {
         currentState = .LoggedOut
+        _currentUserProfile = nil
+//        debugPrint("changeStateToLoggedOut \(_currentUserProfile!)")
         NotificationCenter.default.post(name: .userLoggedOut, object: nil)
         Network.userloggedOut()
     }

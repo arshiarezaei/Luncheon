@@ -24,7 +24,11 @@ struct Network {
     static private var accessToken:String?
     static private var userID:String?
     
-    static private let authorizationHeader:HTTPHeaders = HTTPHeaders(["Authorization":"Bearer \(accessToken!)"])
+    static private var authorizationHeader:HTTPHeaders {
+        get{
+            return HTTPHeaders(["Authorization":"Bearer \(accessToken!)"])
+        }
+    }
     static  var clientNumber:String?
     
     static func requesteSMS(clientNumber:String , completion : @escaping (Error?)->Void){
