@@ -29,6 +29,7 @@ struct Network {
             return HTTPHeaders(["Authorization":"Bearer \(accessToken!)"])
         }
     }
+    static private let authorization :HTTPHeaders = HTTPHeaders(["Authorization":"Basic YWRtaW5hcHA6cGFzc3dvcmQ="])
     static  var clientNumber:String?
     
     static func requesteSMS(clientNumber:String , completion : @escaping (Error?)->Void){
@@ -98,29 +99,26 @@ struct Network {
         }
     }
     
-    static func loginRequest(loginParameteres:[String:String],completion : @escaping (Error?)->Void){
-        let authorization :HTTPHeaders = HTTPHeaders(["Authorization":"Basic YWRtaW5hcHA6cGFzc3dvcmQ="])
+    static func loginRequest(loginParameteres:[String:String],completion : @escaping (Int?)->Void){
+        
         var parameters = loginParameteres
         parameters["grant_type"] = "password"
         debugPrint(parameters)
-        AF.request(loginURL,method: .post,parameters:parameters,encoding: URLEncoding.default,headers: authorization ).responseJSON{ response in
-            switch response.result{
-            case .success(let value):
-                debugPrint("request successed")
-                self.accessToken = ((value as! [String:Any])["access_token"]! as? String)!
-                self.userID = ((value as! [String:Any])["userId"]! as? String)!
-                //                debugPrint("access topken :\(accessToken!)")
-                //                debugPrint("userid  :\(userID!)")
-                UserStates.changeStateToLogin()
-                //                NotificationCenter.default.post(name: .userLoggedIn, object: nil)
-                completion(nil)
-            case .failure(_):
-                assertionFailure("not implemented")
-                print(response.error!)
-                print("data")
-                print(JSON(response.data!)["message"])
-            }
-            
+        AF.request(loginURL,method: .post,parameters:parameters,encoding: URLEncoding.default,headers: authorization)
+            .responseJSON{ response in
+                
+                switch response.result{
+                case .success(let value):
+                    debugPrint("request successed")
+                    self.accessToken = ((value as! [String:Any])["access_token"]! as? String)!
+                    self.userID = ((value as! [String:Any])["userId"]! as? String)!
+                    UserStates.changeStateToLogin()
+                    completion(nil)
+                case .failure:
+                    debugPrint("failor \(String(describing: response.response!.statusCode))")
+                    completion(response.response?.statusCode)
+                }
+                
         }
     }
     

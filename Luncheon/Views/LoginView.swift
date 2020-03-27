@@ -22,6 +22,8 @@ class LoginView: UIView {
     private let loginButton:UIButton = UIButton(frame: .zero)
     private let forgotPasswordButton:UIButton = UIButton(frame: .zero)
     
+    private var activityIndicator:UIActivityIndicatorView?
+    
     private let cornerRadius:CGFloat = CGFloat(20.0)
     
     private let usernameTFtitle:String = "نام کاربری"
@@ -212,12 +214,12 @@ class LoginView: UIView {
     @objc private func loginButtonTapped(_ sender:UIButton) {
         guard usernameTextField.text != "" && passwordTextField.text != ""  else {
             if usernameTextField.text == "" {
-//                usernameTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
+                //                usernameTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
                 usernameIsRequiredLabel.text = usernameIsRequired
                 passwordIsRequiredLabel.text = String()
             }
             if passwordTextField.text == ""  {
-//                passwordTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
+                //                passwordTextField.layer.borderColor = UIColor.luncehonLogoText.cgColor
                 usernameIsRequiredLabel.text = String()
                 passwordIsRequiredLabel.text = passwordIsRequired
             }
@@ -227,12 +229,13 @@ class LoginView: UIView {
             }
             return
         }
-//        usernameTextField.layer.borderColor = UIColor.whiteBorder.cgColor
-//        passwordTextField.layer.borderColor = UIColor.whiteBorder.cgColor
+        //        usernameTextField.layer.borderColor = UIColor.whiteBorder.cgColor
+        //        passwordTextField.layer.borderColor = UIColor.whiteBorder.cgColor
         usernameIsRequiredLabel.text = String()
         passwordIsRequiredLabel.text = String()
         
         debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
+        
         Network.loginRequest(loginParameteres: ["username":usernameTextField.text!,"password":passwordTextField.text!]){
             error in
             if error == nil{
@@ -240,10 +243,36 @@ class LoginView: UIView {
                     self.window?.rootViewController?.dismiss(animated: true, completion: nil)
                 }
             }
-            else{
-                assertionFailure("not implemented")
+            if error == 401{
+                
+                let a = UIAlertController(title:  "خطا", message: "نام کاربری یا کلمه عبور اشتباه است", preferredStyle: .alert)
+                let action = UIAlertAction(title: "تلاش مجدد", style: UIAlertAction.Style.default, handler:nil)
+                action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
+                a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
+                a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
+                 a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
+                
+//                let message:NSAttributedString = NSAttributedString(string: "پیام", attributes: [NSAttributedString.Key.font:UIFont.BYekan])
+//                a.setValue(message, forKey:"message")
+                a.addAction(action)
+                
+                a.view.alpha = 1
+    
+                
+                self.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
             }
         }
-       
+        
     }
 }
+//loginButton.isUserInteractionEnabled = false
+//loginButton.alpha = 0.5
+//activityIndicator = UIActivityIndicatorView(frame: .zero)
+//self.addSubview(activityIndicator!)
+//NSLayoutConstraint.activate([
+//    activityIndicator!.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//    activityIndicator!.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+//    activityIndicator!.widthAnchor.constraint(equalToConstant: 200),
+//    activityIndicator!.heightAnchor.constraint(equalToConstant: 200),
+//])
+//activityIndicator?.startAnimating()
