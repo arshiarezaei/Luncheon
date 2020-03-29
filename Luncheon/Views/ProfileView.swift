@@ -77,7 +77,7 @@ class ProfileView: UIView {
         
         NSLayoutConstraint.activate([
             logoutButton.topAnchor.constraint(equalTo: creditView.bottomAnchor, constant: 16),
-            logoutButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
+            logoutButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             logoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             
         ])

@@ -75,6 +75,7 @@ class CreditView: UIView {
         increaseCreaditButton.translatesAutoresizingMaskIntoConstraints = false
         increaseCreaditButton.semanticContentAttribute = .forceRightToLeft
         increaseCreaditButton.setTitle("افزایش اعتبار", for: .normal)
+        increaseCreaditButton.titleLabel?.font = UIFont(name: UIFont.BYekanName, size: 20)
         increaseCreaditButton.setTitleColor(.luncehonLogoText, for: .normal)
         
         NSLayoutConstraint.activate([

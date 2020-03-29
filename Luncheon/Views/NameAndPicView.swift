@@ -75,6 +75,7 @@ class NameAndPicView: UIView {
         editProfileButton.translatesAutoresizingMaskIntoConstraints = false
         editProfileButton.setTitleColor(.luncehonLogoText, for: .normal)
         editProfileButton.setTitle("ویرایش", for: .normal)
+        editProfileButton.titleLabel?.font = UIFont(name: UIFont.BYekan.fontName, size: 20)
         
         NSLayoutConstraint.activate([
             editProfileButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
