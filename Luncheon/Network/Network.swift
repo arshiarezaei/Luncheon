@@ -70,32 +70,46 @@ struct Network {
         }
     }
     
-    static func newUserRegistraion(infoItems:[String:String],completion : @escaping (Error?)->Void) {
+    static func newUserRegistraion(infoItems:[String:String],completion : @escaping (Bool,String?)->Void) {
         let url :URLComponents = {
             var urlc = URLComponents(string:userRegistrationURL.absoluteString+"/")
-            urlc?.queryItems = [URLQueryItem(name: "token", value:"e35bf479-b6af-4c3c-b444-eec8e5a20a9e" )]
+            urlc?.queryItems = [URLQueryItem(name: "token", value: self.id! )]
             return urlc!
         }()
         debugPrint("url : \(url.string!)")
         print("param \(infoItems)")
         AF.request(url,method: .post,parameters:infoItems,encoder: JSONParameterEncoder.default).response{ response in
-            print("raw request")
-            print(String(data: (response.request?.httpBody)!, encoding: String.Encoding.utf8) ?? "defaul value")
-            print("end")
+            //            print("raw request")
+            //            print(String(data: (response.request?.httpBody)!, encoding: String.Encoding.utf8) ?? "defaul value")
+            //            print("end")
+            //
+            //            print("raw respnse data")
+            //            print(JSON(response.data!)["message"])
+            //            print(JSON(response.data!)["errorCode"])
+            //
+            //            print("ended")
+            //
+            //            print("raw response")
+            //            print(response.response as Any)
+            //            print("ended")
+            //            print(response)
             
-            print("raw respnse data")
-            print(JSON(response.data!)["message"])
-            print(JSON(response.data!)["errorCode"])
+            switch response.result{
+            case .success(_):
+                debugPrint("request succeeded")
+                if response.response?.statusCode != 201 {
+                    completion(false,JSON(response.data!)["message"].string!)
+                }
+                
+            case .failure(_):
+                print("raw respnse data")
+                print(JSON(response.data!)["message"])
+                print(JSON(response.data!)["errorCode"])
+                let message = JSON(response.data!)["message"].string!
+                completion(false,message)
+            }
             
-            print("ended")
             
-            print("raw response")
-            print(response.response as Any)
-            print("ended")
-            
-            
-            
-            print(response)
         }
     }
     

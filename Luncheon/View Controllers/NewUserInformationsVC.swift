@@ -256,7 +256,7 @@ class NewUserInformationsVC: UIViewController {
     
     @objc private func confirmInformationButtonTapped() {
         debugPrint("executing NewUserInformationsVC->confirmInformationButtonTapped")
-        precondition(formValidator(), "check inputs")
+//        precondition(formValidator(), "check inputs")
         let name = nameTF.text!
         let familyName = lastNameTF.text!
         let email = emailTF.text!
@@ -264,7 +264,25 @@ class NewUserInformationsVC: UIViewController {
         
         debugPrint("\(name) \(familyName) \(email) \(password)")
         let info :[String:String] = ["email": email, "familyName": familyName, "name": name, "password": password, "username":email]
-        debugPrint(info)
+        Network.newUserRegistraion(infoItems: info){ (result,message) in
+            if !result {
+                debugPrint("registration completed")
+                DispatchQueue.main.async {
+                    let a = UIAlertController(title:  "خطا", message: message! , preferredStyle: .alert)
+                    let action = UIAlertAction(title: "تلاش مجدد", style: UIAlertAction.Style.default, handler:nil)
+                    action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
+                    a.addAction(action)
+                    a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
+                    a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
+                     a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
+                    self.view.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
+                }
+            }
+            else{
+            
+            }
+            
+        }
 
         
     }
