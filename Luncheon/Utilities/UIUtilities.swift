@@ -11,5 +11,6 @@ import UIKit
 
 struct UIUtilities {
     static let cornerRadius:CGFloat = CGFloat(20)
-    
+    static let defaultTFHeight:CGFloat = CGFloat(40)
+    static let defaultTFWidth:CGFloat = CGFloat(0.9)
 }

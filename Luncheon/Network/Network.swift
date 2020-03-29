@@ -17,6 +17,8 @@ struct Network {
     static private let APIs:URL = baseURL.appendingPathComponent("api/api/v1/")
     static private let userRegistrationURL:URL  = APIs.appendingPathComponent("users")
     static private let currentUserProfile:URL = userRegistrationURL.appendingPathComponent("me")
+    static private let paymentBaseURL:URL = APIs.appendingPathComponent("payments")
+    static private let icreaseCreditURL:URL = paymentBaseURL.appendingPathComponent("request")
     
     static private let loginURL:URL = baseURL.appendingPathComponent("auth/oauth/token")
     static private var id:String? //one time token
@@ -154,12 +156,39 @@ struct Network {
         }
     }
     
+    
     static func userloggedOut(){
         self.id = nil
         self.accessToken = nil
         self.clientNumber = nil
         self.userID = nil
     }
+    
+    static func increaseCredit(amount:Int,completion: @escaping (String?)->Void ) {
+        
+        AF.request(icreaseCreditURL,method: .post,parameters:["amount":amount],encoder: JSONParameterEncoder.default,headers: authorizationHeader).responseJSON{ response in
+            debugPrint("class Network -> increasecredit")
+            print(response)
+            switch response.result{
+            case .success(let value):
+                if let data = value as? [String:Any] {
+                    let json = JSON(data)
+                    let url = json["url"].string!
+                    let token = json["token"].string!
+                    let finlaUrl = url+"?RefId="+token
+                    debugPrint("\(finlaUrl)")
+                    completion(finlaUrl)
+//                    debugPrint("tokrn \(token)")
+                }
+            case .failure:
+                debugPrint("failure")
+            }
+            
+            
+        }
+        
+    }
+    
     
     
     

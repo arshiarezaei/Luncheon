@@ -72,4 +72,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileView!)
         setupProfileView()
     }
+    @objc func increaseButtonTapped() {
+        debugPrint("IncreaseButtonTapped")
+    }
 }

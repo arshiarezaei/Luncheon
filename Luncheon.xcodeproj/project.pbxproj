@@ -20,6 +20,7 @@
 		5925A4CF2423BE3600130990 /* NameAndPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4CE2423BE3600130990 /* NameAndPicView.swift */; };
 		5925A4D12423E9F800130990 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4D02423E9F800130990 /* CreditView.swift */; };
 		593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E952430F8AA00CB41A4 /* UIUtilities.swift */; };
+		593E5E982431176700CB41A4 /* IncreaseCreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */; };
 		59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59456BE924068C5B00B9F6C8 /* NavigationController.swift */; };
 		5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */; };
 		5974539624213E8800CAAB32 /* Extention String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5974539524213E8800CAAB32 /* Extention String.swift */; };
@@ -85,6 +86,7 @@
 		5925A4CE2423BE3600130990 /* NameAndPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndPicView.swift; sourceTree = "<group>"; };
 		5925A4D02423E9F800130990 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		593E5E952430F8AA00CB41A4 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseCreditVC.swift; sourceTree = "<group>"; };
 		59456BE924068C5B00B9F6C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NewUserInformationsVC.swift"; sourceTree = "<group>"; };
 		5974539524213E8800CAAB32 /* Extention String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention String.swift"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */,
 				59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */,
 				59F0A8042420216A00F8185F /* NewUserInformationsVC.swift */,
+				593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
+				593E5E982431176700CB41A4 /* IncreaseCreditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

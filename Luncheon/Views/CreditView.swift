@@ -12,7 +12,7 @@ class CreditView: UIView {
     
     private let yourCreditLabel:UILabel = UILabel(frame: .zero)
     private let yourCreditValue:UILabel = UILabel(frame: .zero)
-    private let increaseCreaditButton:UIButton = UIButton(frame: .zero)
+    private let increaseCreditButton:UIButton = UIButton(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -23,8 +23,8 @@ class CreditView: UIView {
         self.addSubview(yourCreditValue)
         setupYourCreditValueLabel()
         
-        self.addSubview(increaseCreaditButton)
-        setupIncreaseCreaditButton()
+        self.addSubview(increaseCreditButton)
+        setupIncreaseCreditButton()
     }
     
     required init?(coder: NSCoder) {
@@ -71,19 +71,29 @@ class CreditView: UIView {
         
     }
     
-    private func setupIncreaseCreaditButton() {
-        increaseCreaditButton.translatesAutoresizingMaskIntoConstraints = false
-        increaseCreaditButton.semanticContentAttribute = .forceRightToLeft
-        increaseCreaditButton.setTitle("افزایش اعتبار", for: .normal)
-        increaseCreaditButton.titleLabel?.font = UIFont(name: UIFont.BYekanName, size: 20)
-        increaseCreaditButton.setTitleColor(.luncehonLogoText, for: .normal)
+    private func setupIncreaseCreditButton() {
+        increaseCreditButton.translatesAutoresizingMaskIntoConstraints = false
+        increaseCreditButton.semanticContentAttribute = .forceRightToLeft
+        increaseCreditButton.setTitle("افزایش اعتبار", for: .normal)
+        increaseCreditButton.titleLabel?.font = UIFont(name: UIFont.BYekanName, size: 20)
+        increaseCreditButton.setTitleColor(.luncehonLogoText, for: .normal)
+        increaseCreditButton.addTarget( self , action: #selector(increaseButtonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             
-            increaseCreaditButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            increaseCreaditButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +16),
+            increaseCreditButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            increaseCreditButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +16),
         ])
         
+        
+    }
+    @objc func increaseButtonTapped() {
+        debugPrint("IncreaseButtonTapped")
+        let vc = IncreaseCreditVC()
+        
+//        print(self.window?.rootViewController?.navigationController?.topViewController)
+//        self.window?.rootViewController?.navigationController?.topViewController?.present(vc, animated: true, completion: nil)
+        (((self.window?.rootViewController! as! MainTabBarViewController).selectedViewController) as! NavigationController).show(vc, sender: true)
         
     }
 }
