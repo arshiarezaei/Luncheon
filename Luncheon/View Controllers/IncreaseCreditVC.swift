@@ -119,11 +119,11 @@ class IncreaseCreditVC: UIViewController,UITextFieldDelegate,WKNavigationDelegat
         debugPrint("paybuttonTapped")
         let value = (valueTF.text! as NSString).integerValue
         Network.increaseCredit(amount: value ){ paymenturl in
-            if let _ = paymenturl{
+            if let paymenturl = paymenturl{
                 DispatchQueue.main.async {
                     self.web.navigationDelegate = self
                     self.view = self.web
-                    self.web.load(URLRequest(url: URL(string: "https://www.google.com")!))
+                    self.web.load(URLRequest(url: URL(string: paymenturl)!))
                     self.web.allowsBackForwardNavigationGestures = true
                 }
             }
