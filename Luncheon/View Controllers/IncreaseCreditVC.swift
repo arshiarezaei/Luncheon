@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class IncreaseCreditVC: UIViewController,UITextFieldDelegate,WKNavigationDelegate {
+class IncreaseCreditVC: UIViewController,UITextFieldDelegate {
     
     private let yourCreditLabel: UILabel = {
         let ycl = UILabel(frame: .zero)
@@ -60,7 +60,6 @@ class IncreaseCreditVC: UIViewController,UITextFieldDelegate,WKNavigationDelegat
         return pb
     }()
     
-    private let web:WKWebView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,12 +118,13 @@ class IncreaseCreditVC: UIViewController,UITextFieldDelegate,WKNavigationDelegat
         debugPrint("paybuttonTapped")
         let value = (valueTF.text! as NSString).integerValue
         Network.increaseCredit(amount: value ){ paymenturl in
-            if let paymenturl = paymenturl{
+            if let paymenturl = paymenturl {
                 DispatchQueue.main.async {
-                    self.web.navigationDelegate = self
-                    self.view = self.web
-                    self.web.load(URLRequest(url: URL(string: paymenturl)!))
-                    self.web.allowsBackForwardNavigationGestures = true
+                    let vc = PaymentVC()
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true ){
+                        vc.loadURL(url: URL(string: paymenturl)!)
+                    }
                 }
             }
         }

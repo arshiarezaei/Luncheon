@@ -64,6 +64,7 @@ class NameAndPicView: UIView {
         nameLabel.textAlignment = .center
         nameLabel.textColor = .black
         nameLabel.semanticContentAttribute = .forceRightToLeft
+        nameLabel.font = UIFont.BYekan
         
         
         NSLayoutConstraint.activate([
