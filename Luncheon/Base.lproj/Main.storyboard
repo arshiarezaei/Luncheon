@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1048" y="920"/>
         </scene>
-        <!--View Controller-->
+        <!--Food CourtVC-->
         <scene sceneID="KaY-VT-FrC">
             <objects>
-                <viewController id="KE5-j2-ry8" sceneMemberID="viewController">
+                <viewController id="KE5-j2-ry8" customClass="FoodCourtVC" customModule="Luncheon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kan-Mx-iJK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

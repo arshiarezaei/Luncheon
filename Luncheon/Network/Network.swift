@@ -19,6 +19,7 @@ struct Network {
     static private let currentUserProfile:URL = userRegistrationURL.appendingPathComponent("me")
     static private let paymentBaseURL:URL = APIs.appendingPathComponent("payments")
     static private let icreaseCreditURL:URL = paymentBaseURL.appendingPathComponent("request")
+    static private let foodCourtsURL:URL = APIs.appendingPathComponent("food-courts")
     
     static private let loginURL:URL = baseURL.appendingPathComponent("auth/oauth/token")
     static private var id:String? //one time token
@@ -187,6 +188,27 @@ struct Network {
             
         }
         
+    }
+    
+    static func getRestaurantsOfaFoodCourt(fcId:String="c6fb53a6-6941-4c1f-b5d3-0dfab34ff32f"){
+        let url:URLComponents = {
+            var url = self.foodCourtsURL.appendingPathComponent("\(fcId)")
+            url = url.appendingPathComponent("restaurants")
+            var urlc = URLComponents(string: url.absoluteString)
+            urlc?.queryItems = [URLQueryItem(name: "state", value: "ACTIVE")]
+            return urlc!
+        }()
+        AF.request(url).response{ response in
+            debugPrint("getRestaurantsOfaFoodCourt")
+            debugPrint("\(url)")
+            switch response.result{
+            case .success(let data):
+                debugPrint("request succedd")
+                print(JSON(data as Any))
+            case .failure(let error):
+                debugPrint("request failed \(error.errorDescription ?? "no description")")
+            }
+        }
     }
     
     

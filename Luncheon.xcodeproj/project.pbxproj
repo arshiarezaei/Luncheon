@@ -39,6 +39,9 @@
 		59A3066D2413FD870088E463 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066C2413FD870088E463 /* Utilities.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
+		59BEE958243A47E00060BCAB /* FoodCourtRestaurantsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */; };
+		59BEE95A243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEE959243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift */; };
+		59BEE95C243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */; };
 		59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C276312423872B00B69D22 /* Extention NSNotificationName.swift */; };
 		59C2763424238AEC00B69D22 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2763324238AEC00B69D22 /* ProfileView.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
@@ -109,6 +112,9 @@
 		59A3066C2413FD870088E463 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtRestaurantsCV.swift; sourceTree = "<group>"; };
+		59BEE959243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodCourtRestaurantsCV.swift"; sourceTree = "<group>"; };
+		59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtRestaurantsCollectionViewCell.swift; sourceTree = "<group>"; };
 		59C276312423872B00B69D22 /* Extention NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NSNotificationName.swift"; sourceTree = "<group>"; };
 		59C2763324238AEC00B69D22 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 				5954AB6524181BF90060A601 /* Extention NewUserInformationsVC.swift */,
 				5974539524213E8800CAAB32 /* Extention String.swift */,
 				59C276312423872B00B69D22 /* Extention NSNotificationName.swift */,
+				59BEE959243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -279,6 +286,8 @@
 				59C2763324238AEC00B69D22 /* ProfileView.swift */,
 				5925A4CE2423BE3600130990 /* NameAndPicView.swift */,
 				5925A4D02423E9F800130990 /* CreditView.swift */,
+				59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */,
+				59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +469,7 @@
 				59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */,
 				59F593ED243916330009E7D7 /* Food.swift in Sources */,
 				593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */,
+				59BEE95C243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift in Sources */,
 				59F0A8072420232E00F8185F /* Network.swift in Sources */,
 				5974539624213E8800CAAB32 /* Extention String.swift in Sources */,
 				59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */,
@@ -481,7 +491,9 @@
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
 				5925A4D12423E9F800130990 /* CreditView.swift in Sources */,
+				59BEE95A243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+				59BEE958243A47E00060BCAB /* FoodCourtRestaurantsCV.swift in Sources */,
 				59F0A8052420216A00F8185F /* NewUserInformationsVC.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
 				591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */,
