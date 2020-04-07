@@ -16,7 +16,7 @@ extension FoodCourtRestaurantsCV:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restauratsName", for: indexPath)
-        cell.backgroundColor = .red
+//        cell.backgroundColor = .red
         return cell
     }
     

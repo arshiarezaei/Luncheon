@@ -12,14 +12,16 @@ class FoodCourtVC: UIViewController {
     
     let foodcourtRestaurantsCV:FoodCourtRestaurantsCV = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 40, height: 100)
+        layout.itemSize = CGSize(width: 56, height: 120)
+        layout.minimumLineSpacing = 32
         layout.scrollDirection = .horizontal
         let fcrcv = FoodCourtRestaurantsCV(frame: .zero,collectionViewLayout:layout )
         fcrcv.translatesAutoresizingMaskIntoConstraints = false
         fcrcv.semanticContentAttribute = .forceRightToLeft
         fcrcv.contentMode = .center
-        fcrcv.backgroundColor = .green
-        fcrcv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "restauratsName")
+        fcrcv.backgroundColor = .whiteBackgroud
+        fcrcv.register(FoodCourtRestaurantsCollectionViewCell.self, forCellWithReuseIdentifier: "restauratsName")
+    
         return fcrcv
     }()
     
