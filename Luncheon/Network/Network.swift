@@ -190,7 +190,7 @@ struct Network {
         
     }
     
-    static func getRestaurantsOfaFoodCourt(fcId:String="c6fb53a6-6941-4c1f-b5d3-0dfab34ff32f"){
+    static func getRestaurantsOfaFoodCourt(fcId:String="c6fb53a6-6941-4c1f-b5d3-0dfab34ff32f",completion:@escaping (JSON?)->Void){
         let url:URLComponents = {
             var url = self.foodCourtsURL.appendingPathComponent("\(fcId)")
             url = url.appendingPathComponent("restaurants")
@@ -204,9 +204,11 @@ struct Network {
             switch response.result{
             case .success(let data):
                 debugPrint("request succedd")
-                print(JSON(data as Any))
+//                print(JSON(data as Any))
+                completion(JSON(data as Any))
             case .failure(let error):
                 debugPrint("request failed \(error.errorDescription ?? "no description")")
+                completion(nil)
             }
         }
     }

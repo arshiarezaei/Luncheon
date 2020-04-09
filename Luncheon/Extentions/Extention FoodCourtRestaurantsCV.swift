@@ -11,12 +11,21 @@ import UIKit
 
 extension FoodCourtRestaurantsCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return max(2, FoodCourtManager.countOfRestaurants)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restauratsName", for: indexPath)
-//        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restauratsName", for: indexPath) as! FoodCourtRestaurantsCollectionViewCell
+        //        cell.backgroundColor = .red
+        debugPrint("indexPath \(indexPath.item) section \(indexPath.section) count \(FoodCourtManager.countOfRestaurants)")
+        if indexPath.item <= (FoodCourtManager.countOfRestaurants-1) && indexPath.section == 0{
+            debugPrint("if")
+            if let name = FoodCourtManager.getARestaurant(index: indexPath.item)?._persianName {
+                cell.updateContent(fcrestaurantName: name)
+            }
+        }else{
+            cell.updateContent(fcrestaurantName: "اسم رستوران")
+        }
         return cell
     }
     

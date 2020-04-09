@@ -21,21 +21,21 @@ class FoodCourtVC: UIViewController {
         fcrcv.contentMode = .center
         fcrcv.backgroundColor = .whiteBackgroud
         fcrcv.register(FoodCourtRestaurantsCollectionViewCell.self, forCellWithReuseIdentifier: "restauratsName")
-    
+        
         return fcrcv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Network.getRestaurantsOfaFoodCourt()
+        FoodCourtManager.getRestaurantsOfAFC()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "food tray"), style: .done, target: nil, action: nil)
         self.navigationItem.leftBarButtonItem?.tintColor = .luncehonLogoText
         
         self.view.addSubview(foodcourtRestaurantsCV)
         setupFoodcourtRestaurantsCV()
-        
-        
+    
+        foodcourtRestaurantsCV.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     
@@ -44,10 +44,10 @@ class FoodCourtVC: UIViewController {
         foodcourtRestaurantsCV.dataSource = foodcourtRestaurantsCV.self
 
         NSLayoutConstraint.activate([
-            foodcourtRestaurantsCV.topAnchor.constraint(equalTo: self.view.topAnchor),
+            foodcourtRestaurantsCV.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             foodcourtRestaurantsCV.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             foodcourtRestaurantsCV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            foodcourtRestaurantsCV.heightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.heightAnchor,multiplier: 0.4)
+            foodcourtRestaurantsCV.heightAnchor.constraint(equalToConstant: 120)
         ])
     }
     

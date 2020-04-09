@@ -46,8 +46,8 @@ class FoodCourtRestaurantsCollectionViewCell: UICollectionViewCell {
         
         addSubview(restaurantNameLabel)
         setupRestaurantNameLabel()
-        
-        
+    
+    
     }
     
     required init?(coder: NSCoder) {
@@ -76,10 +76,10 @@ class FoodCourtRestaurantsCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func updateContent(name:String,logoimageURL:String) {
-        assertionFailure("not implemented")
-        self.restaurantNameLabel.text = name
-
+    func updateContent(fcrestaurantName:String) {
+        debugPrint("notif received ")
+        self.restaurantNameLabel.text = fcrestaurantName
+        
     }
     
 }

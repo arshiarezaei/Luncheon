@@ -37,6 +37,7 @@
 		59951B6324086861007CE646 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B6224086861007CE646 /* ProfileViewController.swift */; };
 		59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B652408875E007CE646 /* LoginOrSignUpView.swift */; };
 		59A3066D2413FD870088E463 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066C2413FD870088E463 /* Utilities.swift */; };
+		59AC26BD243E28480025984E /* FoodCourtManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC26BC243E28480025984E /* FoodCourtManager.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
 		59BEE958243A47E00060BCAB /* FoodCourtRestaurantsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */; };
@@ -110,6 +111,7 @@
 		59951B6224086861007CE646 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59951B652408875E007CE646 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
 		59A3066C2413FD870088E463 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		59AC26BC243E28480025984E /* FoodCourtManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtManager.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtRestaurantsCV.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		5921F411240183E700739020 /* Luncheon */ = {
 			isa = PBXGroup;
 			children = (
+				59AC26BB243E281D0025984E /* FCRestaurantManager */,
 				59F0A7F3242019FE00F8185F /* Network */,
 				59788111241289C1008A694E /* Utilities */,
 				59BC42EB240978AE00787A4F /* Models */,
@@ -290,6 +293,14 @@
 				59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		59AC26BB243E281D0025984E /* FCRestaurantManager */ = {
+			isa = PBXGroup;
+			children = (
+				59AC26BC243E28480025984E /* FoodCourtManager.swift */,
+			);
+			path = FCRestaurantManager;
 			sourceTree = "<group>";
 		};
 		59BC42EB240978AE00787A4F /* Models */ = {
@@ -468,6 +479,7 @@
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
 				59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */,
 				59F593ED243916330009E7D7 /* Food.swift in Sources */,
+				59AC26BD243E28480025984E /* FoodCourtManager.swift in Sources */,
 				593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */,
 				59BEE95C243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift in Sources */,
 				59F0A8072420232E00F8185F /* Network.swift in Sources */,
