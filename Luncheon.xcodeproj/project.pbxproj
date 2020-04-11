@@ -51,6 +51,7 @@
 		59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D373B224114D15002F6763 /* FollowUpVC.swift */; };
 		59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */; };
 		59D431292441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */; };
+		59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */; };
 		59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE7ED2432647100FA5C0A /* PaymentVC.swift */; };
 		59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */; };
 		59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */; };
@@ -127,6 +128,7 @@
 		59D373B224114D15002F6763 /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
 		59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCV.swift; sourceTree = "<group>"; };
 		59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FCRMenuTitleCVDataSource.swift"; sourceTree = "<group>"; };
 		59DDE7ED2432647100FA5C0A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberVC.swift; sourceTree = "<group>"; };
 		59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				5974539524213E8800CAAB32 /* Extention String.swift */,
 				59C276312423872B00B69D22 /* Extention NSNotificationName.swift */,
 				59BEE959243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift */,
+				59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				59F593EB243914530009E7D7 /* Menu.swift in Sources */,
 				59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */,
 				59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */,
+				59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */,

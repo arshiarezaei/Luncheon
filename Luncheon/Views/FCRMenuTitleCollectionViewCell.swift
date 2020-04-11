@@ -17,6 +17,7 @@ class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
         ml.textColor = .gray
         ml.textAlignment = .center
         ml.semanticContentAttribute = .forceRightToLeft
+        ml.text = "عنوان"
         return ml
     }()
     override init(frame: CGRect) {
@@ -34,6 +35,8 @@ class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             menuTitleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             menuTitleLabel.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor),
+            menuTitleLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
+            menuTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
 }

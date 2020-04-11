@@ -26,11 +26,14 @@ class FoodCourtVC: UIViewController {
     }()
     
     let fcrMenutitles:FCRMenuTitleCV = {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 56, height: 40)
+        layout.scrollDirection = .horizontal
         let fcrmt = FCRMenuTitleCV(frame: .zero, collectionViewLayout: layout)
         fcrmt.translatesAutoresizingMaskIntoConstraints = false
         // for development purpose
         fcrmt.backgroundColor = .green
+        fcrmt.register(FCRMenuTitleCollectionViewCell.self, forCellWithReuseIdentifier: "menuTitle")
         return fcrmt
     }()
     
@@ -63,6 +66,7 @@ class FoodCourtVC: UIViewController {
     }
     
     private func setupFcrMenutitles() {
+        fcrMenutitles.dataSource = fcrMenutitles.self
         NSLayoutConstraint.activate([
             fcrMenutitles.topAnchor.constraint(equalTo: foodcourtRestaurantsCV.bottomAnchor),
             fcrMenutitles.leftAnchor.constraint(equalTo: self.view.leftAnchor),
