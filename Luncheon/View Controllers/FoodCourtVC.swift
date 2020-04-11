@@ -25,6 +25,15 @@ class FoodCourtVC: UIViewController {
         return fcrcv
     }()
     
+    let fcrMenutitles:FCRMenuTitleCV = {
+        let layout = UICollectionViewLayout()
+        let fcrmt = FCRMenuTitleCV(frame: .zero, collectionViewLayout: layout)
+        fcrmt.translatesAutoresizingMaskIntoConstraints = false
+        // for development purpose
+        fcrmt.backgroundColor = .green
+        return fcrmt
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FoodCourtManager.getRestaurantsOfAFC()
@@ -34,8 +43,10 @@ class FoodCourtVC: UIViewController {
         
         self.view.addSubview(foodcourtRestaurantsCV)
         setupFoodcourtRestaurantsCV()
-    
         foodcourtRestaurantsCV.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        
+        self.view.addSubview(fcrMenutitles)
+        setupFcrMenutitles()
     }
     
     
@@ -48,6 +59,15 @@ class FoodCourtVC: UIViewController {
             foodcourtRestaurantsCV.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             foodcourtRestaurantsCV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             foodcourtRestaurantsCV.heightAnchor.constraint(equalToConstant: 120)
+        ])
+    }
+    
+    private func setupFcrMenutitles() {
+        NSLayoutConstraint.activate([
+            fcrMenutitles.topAnchor.constraint(equalTo: foodcourtRestaurantsCV.bottomAnchor),
+            fcrMenutitles.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            fcrMenutitles.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            fcrMenutitles.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
