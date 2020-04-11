@@ -49,6 +49,7 @@
 		59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE1240ABA5C00DE55B8 /* LoginView.swift */; };
 		59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE3240ABB0800DE55B8 /* LoginVC.swift */; };
 		59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D373B224114D15002F6763 /* FollowUpVC.swift */; };
+		59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */; };
 		59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE7ED2432647100FA5C0A /* PaymentVC.swift */; };
 		59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */; };
 		59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */; };
@@ -123,6 +124,7 @@
 		59D32DE1240ABA5C00DE55B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		59D32DE3240ABB0800DE55B8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		59D373B224114D15002F6763 /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
+		59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCV.swift; sourceTree = "<group>"; };
 		59DDE7ED2432647100FA5C0A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberVC.swift; sourceTree = "<group>"; };
 		59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				5925A4D02423E9F800130990 /* CreditView.swift */,
 				59BEE957243A47E00060BCAB /* FoodCourtRestaurantsCV.swift */,
 				59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */,
+				59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */,
 				59F593EB243914530009E7D7 /* Menu.swift in Sources */,
 				59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */,
+				59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */,
