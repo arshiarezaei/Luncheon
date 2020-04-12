@@ -16,8 +16,8 @@ extension FCRMenuTitleCV:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuTitle", for: indexPath) as! FCRMenuTitleCollectionViewCell
-        debugPrint("mana")
-        cell.backgroundColor = .red
+        
+        cell.backgroundColor = .whiteBackgroud
         return cell
     }
     

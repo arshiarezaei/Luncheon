@@ -32,7 +32,7 @@ class FoodCourtVC: UIViewController {
         let fcrmt = FCRMenuTitleCV(frame: .zero, collectionViewLayout: layout)
         fcrmt.translatesAutoresizingMaskIntoConstraints = false
         // for development purpose
-        fcrmt.backgroundColor = .green
+        fcrmt.backgroundColor = .whiteBackgroud
         fcrmt.register(FCRMenuTitleCollectionViewCell.self, forCellWithReuseIdentifier: "menuTitle")
         return fcrmt
     }()
