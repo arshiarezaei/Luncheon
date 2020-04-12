@@ -37,6 +37,15 @@ class FoodCourtVC: UIViewController {
         return fcrmt
     }()
     
+    let food:FoodCV = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let fcv = FoodCV(frame: .zero, collectionViewLayout: layout)
+        fcv.translatesAutoresizingMaskIntoConstraints = false
+        
+        return fcv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FoodCourtManager.getRestaurantsOfAFC()
@@ -50,6 +59,10 @@ class FoodCourtVC: UIViewController {
         
         self.view.addSubview(fcrMenutitles)
         setupFcrMenutitles()
+        
+        self.view.addSubview(food)
+        setupFoodCV()
+        
     }
     
     
@@ -75,4 +88,13 @@ class FoodCourtVC: UIViewController {
         ])
     }
     
+    private func setupFoodCV() {
+        food.backgroundColor = .lightGray
+        NSLayoutConstraint.activate([
+            food.topAnchor.constraint(equalTo: fcrMenutitles.bottomAnchor),
+            food.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            food.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            food.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        ])
+    }
 }
