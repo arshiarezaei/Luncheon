@@ -39,10 +39,13 @@ class FoodCourtVC: UIViewController {
     
     let food:FoodCV = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 150 , height: 150)
+        layout.minimumInteritemSpacing = 30
         let fcv = FoodCV(frame: .zero, collectionViewLayout: layout)
         fcv.translatesAutoresizingMaskIntoConstraints = false
-        
+        fcv.semanticContentAttribute = .forceRightToLeft
+        fcv.register(FoodCVCell.self, forCellWithReuseIdentifier: "FCRFood")
         return fcv
     }()
     
@@ -90,6 +93,7 @@ class FoodCourtVC: UIViewController {
     
     private func setupFoodCV() {
         food.backgroundColor = .lightGray
+        food.dataSource = food.self
         NSLayoutConstraint.activate([
             food.topAnchor.constraint(equalTo: fcrMenutitles.bottomAnchor),
             food.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
