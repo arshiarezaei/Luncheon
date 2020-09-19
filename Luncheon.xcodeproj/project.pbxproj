@@ -20,6 +20,7 @@
 		5921F438240183EA00739020 /* LuncheonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F437240183EA00739020 /* LuncheonUITests.swift */; };
 		5925A4CF2423BE3600130990 /* NameAndPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4CE2423BE3600130990 /* NameAndPicView.swift */; };
 		5925A4D12423E9F800130990 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4D02423E9F800130990 /* CreditView.swift */; };
+		5931242325165BD5009918CB /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931242225165BD5009918CB /* OrderStatusView.swift */; };
 		593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E952430F8AA00CB41A4 /* UIUtilities.swift */; };
 		593E5E982431176700CB41A4 /* IncreaseCreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */; };
 		59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59456BE924068C5B00B9F6C8 /* NavigationController.swift */; };
@@ -102,6 +103,7 @@
 		5921F439240183EA00739020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5925A4CE2423BE3600130990 /* NameAndPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndPicView.swift; sourceTree = "<group>"; };
 		5925A4D02423E9F800130990 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		5931242225165BD5009918CB /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
 		593E5E952430F8AA00CB41A4 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseCreditVC.swift; sourceTree = "<group>"; };
 		59456BE924068C5B00B9F6C8 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */,
 				59DFBA8C24432BC600D35C37 /* FoodCV.swift */,
 				59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */,
+				5931242225165BD5009918CB /* OrderStatusView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,7 +420,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = ir.luncheon;
 				TargetAttributes = {
 					5921F40E240183E700739020 = {
@@ -518,6 +521,7 @@
 				59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */,
 				59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */,
 				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
+				5931242325165BD5009918CB /* OrderStatusView.swift in Sources */,
 				59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */,
 				5954AB6624181BF90060A601 /* Extention NewUserInformationsVC.swift in Sources */,
 				59021A67241167CB00F633E2 /* SignUpVC.swift in Sources */,
@@ -618,6 +622,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -678,6 +683,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
