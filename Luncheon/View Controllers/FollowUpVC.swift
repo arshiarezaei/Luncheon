@@ -11,6 +11,11 @@ import UIKit
 class FollowUpVC: UIViewController {
     private let navBar : UINavigationBar = UINavigationBar(frame:.zero)
     private let orderStatus:OrderStatusView = OrderStatusView()
+    private let chefImage:UIImageView = {
+        let img = UIImageView(image: UIImage(named: "chef"))
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,10 @@ class FollowUpVC: UIViewController {
         
         self.view.addSubview(orderStatus)
         setupOrderStatusVC()
+        
+        // add chef
+        self.view.addSubview(chefImage)
+        setupChefImage()
     }
     private func setupNavBar() {
         navBar.translatesAutoresizingMaskIntoConstraints = false
@@ -43,5 +52,12 @@ class FollowUpVC: UIViewController {
             orderStatus.heightAnchor.constraint(equalToConstant: 90),
         ])
     }
-    
+    private func setupChefImage(){
+        NSLayoutConstraint.activate([
+            chefImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            chefImage.topAnchor.constraint(equalTo: orderStatus.bottomAnchor, constant: 32),
+            chefImage.widthAnchor.constraint(equalToConstant: 200),
+            chefImage.heightAnchor.constraint(equalToConstant: 200),
+        ])
+    }
 }
