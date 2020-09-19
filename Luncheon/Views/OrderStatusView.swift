@@ -22,25 +22,28 @@ class OrderStatusView: UIView {
     
     private let orderConfirmedImage:UIImageView={
         // TODO: change icone
-        var oci = UIImageView(image: UIImage(named: "follow up"))
+        var oci = UIImageView(image: UIImage(named: "confirmation"))
         oci.frame = .zero
         oci.translatesAutoresizingMaskIntoConstraints = false
+        oci.tintColor = .gray
         return oci
     }()
     private let orderIsCockingImage:UIImageView = {
         // TODO: change icone
-        let oici = UIImageView(image: UIImage(named: "follow up"))
+        let oici = UIImageView(image: UIImage(named: "chef"))
         oici.translatesAutoresizingMaskIntoConstraints = false
         //        oici.image = oici.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         oici.frame = .zero
+        oici.tintColor = .gray
         return oici
     }()
     
     private let orderIsReadyImage:UIImageView = {
         // TODO: change icone
-        let oiri = UIImageView(image: UIImage(named: "follow up"))
+        let oiri = UIImageView(image: UIImage(named: "orderIsReady"))
         oiri.translatesAutoresizingMaskIntoConstraints = false
         oiri.frame = .zero
+        oiri.tintColor = .gray
         //        oiri.image = oiri.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         return oiri
     }()
