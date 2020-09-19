@@ -30,7 +30,7 @@ class OrderStatusView: UIView {
     }()
     private let orderIsCockingImage:UIImageView = {
         // TODO: change icone
-        let oici = UIImageView(image: UIImage(named: "chef"))
+        let oici = UIImageView(image: UIImage(named: "cooking"))
         oici.translatesAutoresizingMaskIntoConstraints = false
         //        oici.image = oici.image?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         oici.frame = .zero
