@@ -16,7 +16,8 @@ class FollowUpVC: UIViewController {
         img.translatesAutoresizingMaskIntoConstraints = false
         return img
     }()
-    
+    private let timeToCookView:TimeToCookView = TimeToCookView()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .whiteBackgroud
@@ -29,6 +30,14 @@ class FollowUpVC: UIViewController {
         // add chef
         self.view.addSubview(chefImage)
         setupChefImage()
+        
+        // add timeToCockView
+        self.view.addSubview(timeToCookView)
+        setupTimeToCookView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        debugPrint("appeared")
+//        timeToCookView.startTimer(value: 13602)
     }
     private func setupNavBar() {
         navBar.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +67,15 @@ class FollowUpVC: UIViewController {
             chefImage.topAnchor.constraint(equalTo: orderStatus.bottomAnchor, constant: 32),
             chefImage.widthAnchor.constraint(equalToConstant: 200),
             chefImage.heightAnchor.constraint(equalToConstant: 200),
+        ])
+    }
+    private func setupTimeToCookView() {
+        timeToCookView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            timeToCookView.topAnchor.constraint(equalTo: chefImage.bottomAnchor, constant: -8),
+            timeToCookView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            timeToCookView.heightAnchor.constraint(equalToConstant: 80),
+            timeToCookView.widthAnchor.constraint(equalToConstant: 320),
         ])
     }
 }
