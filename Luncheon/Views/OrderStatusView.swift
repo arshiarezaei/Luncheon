@@ -8,16 +8,16 @@
 
 import Foundation
 import UIKit
-enum lastOrderStatus {
+enum LastOrderStatus {
     case NoOrder
-    case conirmed
+    case confirmed
     case cocking
     case ready
 }
 class OrderStatusView: UIView {
     
     private let statusIconDimentions = (length:CGFloat(42.0),width:CGFloat(42.0))
-    private var orderStaus:lastOrderStatus = .NoOrder
+    private var orderStaus:LastOrderStatus = .NoOrder
     private var availableWidth:CGFloat = CGFloat(0)
     
     private let orderConfirmedImage:UIImageView={
@@ -160,13 +160,13 @@ class OrderStatusView: UIView {
             orderIsReadyLabel.topAnchor.constraint(equalTo: orderIsReadyImage.bottomAnchor, constant: 4),
         ])
     }
-    func changeOrderStatus(updatedStatus:lastOrderStatus) {
+    func changeOrderStatus(updatedStatus:LastOrderStatus) {
         switch updatedStatus {
         case .NoOrder:
             orderConfirmedImage.tintColor = .gray
             orderIsCockingImage.tintColor = .gray
             orderIsReadyImage.tintColor = .gray
-        case .conirmed:
+        case .confirmed:
             orderConfirmedImage.tintColor = .luncehonLogoText
             orderIsCockingImage.tintColor = .gray
             orderIsReadyImage.tintColor = .gray
