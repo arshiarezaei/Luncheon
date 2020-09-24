@@ -16,7 +16,6 @@ class InvoiceTableViewController: UITableViewController {
         defaultInvoiceItem()
         self.view.layer.cornerRadius = 16
         self.tableView.rowHeight = 50
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,12 +29,10 @@ class InvoiceTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        debugPrint("inja")
         return invoice.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        debugPrint("s")
         let cell = tableView.dequeueReusableCell(withIdentifier: "invoiceTableViewControllerCell", for: indexPath) as! InvoiceTableViewCell
 
         // Configure the cell...

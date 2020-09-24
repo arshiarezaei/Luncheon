@@ -109,7 +109,7 @@ class NewUserInformationsVC: UIViewController {
         nameTF.textAlignment = .center
         nameTF.placeholder = "نام"
         nameTF.layer.borderWidth = 1
-        nameTF.layer.borderColor = UIColor.lightGray.cgColor
+        nameTF.layer.borderColor = UIColor.luncheonGray.cgColor
         nameTF.layer.cornerRadius = cornerRadius
         nameTF.font = UIFont.BYekan
         nameTF.returnKeyType = .next
@@ -133,7 +133,7 @@ class NewUserInformationsVC: UIViewController {
         lastNameTF.textAlignment = .center
         lastNameTF.semanticContentAttribute = .forceLeftToRight
         lastNameTF.layer.borderWidth = 1
-        lastNameTF.layer.borderColor = UIColor.lightGray.cgColor
+        lastNameTF.layer.borderColor = UIColor.luncheonGray.cgColor
         lastNameTF.layer.cornerRadius = cornerRadius
         lastNameTF.font = UIFont.BYekan
         lastNameTF.returnKeyType = .next
@@ -157,7 +157,7 @@ class NewUserInformationsVC: UIViewController {
         emailTF.textAlignment = .center
         emailTF.semanticContentAttribute = .forceLeftToRight
         emailTF.layer.borderWidth = 1
-        emailTF.layer.borderColor = UIColor.lightGray.cgColor
+        emailTF.layer.borderColor = UIColor.luncheonGray.cgColor
         emailTF.textContentType = .emailAddress
         emailTF.returnKeyType = .next
         emailTF.layer.cornerRadius = cornerRadius
@@ -183,7 +183,7 @@ class NewUserInformationsVC: UIViewController {
         passwordTF.textAlignment = .center
         passwordTF.semanticContentAttribute = .forceLeftToRight
         passwordTF.layer.borderWidth = 1
-        passwordTF.layer.borderColor = UIColor.lightGray.cgColor
+        passwordTF.layer.borderColor = UIColor.luncheonGray.cgColor
         passwordTF.textContentType = .password
         passwordTF.layer.cornerRadius = cornerRadius
         passwordTF.font = UIFont.BYekan
@@ -207,7 +207,7 @@ class NewUserInformationsVC: UIViewController {
         confirmPassowrdTF.textAlignment = .center
         confirmPassowrdTF.semanticContentAttribute = .forceLeftToRight
         confirmPassowrdTF.layer.borderWidth = 1
-        confirmPassowrdTF.layer.borderColor = UIColor.lightGray.cgColor
+        confirmPassowrdTF.layer.borderColor = UIColor.luncheonGray.cgColor
         confirmPassowrdTF.textContentType = .password
         confirmPassowrdTF.layer.cornerRadius = cornerRadius
         confirmPassowrdTF.font = UIFont.BYekan

@@ -92,7 +92,7 @@ class FoodCourtVC: UIViewController {
     }
     
     private func setupFoodCV() {
-        food.backgroundColor = .lightGray
+        food.backgroundColor = .luncheonGray
         food.dataSource = food.self
         NSLayoutConstraint.activate([
             food.topAnchor.constraint(equalTo: fcrMenutitles.bottomAnchor),

@@ -38,7 +38,7 @@ class IncreaseCreditVC: UIViewController,UITextFieldDelegate {
         vtf.translatesAutoresizingMaskIntoConstraints = false
         vtf.placeholder = "مبلغ را به تومان وارد کنید"
         vtf.layer.cornerRadius = UIUtilities.cornerRadius
-        vtf.layer.borderColor = UIColor.lightGray.cgColor
+        vtf.layer.borderColor = UIColor.luncheonGray.cgColor
         vtf.layer.borderWidth = 1
         vtf.keyboardType = .decimalPad
         vtf.contentMode = .center

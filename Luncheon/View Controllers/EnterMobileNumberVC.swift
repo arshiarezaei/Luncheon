@@ -134,7 +134,7 @@ class EnterMobileNumberVC: UIViewController {
         mobileNumberTF.placeholder = "شماره موبایل ... ۰۹"
         mobileNumberTF.layer.cornerRadius = 20.0
         mobileNumberTF.layer.borderWidth = 1
-        mobileNumberTF.layer.borderColor = UIColor.lightGray.cgColor
+        mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         mobileNumberTF.textAlignment = .center
         mobileNumberTF.semanticContentAttribute = .forceLeftToRight
         mobileNumberTF.keyboardType = .phonePad
@@ -206,7 +206,7 @@ class EnterMobileNumberVC: UIViewController {
         mobileNumberIsRequiredLabel.text = String()
         mobileNumberTF.resignFirstResponder()
         self.view.becomeFirstResponder()
-        mobileNumberTF.layer.borderColor = UIColor.lightGray.cgColor
+        mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         
         Network.requesteSMS(clientNumber: mobileNumberTF.text!.persianToEnglishDigits){ error in
             if let error = error {

@@ -36,7 +36,7 @@ class ProfileView: UIView {
         nameAndPicView.translatesAutoresizingMaskIntoConstraints = false
         nameAndPicView.backgroundColor = .white
         nameAndPicView.layer.borderWidth = 1
-        nameAndPicView.layer.borderColor = UIColor.lightGray.cgColor
+        nameAndPicView.layer.borderColor = UIColor.luncheonGray.cgColor
         nameAndPicView.layer.cornerRadius = 16
         
         
@@ -52,7 +52,7 @@ class ProfileView: UIView {
         creditView.translatesAutoresizingMaskIntoConstraints = false
         creditView.backgroundColor = .white
         creditView.layer.borderWidth = 1
-        creditView.layer.borderColor = UIColor.lightGray.cgColor
+        creditView.layer.borderColor = UIColor.luncheonGray.cgColor
         creditView.layer.cornerRadius = 16
         
         

@@ -33,7 +33,7 @@ class CreditView: UIView {
     
     private func setupYourCredit() {
         yourCreditLabel.translatesAutoresizingMaskIntoConstraints = false
-        yourCreditLabel.textColor = UIColor.lightGray
+        yourCreditLabel.textColor = UIColor.luncheonGray
         yourCreditLabel.font = UIFont(name: UIFont.BYekanName, size: 16)
         yourCreditLabel.textAlignment = .right
         yourCreditLabel.semanticContentAttribute = .forceRightToLeft

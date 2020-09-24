@@ -36,7 +36,7 @@ class FoodCourtRestaurantsCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    private let unselecetedModeColor : UIColor = .lightGray
+    private let unselecetedModeColor : UIColor = .luncheonGray
     
     override init(frame: CGRect) {
         super.init(frame: frame)

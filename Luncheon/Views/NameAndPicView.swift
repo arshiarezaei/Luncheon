@@ -38,9 +38,9 @@ class NameAndPicView: UIView {
         profilePic.layer.cornerRadius = 32
         profilePic.backgroundColor = .white
         profilePic.clipsToBounds = true
-        profilePic.layer.borderColor = UIColor.lightGray.cgColor
+        profilePic.layer.borderColor = UIColor.luncheonGray.cgColor
         profilePic.image = UserStates.currentUserProfile?.profilePic?.withRenderingMode(.alwaysTemplate)
-        profilePic.tintColor = .lightGray
+        profilePic.tintColor = .luncheonGray
         
         NSLayoutConstraint.activate([
             profilePic.widthAnchor.constraint(equalToConstant: 64),

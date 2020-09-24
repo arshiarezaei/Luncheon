@@ -87,7 +87,7 @@ class EnterMobileNumberView: UIView {
         mobileNumberTF.placeholder = "شماره موبایل ... ۰۹"
         mobileNumberTF.layer.cornerRadius = 20.0
         mobileNumberTF.layer.borderWidth = 1
-        mobileNumberTF.layer.borderColor = UIColor.lightGray.cgColor
+        mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         mobileNumberTF.textAlignment = .center
         mobileNumberTF.semanticContentAttribute = .forceLeftToRight
         mobileNumberTF.keyboardType = .phonePad
