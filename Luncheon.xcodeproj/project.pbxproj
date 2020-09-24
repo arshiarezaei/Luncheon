@@ -55,9 +55,12 @@
 		59D431292441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */; };
 		59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */; };
 		59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE7ED2432647100FA5C0A /* PaymentVC.swift */; };
+		59DEC7EE251CA1B600FF756C /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DEC7ED251CA1B600FF756C /* Invoice.swift */; };
 		59DFBA8D24432BC600D35C37 /* FoodCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA8C24432BC600D35C37 /* FoodCV.swift */; };
 		59DFBA8F24432F7D00D35C37 /* FoodCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */; };
 		59DFBA912443338500D35C37 /* Extention FoodCVDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA902443338500D35C37 /* Extention FoodCVDatasource.swift */; };
+		59E3FD4B251B3EF60012584B /* InvoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3FD4A251B3EF60012584B /* InvoiceTableViewController.swift */; };
+		59E3FD50251B797A0012584B /* InvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3FD4F251B797A0012584B /* InvoiceTableViewCell.swift */; };
 		59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */; };
 		59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */; };
 		59F0A8052420216A00F8185F /* NewUserInformationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F0A8042420216A00F8185F /* NewUserInformationsVC.swift */; };
@@ -137,9 +140,12 @@
 		59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FCRMenuTitleCVDataSource.swift"; sourceTree = "<group>"; };
 		59DDE7ED2432647100FA5C0A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		59DEC7ED251CA1B600FF756C /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		59DFBA8C24432BC600D35C37 /* FoodCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCV.swift; sourceTree = "<group>"; };
 		59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCVCell.swift; sourceTree = "<group>"; };
 		59DFBA902443338500D35C37 /* Extention FoodCVDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodCVDatasource.swift"; sourceTree = "<group>"; };
+		59E3FD4A251B3EF60012584B /* InvoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTableViewController.swift; sourceTree = "<group>"; };
+		59E3FD4F251B797A0012584B /* InvoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTableViewCell.swift; sourceTree = "<group>"; };
 		59F0A8002420211800F8185F /* EnterMobileNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterMobileNumberVC.swift; sourceTree = "<group>"; };
 		59F0A8022420214000F8185F /* EnterVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterVerificationCodeVC.swift; sourceTree = "<group>"; };
 		59F0A8042420216A00F8185F /* NewUserInformationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserInformationsVC.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */,
 				59DDE7ED2432647100FA5C0A /* PaymentVC.swift */,
 				598455B92433C14000F08E96 /* FoodCourtVC.swift */,
+				59E3FD4A251B3EF60012584B /* InvoiceTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 				59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */,
 				5931242225165BD5009918CB /* OrderStatusView.swift */,
 				5902C00E251682D900562BA9 /* TimeToCookView.swift */,
+				59E3FD4F251B797A0012584B /* InvoiceTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 			children = (
 				59BC42ED240978AE00787A4F /* UserStates.swift */,
 				59BC42EE240978AE00787A4F /* UserProfile.swift */,
+				59DEC7ED251CA1B600FF756C /* Invoice.swift */,
 			);
 			path = UserModels;
 			sourceTree = "<group>";
@@ -512,9 +521,11 @@
 				59F0A8072420232E00F8185F /* Network.swift in Sources */,
 				5974539624213E8800CAAB32 /* Extention String.swift in Sources */,
 				59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */,
+				59E3FD50251B797A0012584B /* InvoiceTableViewCell.swift in Sources */,
 				59F593EB243914530009E7D7 /* Menu.swift in Sources */,
 				59F0A8032420214000F8185F /* EnterVerificationCodeVC.swift in Sources */,
 				59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */,
+				59E3FD4B251B3EF60012584B /* InvoiceTableViewController.swift in Sources */,
 				59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
@@ -540,6 +551,7 @@
 				59BEE958243A47E00060BCAB /* FoodCourtRestaurantsCV.swift in Sources */,
 				59F0A8052420216A00F8185F /* NewUserInformationsVC.swift in Sources */,
 				598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */,
+				59DEC7EE251CA1B600FF756C /* Invoice.swift in Sources */,
 				591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,

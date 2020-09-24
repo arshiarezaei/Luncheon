@@ -17,6 +17,7 @@ class FollowUpVC: UIViewController {
         return img
     }()
     private let timeToCookView:TimeToCookView = TimeToCookView()
+    private let invoiceTVC = InvoiceTableViewController()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,13 @@ class FollowUpVC: UIViewController {
         // add timeToCockView
         self.view.addSubview(timeToCookView)
         setupTimeToCookView()
+        
+        // add invoiceTable
+        addChild(invoiceTVC)
+        view.addSubview(invoiceTVC.view)
+        invoiceTVC.didMove(toParent: self)
+        setupInvoiceTVC()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         debugPrint("appeared")
@@ -76,6 +84,15 @@ class FollowUpVC: UIViewController {
             timeToCookView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             timeToCookView.heightAnchor.constraint(equalToConstant: 80),
             timeToCookView.widthAnchor.constraint(equalToConstant: 320),
+        ])
+    }
+    private func setupInvoiceTVC() {
+        invoiceTVC.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            invoiceTVC.view.topAnchor.constraint(equalTo: timeToCookView.bottomAnchor,constant: 32),
+            invoiceTVC.view.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            invoiceTVC.view.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
+            invoiceTVC.view.heightAnchor.constraint(equalToConstant: 400),
         ])
     }
 }
