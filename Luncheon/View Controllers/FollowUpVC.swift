@@ -12,7 +12,7 @@ class FollowUpVC: UIViewController {
     private let scrollView:UIScrollView = {
         let sv = UIScrollView(frame: .zero)
         sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.backgroundColor = .green
+        sv.backgroundColor = .whiteBackgroud
         return sv
     }()
     private let navBar : UINavigationBar = UINavigationBar(frame:.zero)
