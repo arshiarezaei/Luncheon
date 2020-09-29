@@ -9,6 +9,12 @@
 import UIKit
 
 class FollowUpVC: UIViewController {
+    private let scrollView:UIScrollView = {
+        let sv = UIScrollView(frame: .zero)
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.backgroundColor = .green
+        return sv
+    }()
     private let navBar : UINavigationBar = UINavigationBar(frame:.zero)
     private let orderStatus:OrderStatusView = OrderStatusView()
     private let chefImage:UIImageView = {
@@ -25,23 +31,27 @@ class FollowUpVC: UIViewController {
         view.addSubview(navBar)
         setupNavBar()
         
-        self.view.addSubview(orderStatus)
+        view.addSubview(self.scrollView)
+        setupScrollView()
+
+        
+        self.scrollView.addSubview(orderStatus)
         setupOrderStatusVC()
-        
+
         // add chef
-        self.view.addSubview(chefImage)
+        self.scrollView.addSubview(chefImage)
         setupChefImage()
-        
+
         // add timeToCockView
-        self.view.addSubview(timeToCookView)
+        self.scrollView.addSubview(timeToCookView)
         setupTimeToCookView()
-        
+
         // add invoiceTable
         addChild(invoiceTVC)
-        view.addSubview(invoiceTVC.view)
+        scrollView.addSubview(invoiceTVC.view)
         invoiceTVC.didMove(toParent: self)
         setupInvoiceTVC()
-        
+
     }
     override func viewDidAppear(_ animated: Bool) {
         debugPrint("appeared")
@@ -59,19 +69,27 @@ class FollowUpVC: UIViewController {
             navBar.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor),
         ])
     }
+    private func setupScrollView(){
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: self.navBar.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            scrollView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
     private func setupOrderStatusVC() {
         orderStatus.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            orderStatus.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            orderStatus.topAnchor.constraint(equalTo: navBar.bottomAnchor),
-            orderStatus.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            orderStatus.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            orderStatus.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            orderStatus.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
             orderStatus.heightAnchor.constraint(equalToConstant: 90),
         ])
     }
     private func setupChefImage(){
         NSLayoutConstraint.activate([
-            chefImage.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            chefImage.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             chefImage.topAnchor.constraint(equalTo: orderStatus.bottomAnchor, constant: 32),
             chefImage.widthAnchor.constraint(equalToConstant: 200),
             chefImage.heightAnchor.constraint(equalToConstant: 200),
@@ -81,7 +99,7 @@ class FollowUpVC: UIViewController {
         timeToCookView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             timeToCookView.topAnchor.constraint(equalTo: chefImage.bottomAnchor, constant: -8),
-            timeToCookView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            timeToCookView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             timeToCookView.heightAnchor.constraint(equalToConstant: 80),
             timeToCookView.widthAnchor.constraint(equalToConstant: 320),
         ])
@@ -90,9 +108,10 @@ class FollowUpVC: UIViewController {
         invoiceTVC.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             invoiceTVC.view.topAnchor.constraint(equalTo: timeToCookView.bottomAnchor,constant: 32),
-            invoiceTVC.view.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            invoiceTVC.view.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.9),
-            invoiceTVC.view.heightAnchor.constraint(equalToConstant: 400),
+            invoiceTVC.view.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            invoiceTVC.view.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, multiplier: 0.9),
+            invoiceTVC.view.heightAnchor.constraint(equalToConstant:CGFloat(invoiceTVC.tableView.numberOfRows(inSection: 0))*invoiceTVC.tableView.rowHeight),
+            invoiceTVC.view.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
         ])
     }
 }
