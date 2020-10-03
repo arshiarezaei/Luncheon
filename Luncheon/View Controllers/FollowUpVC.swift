@@ -24,7 +24,11 @@ class FollowUpVC: UIViewController {
     }()
     private let timeToCookView:TimeToCookView = TimeToCookView()
     private let invoiceTVC = InvoiceTableViewController()
-        
+    
+    private lazy var blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+    private lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
+    private lazy var loginALert:LoginAlertView = LoginAlertView(frame: .zero)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .whiteBackgroud
@@ -33,29 +37,40 @@ class FollowUpVC: UIViewController {
         
         view.addSubview(self.scrollView)
         setupScrollView()
-
+        
         
         self.scrollView.addSubview(orderStatus)
         setupOrderStatusVC()
-
+        
         // add chef
         self.scrollView.addSubview(chefImage)
         setupChefImage()
-
+        
         // add timeToCockView
         self.scrollView.addSubview(timeToCookView)
         setupTimeToCookView()
-
+        
         // add invoiceTable
         addChild(invoiceTVC)
         scrollView.addSubview(invoiceTVC.view)
         invoiceTVC.didMove(toParent: self)
         setupInvoiceTVC()
-
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserStates.currentState == .LoggedOut {
+            debugPrint("logged out ")
+            self.view.isUserInteractionEnabled = false
+            view.addSubview(blurEffectView)
+            setupBlurView()
+            blurEffectView.contentView.addSubview(loginALert)
+            setupLoginAlert()
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         debugPrint("appeared")
-//        timeToCookView.startTimer(value: 13602)
+        //        timeToCookView.startTimer(value: 13602)
     }
     private func setupNavBar() {
         navBar.translatesAutoresizingMaskIntoConstraints = false
@@ -113,5 +128,27 @@ class FollowUpVC: UIViewController {
             invoiceTVC.view.heightAnchor.constraint(equalToConstant:CGFloat(invoiceTVC.tableView.numberOfRows(inSection: 0))*invoiceTVC.tableView.rowHeight),
             invoiceTVC.view.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
         ])
+    }
+    private func setupLoginAlert()  {
+        loginALert.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loginALert.centerXAnchor.constraint(equalTo: blurEffectView.contentView.centerXAnchor),
+            loginALert.centerYAnchor.constraint(equalTo: blurEffectView.contentView.centerYAnchor),
+            loginALert.heightAnchor.constraint(equalToConstant: 100),
+            loginALert.widthAnchor.constraint(equalTo: blurEffectView.contentView.widthAnchor,multiplier: 0.8),
+        ])
+    }
+    private func  setupBlurView()  {
+        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            blurEffectView.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            blurEffectView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            blurEffectView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            blurEffectView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        ])
+    }
+    func removeBlurEffectView() {
+        blurEffectView.removeFromSuperview()
+        self.view.isUserInteractionEnabled = true
     }
 }
