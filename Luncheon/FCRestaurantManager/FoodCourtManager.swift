@@ -11,7 +11,7 @@ import SwiftyJSON
 
 struct FoodCourtManager {
     
-    private static var _fCRestaurants:[FCRestaurant]?
+    private static var _fCRestaurants:[FCRestaurant]? 
     
     static var fCRestaurants:[FCRestaurant]?{
         get{

@@ -14,7 +14,7 @@ struct FCRestaurant {
     private let id:String
     private let name:String
     private let persianName:String
-    private let rate:UInt8?
+    private let rate:Double
     private let rateCount:Int
     private let menus:[Menu]
     private let state = "ACTIVE"
@@ -31,7 +31,7 @@ struct FCRestaurant {
     }
     
     
-    internal init(id: String, name: String, persianName: String, rate: UInt8?, rateCount: Int, menus: [Menu]) {
+    internal init(id: String, name: String, persianName: String, rate: Double, rateCount: Int, menus: [Menu]) {
         self.id = id
         self.name = name
         self.persianName = persianName
@@ -43,7 +43,7 @@ struct FCRestaurant {
         self.id = json["id"].string!
         self.name = json["name"].string!
         self.persianName = json["persianName"].string!
-        if let rate = json["rate"].uInt8{
+        if let rate = json["rate"].double{
             self.rate = rate
         }else{
             self.rate = 0

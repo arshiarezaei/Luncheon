@@ -11,7 +11,7 @@ import UIKit
 
 extension FoodCourtRestaurantsCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return max(2, FoodCourtManager.countOfRestaurants)
+        return FoodCourtManager.countOfRestaurants
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -10,7 +10,7 @@ import Foundation
 
 struct Ingredient {
 
-    private let id:Int
+    private let id:String
     private let name:String
     private let price:UInt
     private let value:UInt8
@@ -19,7 +19,7 @@ struct Ingredient {
     private let maxValue:UInt8
     private let calorie:UInt8
     
-    internal init(id: Int, name: String, price: UInt, value: UInt8, defaultValue: UInt8, minValue: UInt8, maxValue: UInt8, calorie: UInt8) {
+    internal init(id: String, name: String, price: UInt, value: UInt8, defaultValue: UInt8, minValue: UInt8, maxValue: UInt8, calorie: UInt8) {
         self.id = id
         self.name = name
         self.price = price
