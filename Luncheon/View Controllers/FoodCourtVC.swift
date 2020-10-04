@@ -20,6 +20,8 @@ class FoodCourtVC: UIViewController {
         fcrcv.semanticContentAttribute = .forceRightToLeft
         fcrcv.contentMode = .center
         fcrcv.backgroundColor = .whiteBackgroud
+        fcrcv.dataSource = fcrcv.self
+        fcrcv.delegate = fcrcv.delegate
         fcrcv.register(FoodCourtRestaurantsCollectionViewCell.self, forCellWithReuseIdentifier: "restauratsName")
         
         return fcrcv
@@ -71,7 +73,6 @@ class FoodCourtVC: UIViewController {
     
     private func setupFoodcourtRestaurantsCV() {
         debugPrint("class FoodCourtVC->setupFoodcourtRestaurantsCV")
-        foodcourtRestaurantsCV.dataSource = foodcourtRestaurantsCV.self
 
         NSLayoutConstraint.activate([
             foodcourtRestaurantsCV.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),

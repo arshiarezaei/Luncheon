@@ -11,12 +11,12 @@ import UIKit
 
 extension FCRMenuTitleCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuTitle", for: indexPath) as! FCRMenuTitleCollectionViewCell
-        
+        cell.setupContent(menuTitle: SampleRestaurantManager.restaurats[0].menus[indexPath.item].persianName)
         cell.backgroundColor = .whiteBackgroud
         return cell
     }

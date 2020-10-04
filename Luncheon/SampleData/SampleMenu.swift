@@ -15,7 +15,7 @@ struct SampleMenu {
     let persianName:String
     var foods:[SampleFood]
     
-    internal init(id: UInt, name: String, persianName: String,foods:[SampleFood]) {
+    internal init(id: UInt, persianName: String,foods:[SampleFood]) {
         self.id = id
         self.persianName = persianName
         self.foods = foods

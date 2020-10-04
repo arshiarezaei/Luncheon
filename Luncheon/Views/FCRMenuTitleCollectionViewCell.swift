@@ -9,7 +9,7 @@
 import UIKit
 
 class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
-    
+    private let unselecetedModeColor : UIColor = .luncheonGray
     let menuTitleLabel:UILabel = {
         let ml = UILabel()
         ml.translatesAutoresizingMaskIntoConstraints = false
@@ -20,6 +20,11 @@ class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
         ml.text = "عنوان"
         return ml
     }()
+    override var isSelected: Bool {
+        didSet{
+            setNeedsDisplay()
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,7 +35,11 @@ class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    override func setNeedsDisplay() {
+        super.setNeedsDisplay()
+        menuTitleLabel.textColor = isSelected ? UIColor.luncehonLogoText: self.unselecetedModeColor
+
+    }
     private func setupMenuTitleLabel() {
         NSLayoutConstraint.activate([
             menuTitleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
@@ -38,5 +47,8 @@ class FCRMenuTitleCollectionViewCell: UICollectionViewCell {
             menuTitleLabel.widthAnchor.constraint(equalTo: self.widthAnchor),
             menuTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
+    }
+    func setupContent(menuTitle:String)  {
+        self.menuTitleLabel.text = menuTitle
     }
 }
