@@ -63,6 +63,7 @@
 		59DB31EF2528A71B006D1C2D /* SampleIngrdient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB31EE2528A71B006D1C2D /* SampleIngrdient.swift */; };
 		59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDE7ED2432647100FA5C0A /* PaymentVC.swift */; };
 		59DEC7EE251CA1B600FF756C /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DEC7ED251CA1B600FF756C /* Invoice.swift */; };
+		59DF12DC252A63E600F7556E /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF12DB252A63E600F7556E /* RateView.swift */; };
 		59DFBA8D24432BC600D35C37 /* FoodCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA8C24432BC600D35C37 /* FoodCV.swift */; };
 		59DFBA8F24432F7D00D35C37 /* FoodCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */; };
 		59DFBA912443338500D35C37 /* Extention FoodCVDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFBA902443338500D35C37 /* Extention FoodCVDatasource.swift */; };
@@ -156,6 +157,7 @@
 		59DB31EE2528A71B006D1C2D /* SampleIngrdient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleIngrdient.swift; sourceTree = "<group>"; };
 		59DDE7ED2432647100FA5C0A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		59DEC7ED251CA1B600FF756C /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		59DF12DB252A63E600F7556E /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		59DFBA8C24432BC600D35C37 /* FoodCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCV.swift; sourceTree = "<group>"; };
 		59DFBA8E24432F7D00D35C37 /* FoodCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCVCell.swift; sourceTree = "<group>"; };
 		59DFBA902443338500D35C37 /* Extention FoodCVDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodCVDatasource.swift"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				5902C00E251682D900562BA9 /* TimeToCookView.swift */,
 				59E3FD4F251B797A0012584B /* InvoiceTableViewCell.swift */,
 				5964B1C22523D8F600C0833B /* LoginAlertView.swift */,
+				59DF12DB252A63E600F7556E /* RateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
 				59D431292441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift in Sources */,
 				59DB31DB2528A6C4006D1C2D /* SampleDataManager.swift in Sources */,
+				59DF12DC252A63E600F7556E /* RateView.swift in Sources */,
 				59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */,
 				5902C00F251682D900562BA9 /* TimeToCookView.swift in Sources */,
 				59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */,

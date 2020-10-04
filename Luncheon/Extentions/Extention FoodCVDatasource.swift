@@ -21,7 +21,7 @@ extension FoodCV:UICollectionViewDataSource{
         cell.backgroundColor = .green
         
         //just for development purpose
-        cell.setupCell(foodName: "اسم غذا", foodDescription: "توضیح غذا", foodPrice: 2000, foodPriceAfterDiscount: 200)
+        cell.setupCell(foodName: "اسم غذا", foodDescription: "توضیح غذا", foodPrice: 2000, foodPriceAfterDiscount: 200, foodRate: 4.6)
         
         return cell
     }
