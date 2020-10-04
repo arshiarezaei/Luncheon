@@ -36,10 +36,11 @@ class FoodCourtRestaurantsCV: UICollectionView{
 
     }
     @objc private func updateContent(notif:Notification) {
-        let index:Int = (notif.object as! [String:Any])["index"] as! Int
-        let indPath = IndexPath(item: index, section: 0)
-        let fcRestName = FoodCourtManager.getARestaurant(index: index)!._persianName
-        (self.cellForItem(at: indPath) as! FoodCourtRestaurantsCollectionViewCell).updateContent(fcrestaurantName: fcRestName)
+        assertionFailure("foodcourtrestaurantCV.swift updateContent")
+//        let index:Int = (notif.object as! [String:Any])["index"] as! Int
+//        let indPath = IndexPath(item: index, section: 0)
+//        let fcRestName = FoodCourtManager.getARestaurant(index: index)!._persianName
+//        (self.cellForItem(at: indPath) as! FoodCourtRestaurantsCollectionViewCell).updateContent(fcrestaurantName: fcRestName)
     }
     
 }

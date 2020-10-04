@@ -76,9 +76,10 @@ class FoodCourtRestaurantsCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func updateContent(fcrestaurantName:String) {
+    func updateContent(fcrestaurantName:String,fCRestaurantLogo:UIImage) {
         debugPrint("notif received ")
         self.restaurantNameLabel.text = fcrestaurantName
+        self.restaurantLogo.image = fCRestaurantLogo
         
     }
     

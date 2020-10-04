@@ -17,7 +17,7 @@ struct SampleRestaurant {
     let logo:UIImage
     let menus:[Menu]
     
-    init(id: Int, name: String, persianName: String, rate: Double, logo:UIImage, menus: [Menu]) {
+    init(id: Int, persianName: String, rate: Double, logo:UIImage, menus: [Menu]) {
         self.id = id
         self.persianName = persianName
         self.rate = rate
