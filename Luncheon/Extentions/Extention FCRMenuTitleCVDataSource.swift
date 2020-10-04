@@ -12,14 +12,14 @@ import UIKit
 extension FCRMenuTitleCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let m:Int = (parentViewController as! FoodCourtVC).currentRestaurant
-        debugPrint("inja \(m)")
+//        debugPrint(" \(m)")
         return SampleRestaurantManager.restaurats[m].menus.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuTitle", for: indexPath) as! FCRMenuTitleCollectionViewCell
         let m:Int = (parentViewController as! FoodCourtVC).currentRestaurant
-        cell.setupContent(menuTitle: SampleRestaurantManager.restaurats[m].menus[indexPath.item].persianName)
+    cell.setupContent(menuTitle: SampleRestaurantManager.restaurats[m].menus[indexPath.item].persianName)
         cell.backgroundColor = .whiteBackgroud
         return cell
     }

@@ -118,12 +118,12 @@ class FoodCourtVC: UIViewController {
         ])
     }
     func changeSeelectedRestaurant(index: Int) {
-        debugPrint("changeSeelectedRestaurant \(index)")
+//        debugPrint("changeSeelectedRestaurant \(index)")
         currentSelectedItem = (index,1)
         fcrMenutitles.reloadData()
     }
     func changeSeelectedMenu(index: Int) {
-        debugPrint("changeSeelectedMenu")
+//        debugPrint("changeSeelectedMenu")
         currentSelectedItem.menu = 1
         
     }
