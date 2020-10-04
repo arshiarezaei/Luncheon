@@ -13,7 +13,7 @@ class RateView: UIView {
      private let star:UIImageView = {
          let sv = UIImageView(frame: .zero)
          sv.translatesAutoresizingMaskIntoConstraints = false
-         sv.image = UIImage(named: "rate star")
+         sv.image = UIImage(named: "star")
          sv.contentMode = .scaleAspectFill
          
          return sv
