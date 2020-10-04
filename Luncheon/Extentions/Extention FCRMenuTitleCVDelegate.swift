@@ -1,5 +1,5 @@
 //
-//  Extention FoodCourtRestaurantsCVDelegate.swift
+//  Extention .swift
 //  Luncheon
 //
 //  Created by arshiya on 10/4/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension FoodCourtRestaurantsCV:UICollectionViewDelegate{
+extension FCRMenuTitleCV:UICollectionViewDelegate{
     var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
@@ -21,7 +21,6 @@ extension FoodCourtRestaurantsCV:UICollectionViewDelegate{
         return nil
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        debugPrint("\(indexPath.item)")
-        (parentViewController as! FoodCourtVC).changeSeelectedRestaurant(index: indexPath.item)
+        
     }
 }

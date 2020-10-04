@@ -10,7 +10,8 @@ import UIKit
 
 class FoodCourtVC: UIViewController {
     
-    let foodcourtRestaurantsCV:FoodCourtRestaurantsCV = {
+    private let foodcourtRestaurantsCV:FoodCourtRestaurantsCV = {
+        
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 56, height: 120)
         layout.minimumLineSpacing = 32
@@ -21,13 +22,13 @@ class FoodCourtVC: UIViewController {
         fcrcv.contentMode = .center
         fcrcv.backgroundColor = .whiteBackgroud
         fcrcv.dataSource = fcrcv.self
-        fcrcv.delegate = fcrcv.delegate
+        fcrcv.delegate = fcrcv.self
         fcrcv.register(FoodCourtRestaurantsCollectionViewCell.self, forCellWithReuseIdentifier: "restauratsName")
         
         return fcrcv
     }()
     
-    let fcrMenutitles:FCRMenuTitleCV = {
+    private let fcrMenutitles:FCRMenuTitleCV = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 56, height: 40)
         layout.scrollDirection = .horizontal
@@ -35,11 +36,13 @@ class FoodCourtVC: UIViewController {
         fcrmt.translatesAutoresizingMaskIntoConstraints = false
         // for development purpose
         fcrmt.backgroundColor = .whiteBackgroud
+        fcrmt.delegate = fcrmt.self
+        fcrmt.dataSource = fcrmt.self
         fcrmt.register(FCRMenuTitleCollectionViewCell.self, forCellWithReuseIdentifier: "menuTitle")
         return fcrmt
     }()
     
-    let food:FoodCV = {
+    private let food:FoodCV = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: 150 , height: 150)
@@ -50,6 +53,18 @@ class FoodCourtVC: UIViewController {
         fcv.register(FoodCVCell.self, forCellWithReuseIdentifier: "FCRFood")
         return fcv
     }()
+    // this variable tracks currentt selected res,menu
+    private var currentSelectedItem: (restaurant:Int,menu:Int) = (0,0)
+    public var currentRestaurant: Int {
+        get {
+            currentSelectedItem.restaurant
+        }
+    }
+    public var currentMenu: Int {
+        get {
+            currentSelectedItem.menu
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +88,7 @@ class FoodCourtVC: UIViewController {
     
     private func setupFoodcourtRestaurantsCV() {
         debugPrint("class FoodCourtVC->setupFoodcourtRestaurantsCV")
-
+        
         NSLayoutConstraint.activate([
             foodcourtRestaurantsCV.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             foodcourtRestaurantsCV.widthAnchor.constraint(equalTo: self.view.widthAnchor),
@@ -83,7 +98,7 @@ class FoodCourtVC: UIViewController {
     }
     
     private func setupFcrMenutitles() {
-        fcrMenutitles.dataSource = fcrMenutitles.self
+
         NSLayoutConstraint.activate([
             fcrMenutitles.topAnchor.constraint(equalTo: foodcourtRestaurantsCV.bottomAnchor),
             fcrMenutitles.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -101,5 +116,15 @@ class FoodCourtVC: UIViewController {
             food.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             food.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
+    }
+    func changeSeelectedRestaurant(index: Int) {
+        debugPrint("changeSeelectedRestaurant \(index)")
+        currentSelectedItem = (index,1)
+        fcrMenutitles.reloadData()
+    }
+    func changeSeelectedMenu(index: Int) {
+        debugPrint("changeSeelectedMenu")
+        currentSelectedItem.menu = 1
+        
     }
 }

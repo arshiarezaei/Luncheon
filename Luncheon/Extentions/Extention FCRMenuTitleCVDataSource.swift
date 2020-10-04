@@ -11,7 +11,8 @@ import UIKit
 
 extension FCRMenuTitleCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        let m:Int = (parentViewController as! FoodCourtVC).currentRestaurant
+        return SampleRestaurantManager.restaurats[m].menus.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

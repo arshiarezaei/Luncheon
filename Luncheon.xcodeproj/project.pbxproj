@@ -75,6 +75,7 @@
 		59F593EB243914530009E7D7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EA243914530009E7D7 /* Menu.swift */; };
 		59F593ED243916330009E7D7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EC243916330009E7D7 /* Food.swift */; };
 		59F593EF243918940009E7D7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EE243918940009E7D7 /* Ingredient.swift */; };
+		59FB25CC252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		59F593EA243914530009E7D7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		59F593EC243916330009E7D7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		59F593EE243918940009E7D7 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FCRMenuTitleCVDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 				59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */,
 				59DFBA902443338500D35C37 /* Extention FoodCVDatasource.swift */,
 				599C3BF02529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift */,
+				59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */,
 				5902C00F251682D900562BA9 /* TimeToCookView.swift in Sources */,
 				59F0A8012420211800F8185F /* EnterMobileNumberVC.swift in Sources */,
+				59FB25CC252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift in Sources */,
 				59833FF4240589E600D131BF /* Extention UIColor.swift in Sources */,
 				5931242325165BD5009918CB /* OrderStatusView.swift in Sources */,
 				59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */,
