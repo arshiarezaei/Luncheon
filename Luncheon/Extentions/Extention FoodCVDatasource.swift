@@ -18,7 +18,7 @@ extension FoodCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FCRFood", for: indexPath) as! FoodCVCell
         
-        cell.backgroundColor = .green
+//        cell.backgroundColor = .green
         
         //just for development purpose
         cell.setupCell(foodName: "اسم غذا", foodDescription: "توضیح غذا", foodPrice: 2000, foodPriceAfterDiscount: 200, foodRate: 4.6)

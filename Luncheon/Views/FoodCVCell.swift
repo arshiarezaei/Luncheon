@@ -194,7 +194,7 @@ class FoodCVCell: UICollectionViewCell {
                 fatalError("init(coder:) has not been implemented")
             }
             
-            func setupCell(foodName:String , foodDescription:String,foodPrice:Int,foodPriceAfterDiscount:Int!,foodImage:UIImage=UIImage(named: "restaurant")!,foodRate:Double) {
+            func setupCell(foodName:String , foodDescription:String,foodPrice:Int,foodPriceAfterDiscount:Int!,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double) {
                 let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
                 self.foodNameLabel.text = foodName
                 self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
@@ -288,7 +288,7 @@ class FoodCVCell: UICollectionViewCell {
                     
                     
                 }
-                orderedCountLabel.text = Utilities.convertToPersianNumber(number: Double(orderedCount))
+                orderedCountLabel.text = Utilities.convertToPersianNumber(number: orderedCount)
                 
                 
             }
@@ -298,7 +298,7 @@ class FoodCVCell: UICollectionViewCell {
                 orderedCount -= 1
                 
                 if orderedCount>0{
-                    orderedCountLabel.text = Utilities.convertToPersianNumber(number: Double(orderedCount))
+                    orderedCountLabel.text = Utilities.convertToPersianNumber(number: orderedCount)
                 }
                 else if orderedCount==0{
                     minusButton.removeFromSuperview()

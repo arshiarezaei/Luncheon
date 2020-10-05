@@ -43,4 +43,11 @@ class Utilities {
         }
         return result
     }
+    static func convertToPersianNumber(number:Int) -> String {
+        var result:String = String(number)
+        for (key,value) in Utilities.numbers  {
+            result = result.replacingOccurrences(of: key, with: value)
+        }
+        return result
+    }
 }
