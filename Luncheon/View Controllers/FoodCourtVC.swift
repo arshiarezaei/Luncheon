@@ -46,7 +46,7 @@ class FoodCourtVC: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: 160 , height: 200)
-//        layout.minimumInteritemSpacing = 30
+        //        layout.minimumInteritemSpacing = 30
         let fcv = FoodCV(frame: .zero, collectionViewLayout: layout)
         fcv.translatesAutoresizingMaskIntoConstraints = false
         fcv.semanticContentAttribute = .forceRightToLeft
@@ -70,7 +70,7 @@ class FoodCourtVC: UIViewController {
         super.viewDidLoad()
         FoodCourtManager.getRestaurantsOfAFC()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "food tray"), style: .done, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "food tray"), style: .done, target: self, action: #selector(foodTrayTapped(_:)))
         self.navigationItem.leftBarButtonItem?.tintColor = .luncehonLogoText
         
         self.view.addSubview(foodcourtRestaurantsCV)
@@ -98,7 +98,7 @@ class FoodCourtVC: UIViewController {
     }
     
     private func setupFcrMenutitles() {
-
+        
         NSLayoutConstraint.activate([
             fcrMenutitles.topAnchor.constraint(equalTo: foodcourtRestaurantsCV.bottomAnchor),
             fcrMenutitles.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -117,14 +117,19 @@ class FoodCourtVC: UIViewController {
             food.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
     }
+    @objc private func foodTrayTapped(_ sender:UIButton) {
+        debugPrint("foodtray tapped")
+        self.view.window?.rootViewController?.present(FoodCourtVC(), animated: true, completion: nil)
+    }
     func changeSeelectedRestaurant(index: Int) {
-//        debugPrint("changeSeelectedRestaurant \(index)")
+        //        debugPrint("changeSeelectedRestaurant \(index)")
         currentSelectedItem = (index,1)
         fcrMenutitles.reloadData()
     }
     func changeSeelectedMenu(index: Int) {
-//        debugPrint("changeSeelectedMenu")
+        //        debugPrint("changeSeelectedMenu")
         currentSelectedItem.menu = 1
         
     }
+   
 }
