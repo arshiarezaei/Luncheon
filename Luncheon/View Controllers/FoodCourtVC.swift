@@ -47,6 +47,7 @@ class FoodCourtVC: UIViewController {
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: 160 , height: 200)
         //        layout.minimumInteritemSpacing = 30
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
         let fcv = FoodCV(frame: .zero, collectionViewLayout: layout)
         fcv.translatesAutoresizingMaskIntoConstraints = false
         fcv.semanticContentAttribute = .forceRightToLeft

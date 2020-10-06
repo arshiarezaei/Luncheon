@@ -34,6 +34,8 @@ class FoodTrayViewController: UIViewController {
         return ftb
     }()
 
+    private var foodTrayItem = [DropDownMenu]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -52,6 +54,10 @@ class FoodTrayViewController: UIViewController {
         self.view.addSubview(foodtrayLabel)
         setupFoodTrayLabel()
         
+        // MARK: test purpose
+        foodTrayItem.append(DropDownMenu())
+        self.view.addSubview(foodTrayItem[0])
+        seutpFoodTrayItem()
 
     }
     
@@ -75,6 +81,15 @@ class FoodTrayViewController: UIViewController {
         NSLayoutConstraint.activate([
             foodtrayLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
             foodtrayLabel.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+        ])
+    }
+    
+    private func seutpFoodTrayItem(){
+        NSLayoutConstraint.activate([
+            foodTrayItem[0].topAnchor.constraint(equalTo: self.view.topAnchor,constant: 120),
+            foodTrayItem[0].centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            foodTrayItem[0].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+            foodTrayItem[0].heightAnchor.constraint(equalToConstant: 60),
         ])
     }
     @objc func closeButtonTapped(_ sender:UIButton) {
