@@ -119,7 +119,7 @@ class FoodCourtVC: UIViewController {
     }
     @objc private func foodTrayTapped(_ sender:UIButton) {
         debugPrint("foodtray tapped")
-        self.view.window?.rootViewController?.present(FoodCourtVC(), animated: true, completion: nil)
+        self.view.window?.rootViewController?.present(FoodTrayViewController(), animated: true, completion: nil)
     }
     func changeSeelectedRestaurant(index: Int) {
         //        debugPrint("changeSeelectedRestaurant \(index)")
