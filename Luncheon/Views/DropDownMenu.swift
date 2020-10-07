@@ -32,7 +32,17 @@ class DropDownMenu: UIView {
         return eA
     }()
     
-    private var isOpen:Bool = false
+    private let items:FoodTrayTableView = {
+        var i = FoodTrayTableView()
+        i.translatesAutoresizingMaskIntoConstraints = false
+        i.rowHeight = 78
+        i.dataSource = i.self
+        i.allowsSelection = false
+        return i
+    }()
+    
+    private var isItemsOpen:Bool = false
+    private var height = NSLayoutConstraint()
     
     init(frame: CGRect,title:String) {
         super.init(frame: frame)
@@ -50,6 +60,8 @@ class DropDownMenu: UIView {
         self.addSubview(explandArrow)
         setupExpandArrow()
         
+        self.addSubview(items)
+        adddItemTableView()
     }
     
     required init?(coder: NSCoder) {
@@ -75,20 +87,46 @@ class DropDownMenu: UIView {
         ])
         
     }
+    private func adddItemTableView(){
+        NSLayoutConstraint.activate([
+            items.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            items.centerXAnchor.constraint(equalTo: self.centerXAnchor ),
+            items.widthAnchor.constraint(equalTo: self.widthAnchor),
+        ])
+        
+        height = items.heightAnchor.constraint(equalToConstant: 0)
+        
+    }
     @objc private func expandArrowTapped()  {
         debugPrint("arrowButttonTappedd")
-        if isOpen{
-            UIView.animate(withDuration: 0.25, animations: {
-                self.explandArrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-            })
-            isOpen = !isOpen
-        }else{
+        if isItemsOpen{
             UIView.animate(withDuration: 0.25, animations: {
                 self.explandArrow.transform = CGAffineTransform(rotationAngle: 0)
             })
-            isOpen = !isOpen
+            isItemsOpen = !isItemsOpen
+            NSLayoutConstraint.deactivate([self.height])
+            self.height.constant = 0
+            NSLayoutConstraint.activate([self.height])
+            
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseIn, animations:{
+               self.items.center.y -= self.items.frame.height/2
+                self.items.layoutIfNeeded()
+                
+            }, completion: nil)
+        }else{
+            UIView.animate(withDuration: 0.25, animations: {
+                self.explandArrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            })
+            isItemsOpen = !isItemsOpen
+            
+            NSLayoutConstraint.deactivate([height])
+            height.constant = 5 * 78
+            NSLayoutConstraint.activate([height])
+            
+            UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseIn, animations:{
+                self.layoutIfNeeded()
+                //self.items.center.y += self.items.frame.height/2
+            }, completion: nil)
         }
-        
-      
     }
 }

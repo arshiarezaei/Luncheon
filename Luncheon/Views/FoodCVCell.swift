@@ -290,7 +290,6 @@ class FoodCVCell: UICollectionViewCell {
         }
         orderedCountLabel.text = Utilities.convertToPersianNumber(number: orderedCount)
         
-        
     }
     
     @objc private func minusButtonTapped(){

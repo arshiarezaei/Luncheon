@@ -18,7 +18,7 @@ struct SampleRestaurantManager {
         SampleRestaurant(id: 5, persianName: "برگر کینگ", rate: 4.0, logo: UIImage(named: "BK")!, menus: []),
     ]
     private static let mcdonaldMenu:[SampleMenu] = [
-        SampleMenu(id: 1, persianName: "پیتزا", foods: []),
+        SampleMenu(id: 1, persianName: "پیتزا", foods: [SampleFood(id: 1, persianName: "پیتزا ۱", rate: UInt8(4.6), price: 20000, discountAmount: 0, ingredients: [], calorie: 0)]),
         SampleMenu(id: 2, persianName: "برگر", foods: []),
         SampleMenu(id: 3, persianName: "سوخاری", foods: []),
         SampleMenu(id: 4, persianName: "نوشیدنی", foods: []),
