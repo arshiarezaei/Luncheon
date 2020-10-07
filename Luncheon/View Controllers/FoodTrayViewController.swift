@@ -38,7 +38,7 @@ class FoodTrayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .whiteBackgroud
         
         // Do any additional setup after loading the view.
         
@@ -55,7 +55,7 @@ class FoodTrayViewController: UIViewController {
         setupFoodTrayLabel()
         
         // MARK: test purpose
-        foodTrayItem.append(DropDownMenu())
+        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران"))
         self.view.addSubview(foodTrayItem[0])
         seutpFoodTrayItem()
 
