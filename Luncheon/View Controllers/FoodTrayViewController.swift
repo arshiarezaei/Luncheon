@@ -55,10 +55,19 @@ class FoodTrayViewController: UIViewController {
         setupFoodTrayLabel()
         
         // MARK: test purpose
-        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران"))
+        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:0))
         self.view.addSubview(foodTrayItem[0])
         seutpFoodTrayItem()
 
+        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
+        self.view.addSubview(foodTrayItem[1])
+        
+        NSLayoutConstraint.activate([
+            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
+            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
+            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
+        ])
     }
     
     private func setupCloseButton() {
@@ -89,11 +98,25 @@ class FoodTrayViewController: UIViewController {
             foodTrayItem[0].topAnchor.constraint(equalTo: self.view.topAnchor,constant: 120),
             foodTrayItem[0].centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             foodTrayItem[0].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
-            foodTrayItem[0].heightAnchor.constraint(equalToConstant: 60),
+            foodTrayItem[0].heightAnchor.constraint(greaterThanOrEqualToConstant: 65),
         ])
     }
     @objc func closeButtonTapped(_ sender:UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    func moveView(index:Int) {
+        debugPrint("sss")
+        self.view.setNeedsLayout()
+//        foodTrayItem[1].removeFromSuperview()
+//        self.view.addSubview(foodTrayItem[1])
+//        NSLayoutConstraint.activate([
+//            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
+//            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
+//            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+//            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
+//        ])
+        
+        
     }
     /*
     // MARK: - Navigation

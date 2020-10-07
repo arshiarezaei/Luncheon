@@ -43,14 +43,17 @@ class DropDownMenu: UIView {
     
     private var isItemsOpen:Bool = false
     private var height = NSLayoutConstraint()
+    private var index:Int = 0
+    lazy var bottomA = items.bottomAnchor
     
-    init(frame: CGRect,title:String) {
+    init(frame: CGRect,title:String,index:Int) {
         super.init(frame: frame)
         self.backgroundColor = .red
         self.layer.cornerRadius = 16
         self.backgroundColor = .white
         self.translatesAutoresizingMaskIntoConstraints = false
         
+        self.index = index
         // add titleLabel
         self.addSubview(titleLabel)
         titleLabel.text = title
@@ -111,6 +114,8 @@ class DropDownMenu: UIView {
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseIn, animations:{
                self.items.center.y -= self.items.frame.height/2
                 self.items.layoutIfNeeded()
+                ((self.superview?.window?.rootViewController?.presentedViewController) as! FoodTrayViewController).moveView(index: self.index)
+                self.superview?.layoutIfNeeded()
                 
             }, completion: nil)
         }else{
@@ -125,6 +130,8 @@ class DropDownMenu: UIView {
             
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseIn, animations:{
                 self.layoutIfNeeded()
+                ((self.superview?.window?.rootViewController?.presentedViewController) as! FoodTrayViewController).moveView(index: self.index)
+                self.superview?.layoutIfNeeded()
                 //self.items.center.y += self.items.frame.height/2
             }, completion: nil)
         }
