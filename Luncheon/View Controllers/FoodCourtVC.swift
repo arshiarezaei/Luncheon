@@ -63,7 +63,7 @@ class FoodCourtVC: UIViewController {
     }
     public var currentMenu: Int {
         get {
-            currentSelectedItem.menu
+            return currentSelectedItem.menu
         }
     }
     
@@ -80,9 +80,11 @@ class FoodCourtVC: UIViewController {
         
         self.view.addSubview(fcrMenutitles)
         setupFcrMenutitles()
+        fcrMenutitles.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
         
         self.view.addSubview(food)
         setupFoodCV()
+        
         
     }
     
@@ -122,15 +124,21 @@ class FoodCourtVC: UIViewController {
         debugPrint("foodtray tapped")
         self.view.window?.rootViewController?.present(FoodTrayViewController(), animated: true, completion: nil)
     }
+    /// change sele
+    /// - Parameter index: index of item
     func changeSeelectedRestaurant(index: Int) {
         //        debugPrint("changeSeelectedRestaurant \(index)")
-        currentSelectedItem = (index,1)
+        currentSelectedItem = (index,0)
         fcrMenutitles.reloadData()
+        food.reloadData()
     }
     func changeSeelectedMenu(index: Int) {
-        //        debugPrint("changeSeelectedMenu")
-        currentSelectedItem.menu = 1
-        
+        debugPrint("changeSeelectedMenu \(index)")
+        currentSelectedItem.menu = index
+        food.reloadData()
     }
-   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        food.reloadData()
+    }
 }

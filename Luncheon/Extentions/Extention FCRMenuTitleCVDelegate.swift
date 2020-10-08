@@ -21,6 +21,6 @@ extension FCRMenuTitleCV:UICollectionViewDelegate{
         return nil
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        (parentViewController as! FoodCourtVC).changeSeelectedMenu(index: indexPath.item)
     }
 }

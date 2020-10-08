@@ -10,7 +10,7 @@ import Foundation
 
 
 struct SampleFoodTray {
-    private static var foodTray : [Int:[(menuId:Int,foodId:Int,count:Int)]]  = [Int:[(Int,Int,Int)]]()
+     static var foodTray : [Int:[(foodId:Int,count:Int)]]  = [Int:[(Int,Int)]]()
     public static var restaurantsInFoodTray:Int {
         get{
             return self.foodTray.count
@@ -25,17 +25,39 @@ struct SampleFoodTray {
         }
     }
     
-    static func addNewFood(resId:Int,menuId:Int,foodId:Int,count:Int) {
+    static func updateFoodTray(resId:Int,foodId:Int,count:Int) {
+//        if let _ = foodTray[resId]{
+//            debugPrint("item exists")
+//            var idex:Int = 1
+//            for item in foodTray[resId]! {
+//                <#code#>
+//            }
+//        }else{
+//            debugPrint("newItem")
+//        }
+        
+//    }
+        
         if let a = foodTray[resId]{
             var i = 0
+            t :
             for item in a {
-                if item.menuId == menuId && item.foodId == foodId {
+                if item.foodId == foodId {
+                    debugPrint("if")
                     foodTray[resId]![i].count = count
+                    i = 0
+                    break t
                 }else{
-                    foodTray[resId]!.append((menuId,foodId,count))
+                    debugPrint("\(item.foodId)  \(foodId)")
+                    foodTray[resId]!.append((foodId,count))
+//                    debugPrint("i")
+                    i = 0
+                    break t
                 }
-                i += 1
+                
             }
+        } else{
+            foodTray[resId] = [(foodId,count)]
         }
     }
 }

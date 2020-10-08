@@ -97,8 +97,9 @@ class FoodCVCell: UICollectionViewCell {
         
         return odl
     }()
-    private  var orderedCount :Int = 0
-    
+    private var orderedCount :Int = 0
+    private var discountAmount:Int = 0
+    private var foodID:Int = -1
     private lazy var foodPriceLabelInitialLayout:[NSLayoutConstraint] = [
         foodPriceLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: foodDescriptionLabel.safeAreaLayoutGuide.bottomAnchor,constant: 0),
         foodPriceLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 8),
@@ -151,6 +152,16 @@ class FoodCVCell: UICollectionViewCell {
         foodPriceAfterDiscountLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 4),
         foodPriceAfterDiscountLabel.safeAreaLayoutGuide.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor,multiplier: 0.055, constant: 15),
     ]
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder?.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -186,7 +197,7 @@ class FoodCVCell: UICollectionViewCell {
         
         
         
-        setupCell(foodName: "اسم غذا", foodDescription: "این غذا شامل توضیحات خاصی نمی باشد", foodPrice: 20000, foodPriceAfterDiscount: 19000, foodRate: 4.2)
+//        setupCell(foodName: "اسم غذا", foodDescription: "این غذا شامل توضیحات خاصی نمی باشد", foodPrice: 20000, discountAmount: 0, foodRate: 4.2)
         
     }
     
@@ -194,14 +205,16 @@ class FoodCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,foodPriceAfterDiscount:Int!,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double) {
+    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int!,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
         let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
         self.foodNameLabel.text = foodName
         self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
         self.foodDescriptionLabel.text = foodDescription
         self.foodImage.image = foodImage
+        self.discountAmount = discountAmount
+        self.foodID = foodId
         
-        if let fpad = foodPriceAfterDiscount{
+        if let fpad = discountAmount ,fpad != 0 {
             let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: Double(fpad))
             self.foodPriceAfterDiscountLabel.text = fpadInPersianNumberFormat + "ت"
             self.foodPriceLabel.text?.removeLast()
@@ -274,6 +287,9 @@ class FoodCVCell: UICollectionViewCell {
     @objc private func plusButtonTapped() {
         debugPrint("plusButton tapped")
         orderedCount += 1
+        if discountAmount != 0 {
+            foodPriceLabel.removeFromSuperview()
+        }
         if orderedCount == 1{
             NSLayoutConstraint.deactivate(plusButtonInitialLayoutSetup)
             self.addSubview(orderedCountLabel)
@@ -282,14 +298,19 @@ class FoodCVCell: UICollectionViewCell {
             NSLayoutConstraint.activate(minusButtonInitialLayoutSetup)
             NSLayoutConstraint.activate(orderedCountLabelLayout)
             NSLayoutConstraint.activate(plusButtonLayoutAfterbeingTapped)
-            foodPriceLabel.removeFromSuperview()
+            
             NSLayoutConstraint.deactivate(foodPriceAfterDiscountInitialLayout)
             NSLayoutConstraint.activate(foodPriceAfterDiscountLabelLayoutAfterTappingPlusButton)
             
             
         }
         orderedCountLabel.text = Utilities.convertToPersianNumber(number: orderedCount)
-        
+        // update food tray
+        let resId = (parentViewController as! FoodCourtVC).currentRestaurant
+//        let menuId = (parentViewController as! FoodCourtVC).currentMenu
+//        debugPrint("r \(resId)    m \(menuId)  f \(self.foodID) ")
+        SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
+        debugPrint(SampleFoodTray.foodTray)
     }
     
     @objc private func minusButtonTapped(){
@@ -308,9 +329,10 @@ class FoodCVCell: UICollectionViewCell {
             self.addSubview(foodPriceLabel)
             NSLayoutConstraint.activate(foodPriceLabelInitialLayout)
             NSLayoutConstraint.activate(foodPriceAfterDiscountInitialLayout)
-            
-            
         }
-        
+        let resId = (parentViewController as! FoodCourtVC).currentRestaurant
+//        let menuId = (parentViewController as! FoodCourtVC).currentMenu
+        SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
+        debugPrint(SampleFoodTray.foodTray)
     }
 }

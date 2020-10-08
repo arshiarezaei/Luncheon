@@ -16,13 +16,15 @@ struct SampleRestaurant {
     let rate:Double
     let logo:UIImage
     let menus:[SampleMenu]
+    let food:[SampleFood]
     
-    init(id: Int, persianName: String, rate: Double, logo:UIImage, menus: [SampleMenu]) {
+    init(id: Int, persianName: String, rate: Double, logo:UIImage, menus: [SampleMenu],food:[SampleFood]) {
         self.id = id
         self.persianName = persianName
         self.rate = rate
         self.logo = logo
         self.menus = menus
+        self.food = food
     }
     
 }

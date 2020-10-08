@@ -12,16 +12,23 @@ import UIKit
 
 extension FoodCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        let r:Int = (parentViewController as! FoodCourtVC).currentRestaurant
+        let m  = (parentViewController as! FoodCourtVC).currentMenu
+        debugPrint(m)
+        let  c = SampleRestaurantManager.restaurats[r].menus[m].foods.count 
+        return c
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FCRFood", for: indexPath) as! FoodCVCell
-        
-//        cell.backgroundColor = .green
-        
         //just for development purpose
-        cell.setupCell(foodName: "اسم غذا", foodDescription: "توضیح غذا", foodPrice: 2000, foodPriceAfterDiscount: 200, foodRate: 4.6)
+//        cell.setupCell(foodName: "اسم غذا", foodDescription: "توضیح غذا", foodPrice: 2000, foodPriceAfterDiscount: 200, foodRate: 4.6)
+        let m:Int = (parentViewController as! FoodCourtVC).currentMenu
+        let r:Int = (parentViewController as! FoodCourtVC).currentRestaurant
+        let sampleFood:SampleFood = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item]
+        let foodId:Int = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item].id
+        debugPrint("cell")
+        cell.setupCell(foodName: sampleFood.persianName, foodDescription: "توضیح غذا", foodPrice: Int(sampleFood.price) ,discountAmount:0, foodImage: sampleFood.image,foodRate:sampleFood.rate,foodId:foodId)
         
         return cell
     }
