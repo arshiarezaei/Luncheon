@@ -12,6 +12,7 @@ class FoodTrayTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+        self.layer.cornerRadius = 16
 //        self.data = data
     }
     

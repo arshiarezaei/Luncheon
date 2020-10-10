@@ -120,8 +120,21 @@ class FoodCourtVC: UIViewController {
             food.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
     }
+    private func showEmptyFoodTrayAlert(){
+        let alert = UIAlertController(title: "خطا", message: "سینی غذا شما خالی است", preferredStyle: .alert)
+        let action = UIAlertAction(title:  "متوجه شدم", style: .cancel, handler: nil)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     @objc private func foodTrayTapped(_ sender:UIButton) {
 //        debugPrint("foodtray tapped")
+        if SampleFoodTray.foodTray.count == 0 {
+            debugPrint("empty food tray")
+            showEmptyFoodTrayAlert()
+            return
+        }
         self.view.window?.rootViewController?.present(FoodTrayViewController(), animated: true, completion: nil)
     }
     /// change sele
@@ -141,4 +154,5 @@ class FoodCourtVC: UIViewController {
         super.viewDidAppear(animated)
         food.reloadData()
     }
+    
 }
