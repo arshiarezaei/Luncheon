@@ -35,6 +35,16 @@ class FoodTrayViewController: UIViewController {
     }()
 
     private var foodTrayItem = [DropDownMenu]()
+    private var payOrderButton:UIButton = {
+        var pob = UIButton(frame: .zero)
+        pob.translatesAutoresizingMaskIntoConstraints = false
+        pob.backgroundColor = .luncehonLogoText
+        pob.layer.cornerRadius = 16
+        pob.setTitle("پرداخت", for: .normal)
+        pob.titleLabel?.font = UIFont(name: UIFont.BYekan.fontName, size: 30)
+        pob.addTarget(self, action: #selector(payOrderButtonTapped(_:)), for: .touchUpInside)
+        return pob
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +78,9 @@ class FoodTrayViewController: UIViewController {
             foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
             foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
         ])
+        
+        self.view.addSubview(payOrderButton)
+        setupPayOrderButtonConstraints()
     }
     
     private func setupCloseButton() {
@@ -101,31 +114,28 @@ class FoodTrayViewController: UIViewController {
             foodTrayItem[0].heightAnchor.constraint(greaterThanOrEqualToConstant: 65),
         ])
     }
-    @objc func closeButtonTapped(_ sender:UIButton) {
+    @objc private func closeButtonTapped(_ sender:UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    @objc private func payOrderButtonTapped(_ sender:UIButton) {
+        debugPrint("payorderButtonTapped")
+//        self.dismiss(animated: true, completion: nil)
+    }
+    private func setupPayOrderButtonConstraints(){
+        NSLayoutConstraint.activate([
+            payOrderButton.topAnchor.constraint(equalTo: foodTrayItem[foodTrayItem.count-1].bottomA,constant: 32),
+            payOrderButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            payOrderButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+            payOrderButton.heightAnchor.constraint(equalToConstant: 65 )
+            
+        ])
+    }
+    
     func moveView(index:Int) {
-        debugPrint("sss")
+//        debugPrint("sss")
         self.view.setNeedsLayout()
-//        foodTrayItem[1].removeFromSuperview()
-//        self.view.addSubview(foodTrayItem[1])
-//        NSLayoutConstraint.activate([
-//            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
-//            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
-//            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
-//            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
-//        ])
-        
-        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }

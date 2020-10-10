@@ -39,8 +39,8 @@ struct SampleRestaurantManager {
         SampleMenu(id:5, persianName: "پیش غذا", foods: []),
     ]
     private static let mcDonalFood:[SampleFood] = [
-        SampleFood(id: 1, persianName: "دونالد برگر", rate: 5.0, price: 40000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "food")!),
-        SampleFood(id: 2, persianName: "پیتزا ۱", rate: 4.6, price: 20000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "1-1-1")!),
+        SampleFood(id: 0, persianName: "دونالد برگر", rate: 5.0, price: 40000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "food")!),
+        SampleFood(id: 1, persianName: "پیتزا ۱", rate: 4.6, price: 20000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "1-1-1")!),
     ]
 }
 

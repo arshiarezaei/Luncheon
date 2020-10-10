@@ -137,7 +137,7 @@ class EnterMobileNumberVC: UIViewController {
         mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         mobileNumberTF.textAlignment = .center
         mobileNumberTF.semanticContentAttribute = .forceLeftToRight
-        mobileNumberTF.keyboardType = .phonePad
+        mobileNumberTF.keyboardType = .numberPad
         mobileNumberTF.clearButtonMode = .always
         mobileNumberTF.font = UIFont.BYekan
         

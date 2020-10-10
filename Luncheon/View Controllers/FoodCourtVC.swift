@@ -121,7 +121,7 @@ class FoodCourtVC: UIViewController {
         ])
     }
     @objc private func foodTrayTapped(_ sender:UIButton) {
-        debugPrint("foodtray tapped")
+//        debugPrint("foodtray tapped")
         self.view.window?.rootViewController?.present(FoodTrayViewController(), animated: true, completion: nil)
     }
     /// change sele
@@ -133,7 +133,7 @@ class FoodCourtVC: UIViewController {
         food.reloadData()
     }
     func changeSeelectedMenu(index: Int) {
-        debugPrint("changeSeelectedMenu \(index)")
+//        debugPrint("changeSeelectedMenu \(index)")
         currentSelectedItem.menu = index
         food.reloadData()
     }

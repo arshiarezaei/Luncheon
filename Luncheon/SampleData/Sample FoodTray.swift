@@ -10,13 +10,13 @@ import Foundation
 
 
 struct SampleFoodTray {
-     static var foodTray : [Int:[(foodId:Int,count:Int)]]  = [Int:[(Int,Int)]]()
+    static var foodTray : [Int:[(foodId:Int,count:Int)]]  = [Int:[(Int,Int)]]()
     public static var restaurantsInFoodTray:Int {
         get{
             return self.foodTray.count
         }
     }
-   static subscript(index: Int) -> Int {
+    static subscript(index: Int) -> Int {
         get {
             if let count = foodTray[index]?.count {
                 return count
@@ -26,38 +26,34 @@ struct SampleFoodTray {
     }
     
     static func updateFoodTray(resId:Int,foodId:Int,count:Int) {
-//        if let _ = foodTray[resId]{
-//            debugPrint("item exists")
-//            var idex:Int = 1
-//            for item in foodTray[resId]! {
-//                <#code#>
-//            }
-//        }else{
-//            debugPrint("newItem")
-//        }
-        
-//    }
-        
-        if let a = foodTray[resId]{
-            var i = 0
-            t :
-            for item in a {
-                if item.foodId == foodId {
-                    debugPrint("if")
-                    foodTray[resId]![i].count = count
-                    i = 0
-                    break t
+//        debugPrint("****")
+//        debugPrint(foodTray)
+        guard let orderedFoods = foodTray[resId] else { return foodTray[resId] = [(foodId,count)]}
+//        debugPrint("for")
+        for (index,_) in orderedFoods.enumerated(){
+//            debugPrint("inside for")
+            if foodTray[resId]![index].foodId == foodId{
+//                debugPrint(" \(index)  \(foodTray[resId]![index].foodId)  \(foodId)")
+                if count == 0 {
+                    foodTray[resId]!.remove(at: index)
                 }else{
-                    debugPrint("\(item.foodId)  \(foodId)")
-                    foodTray[resId]!.append((foodId,count))
-//                    debugPrint("i")
-                    i = 0
-                    break t
+                    foodTray[resId]![index].count = count
+//                    debugPrint(foodTray[resId]![index])
+//                    debugPrint("-----")
                 }
-                
+ 
+                return
             }
-        } else{
-            foodTray[resId] = [(foodId,count)]
         }
+//        debugPrint("not exists")
+        foodTray[resId]!.append((foodId,count))
+//        debugPrint(foodTray)
+//        debugPrint("-----")
+//        debugPrint("****")
+        //        debugPrint("-------")
+        ////               debugPrint(res)
+        //        debugPrint("----")
+        //        debugPrint("----")
     }
+    
 }

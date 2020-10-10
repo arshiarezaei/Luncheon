@@ -14,7 +14,7 @@ extension FoodCV:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let r:Int = (parentViewController as! FoodCourtVC).currentRestaurant
         let m  = (parentViewController as! FoodCourtVC).currentMenu
-        debugPrint(m)
+//        debugPrint(m)
         let  c = SampleRestaurantManager.restaurats[r].menus[m].foods.count 
         return c
     }
@@ -27,7 +27,7 @@ extension FoodCV:UICollectionViewDataSource{
         let r:Int = (parentViewController as! FoodCourtVC).currentRestaurant
         let sampleFood:SampleFood = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item]
         let foodId:Int = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item].id
-        debugPrint("cell")
+//        debugPrint("cell")
         cell.setupCell(foodName: sampleFood.persianName, foodDescription: "توضیح غذا", foodPrice: Int(sampleFood.price) ,discountAmount:0, foodImage: sampleFood.image,foodRate:sampleFood.rate,foodId:foodId)
         
         return cell

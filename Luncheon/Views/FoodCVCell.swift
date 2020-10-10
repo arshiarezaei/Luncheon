@@ -310,7 +310,7 @@ class FoodCVCell: UICollectionViewCell {
 //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
 //        debugPrint("r \(resId)    m \(menuId)  f \(self.foodID) ")
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-        debugPrint(SampleFoodTray.foodTray)
+//        debugPrint(SampleFoodTray.foodTray)
     }
     
     @objc private func minusButtonTapped(){
@@ -333,6 +333,6 @@ class FoodCVCell: UICollectionViewCell {
         let resId = (parentViewController as! FoodCourtVC).currentRestaurant
 //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-        debugPrint(SampleFoodTray.foodTray)
+//        debugPrint(SampleFoodTray.foodTray)
     }
 }
