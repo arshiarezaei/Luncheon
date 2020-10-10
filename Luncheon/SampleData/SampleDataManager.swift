@@ -26,7 +26,7 @@ struct SampleRestaurantManager {
     ]
     private static let subwayMenu:[SampleMenu] = [
         SampleMenu(id: 1, persianName: "س پیتزا", foods: []),
-        SampleMenu(id: 2, persianName: "س برگر", foods: []),
+        SampleMenu(id: 2, persianName:   "سانودیچ", foods:SubwayFood),
         SampleMenu(id: 3, persianName: "س سوخاری", foods: []),
         SampleMenu(id: 4, persianName: "نوشیدنی", foods: []),
         SampleMenu(id:5, persianName: "پیش غذا", foods: []),
@@ -40,7 +40,12 @@ struct SampleRestaurantManager {
     ]
     private static let mcDonalFood:[SampleFood] = [
         SampleFood(id: 0, persianName: "دونالد برگر", rate: 5.0, price: 40000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "food")!),
-        SampleFood(id: 1, persianName: "پیتزا ۱", rate: 4.6, price: 20000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "1-1-1")!),
+        SampleFood(id: 1, persianName: "پیتزا ۱", rate: 4.6, price: 20000, discountAmount: 1000, ingredients: [], calorie: 0,image: UIImage(named: "1-1-1")!),
     ]
+    private static let SubwayFood:[SampleFood] = [
+        SampleFood(id: 0, persianName: "هات داگ", rate: 5.0, price: 40000, discountAmount: 0, ingredients: [], calorie: 0,image: UIImage(named: "food")!),
+        SampleFood(id: 1, persianName: "ژامبون تنوری", rate: 4.6, price: 20000, discountAmount: 1000, ingredients: [], calorie: 0,image: UIImage(named: "food")!),
+    ]
+
 }
 

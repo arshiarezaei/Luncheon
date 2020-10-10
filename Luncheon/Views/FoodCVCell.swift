@@ -205,7 +205,7 @@ class FoodCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int!,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
+    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
         let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
         self.foodNameLabel.text = foodName
         self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
@@ -214,8 +214,8 @@ class FoodCVCell: UICollectionViewCell {
         self.discountAmount = discountAmount
         self.foodID = foodId
         
-        if let fpad = discountAmount ,fpad != 0 {
-            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: Double(fpad))
+        if discountAmount != 0 {
+            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: discountAmount)
             self.foodPriceAfterDiscountLabel.text = fpadInPersianNumberFormat + "ت"
             self.foodPriceLabel.text?.removeLast()
             let attributedString = NSMutableAttributedString(string: foodPriceInPersinaNumberFormate)

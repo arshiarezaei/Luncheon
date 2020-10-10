@@ -28,7 +28,7 @@ extension FoodCV:UICollectionViewDataSource{
         let sampleFood:SampleFood = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item]
         let foodId:Int = SampleRestaurantManager.restaurats[r].menus[m].foods[indexPath.item].id
 //        debugPrint("cell")
-        cell.setupCell(foodName: sampleFood.persianName, foodDescription: "توضیح غذا", foodPrice: Int(sampleFood.price) ,discountAmount:0, foodImage: sampleFood.image,foodRate:sampleFood.rate,foodId:foodId)
+        cell.setupCell(foodName: sampleFood.persianName, foodDescription: "توضیح غذا", foodPrice: Int(sampleFood.price) ,discountAmount:sampleFood.discountAmount, foodImage: sampleFood.image,foodRate:sampleFood.rate,foodId:foodId)
         
         return cell
     }

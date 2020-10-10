@@ -13,8 +13,8 @@ import UIKit
 extension FoodTrayTableView:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return SampleFoodTray.restaurantsInFoodTray
-        return 5
+        return SampleFoodTray.restaurantsInFoodTray
+//        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
