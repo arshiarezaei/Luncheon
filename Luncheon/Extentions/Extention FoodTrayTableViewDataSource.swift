@@ -20,9 +20,10 @@ extension FoodTrayTableView:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         debugPrint("FoodTrayTableViewDataSourcee cellforRowAt")
-        let c = UITableViewCell()
-        c.textLabel?.text = "food \(indexPath.row)"
-        return c
+        let c = FoodTrayTableViewCell()
+        c.setupCellContent(foodName: "اسم غذا", foodPrice: 2000, count: 5)
+//        c.textLabel?.text = "food \(indexPath.row)"
+        return c as UITableViewCell
     }
     override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
         debugPrint("FoodTrayTableViewDataSourcee dequeueReusableCell")

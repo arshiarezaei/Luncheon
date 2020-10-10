@@ -82,6 +82,8 @@
 		59F593EB243914530009E7D7 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EA243914530009E7D7 /* Menu.swift */; };
 		59F593ED243916330009E7D7 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EC243916330009E7D7 /* Food.swift */; };
 		59F593EF243918940009E7D7 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F593EE243918940009E7D7 /* Ingredient.swift */; };
+		59FA2F9A2531D8FF00662E00 /* FoodTrayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */; };
+		59FA2F9F2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA2F9E2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift */; };
 		59FB25CC252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +184,8 @@
 		59F593EA243914530009E7D7 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		59F593EC243916330009E7D7 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		59F593EE243918940009E7D7 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrayTableViewCell.swift; sourceTree = "<group>"; };
+		59FA2F9E2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodTrayTableViewDelegate.swift"; sourceTree = "<group>"; };
 		59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FCRMenuTitleCVDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -337,6 +341,7 @@
 				599C3BF02529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift */,
 				59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */,
 				59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */,
+				59FA2F9E2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				59DF12DB252A63E600F7556E /* RateView.swift */,
 				59430547252CDA0F0032364F /* DropDownMenu.swift */,
 				59A0AD10252D639E0094F130 /* FoodTrayTableView.swift */,
+				59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +574,7 @@
 				59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */,
 				59DB31EA2528A706006D1C2D /* SampleMenu.swift in Sources */,
 				59F593ED243916330009E7D7 /* Food.swift in Sources */,
+				59FA2F9A2531D8FF00662E00 /* FoodTrayTableViewCell.swift in Sources */,
 				59AC26BD243E28480025984E /* FoodCourtManager.swift in Sources */,
 				59DB31EF2528A71B006D1C2D /* SampleIngrdient.swift in Sources */,
 				593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */,
@@ -588,6 +595,7 @@
 				5921F417240183E700739020 /* ViewController.swift in Sources */,
 				59D373B324114D15002F6763 /* FollowUpVC.swift in Sources */,
 				5921F41D240183E700739020 /* Luncheon.xcdatamodeld in Sources */,
+				59FA2F9F2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift in Sources */,
 				59D431292441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift in Sources */,
 				59DB31DB2528A6C4006D1C2D /* SampleDataManager.swift in Sources */,
 				59DF12DC252A63E600F7556E /* RateView.swift in Sources */,

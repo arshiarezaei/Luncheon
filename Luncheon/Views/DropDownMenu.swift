@@ -37,7 +37,8 @@ class DropDownMenu: UIView {
         i.translatesAutoresizingMaskIntoConstraints = false
         i.rowHeight = 78
         i.dataSource = i.self
-        i.allowsSelection = false
+        i.delegate = i.self
+//        i.allowsSelection = false
         return i
     }()
     
