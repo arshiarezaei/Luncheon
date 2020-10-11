@@ -38,7 +38,6 @@ class DropDownMenu: UIView {
         i.rowHeight = 78
         i.dataSource = i.self
         i.delegate = i.self
-//        i.allowsSelection = false
         return i
     }()
     
@@ -57,7 +56,7 @@ class DropDownMenu: UIView {
         self.index = index
         // add titleLabel
         self.addSubview(titleLabel)
-        titleLabel.text = title
+        titleLabel.text = SampleRestaurantManager.restaurats[index].persianName
         setupTitleLabel()
         
         // add expland arrow
@@ -66,6 +65,9 @@ class DropDownMenu: UIView {
         
         self.addSubview(items)
         adddItemTableView()
+//    MARK : temporary
+        items.index = 0
+        items.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -126,7 +128,7 @@ class DropDownMenu: UIView {
             isItemsOpen = !isItemsOpen
             
             NSLayoutConstraint.deactivate([height])
-            height.constant = 5 * 78
+            height.constant = CGFloat(SampleFoodTray.foodTray[index]!.count) * 78
             NSLayoutConstraint.activate([height])
             
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: .curveEaseIn, animations:{

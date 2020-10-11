@@ -15,13 +15,13 @@ struct SampleFood {
     let id:Int
     let persianName:String
     let rate:Double
-    let price:UInt
+    let price:Int
     let discountAmount:Int
     let ingredients:[Ingredient]
     let image:UIImage
 
     
-    internal init(id: Int, persianName: String, rate: Double,price: UInt, discountAmount: Int, ingredients: [Ingredient], calorie: Int,image:UIImage) {
+    internal init(id: Int, persianName: String, rate: Double,price: Int, discountAmount: Int, ingredients: [Ingredient], calorie: Int,image:UIImage) {
         self.id = id
         self.persianName = persianName
         self.rate = rate

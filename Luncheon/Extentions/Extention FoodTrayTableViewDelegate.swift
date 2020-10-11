@@ -10,5 +10,4 @@ import Foundation
 import UIKit
 
 extension FoodTrayTableView:UITableViewDelegate{
-    
 }

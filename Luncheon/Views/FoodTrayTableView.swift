@@ -10,6 +10,8 @@ import UIKit
 
 class FoodTrayTableView: UITableView {
     
+    var index:Int = 0
+    
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.layer.cornerRadius = 16
@@ -20,8 +22,5 @@ class FoodTrayTableView: UITableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        superview?.touchesBegan(touches, with: event)
-        debugPrint("asdsfsd")
-    }
+    
 }

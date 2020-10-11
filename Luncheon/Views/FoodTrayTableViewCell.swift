@@ -79,11 +79,11 @@ class FoodTrayTableViewCell: UITableViewCell {
         // add plusButton
         self.addSubview(plusBuuton)
         setupPlusButtonConstraints()
-        
+
         // add ordered count
         self.addSubview(orderedCountLabel)
         setupOrderedCountLabelConstraints()
-        
+    
 //         add minuse button
         self.addSubview(minusButton)
         setupMinusButtonConstraints()
@@ -148,5 +148,7 @@ class FoodTrayTableViewCell: UITableViewCell {
         orderedCountLabel.text = Utilities.convertToPersianNumber(number: count)
     }
     
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        debugPrint("sss")
+    }
 }

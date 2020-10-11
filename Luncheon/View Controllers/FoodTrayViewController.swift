@@ -119,7 +119,8 @@ class FoodTrayViewController: UIViewController {
     }
     @objc private func payOrderButtonTapped(_ sender:UIButton) {
         debugPrint("payorderButtonTapped")
-//        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        self.view.superview?.window?.rootViewController?.present(OrderPaymentViewController(), animated: true, completion: nil)
     }
     private func setupPayOrderButtonConstraints(){
         NSLayoutConstraint.activate([
@@ -132,7 +133,6 @@ class FoodTrayViewController: UIViewController {
     }
     
     func moveView(index:Int) {
-//        debugPrint("sss")
         self.view.setNeedsLayout()
     }
     

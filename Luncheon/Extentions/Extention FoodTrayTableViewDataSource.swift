@@ -14,14 +14,20 @@ extension FoodTrayTableView:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         debugPrint("FoodTrayTableViewDataSourcee numberOfRowsInSection")
-//        return SampleFoodTray.foodTray[0]!.count
-        return 5
+        return SampleFoodTray.foodTray[index]!.count
+//        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         debugPrint("FoodTrayTableViewDataSourcee cellforRowAt")
         let c = FoodTrayTableViewCell()
-        c.setupCellContent(foodName: "اسم غذا", foodPrice: 2000, count: 5)
+        let foodId = SampleFoodTray.foodTray[index]![indexPath.item].foodId
+        let foodName = SampleRestaurantManager.restaurats[index].food[foodId].persianName
+        let price = SampleRestaurantManager.restaurats[index].food[foodId].price
+        let count = SampleFoodTray.foodTray[index]![indexPath.item].count
+        let discount = SampleRestaurantManager.restaurats[index].food[foodId].discountAmount
+        let finalPrice =  price - discount
+        c.setupCellContent(foodName: foodName, foodPrice:finalPrice , count: count)
 //        c.textLabel?.text = "food \(indexPath.row)"
         return c as UITableViewCell
     }

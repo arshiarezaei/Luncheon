@@ -24,6 +24,9 @@
 		5925A4D12423E9F800130990 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925A4D02423E9F800130990 /* CreditView.swift */; };
 		592CC3E0252BA8350069F72B /* FoodTrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */; };
 		5931242325165BD5009918CB /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931242225165BD5009918CB /* OrderStatusView.swift */; };
+		593AAC302532201700626265 /* OrderPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC2F2532201700626265 /* OrderPaymentViewController.swift */; };
+		593AAC3525322A6200626265 /* Sample User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC3425322A6200626265 /* Sample User.swift */; };
+		593AAC3A25322B6B00626265 /* PayOrderFromCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */; };
 		593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E952430F8AA00CB41A4 /* UIUtilities.swift */; };
 		593E5E982431176700CB41A4 /* IncreaseCreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */; };
 		59430548252CDA0F0032364F /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59430547252CDA0F0032364F /* DropDownMenu.swift */; };
@@ -128,6 +131,9 @@
 		5925A4D02423E9F800130990 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrayViewController.swift; sourceTree = "<group>"; };
 		5931242225165BD5009918CB /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
+		593AAC2F2532201700626265 /* OrderPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPaymentViewController.swift; sourceTree = "<group>"; };
+		593AAC3425322A6200626265 /* Sample User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample User.swift"; sourceTree = "<group>"; };
+		593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderFromCreditView.swift; sourceTree = "<group>"; };
 		593E5E952430F8AA00CB41A4 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		593E5E972431176700CB41A4 /* IncreaseCreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseCreditVC.swift; sourceTree = "<group>"; };
 		59430547252CDA0F0032364F /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
@@ -322,6 +328,7 @@
 				59E3FD4A251B3EF60012584B /* InvoiceTableViewController.swift */,
 				592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */,
 				5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */,
+				593AAC2F2532201700626265 /* OrderPaymentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 				59430547252CDA0F0032364F /* DropDownMenu.swift */,
 				59A0AD10252D639E0094F130 /* FoodTrayTableView.swift */,
 				59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */,
+				593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 				59DB31E92528A706006D1C2D /* SampleMenu.swift */,
 				59DB31EE2528A71B006D1C2D /* SampleIngrdient.swift */,
 				59A0AD2E252DA8410094F130 /* Sample FoodTray.swift */,
+				593AAC3425322A6200626265 /* Sample User.swift */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -566,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
+				593AAC3525322A6200626265 /* Sample User.swift in Sources */,
 				59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */,
 				59C2763424238AEC00B69D22 /* ProfileView.swift in Sources */,
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
@@ -579,6 +589,7 @@
 				59DB31EF2528A71B006D1C2D /* SampleIngrdient.swift in Sources */,
 				593E5E962430F8AA00CB41A4 /* UIUtilities.swift in Sources */,
 				59BEE95C243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift in Sources */,
+				593AAC3A25322B6B00626265 /* PayOrderFromCreditView.swift in Sources */,
 				59DFBA8F24432F7D00D35C37 /* FoodCVCell.swift in Sources */,
 				5964B1C32523D8F600C0833B /* LoginAlertView.swift in Sources */,
 				59F0A8072420232E00F8185F /* Network.swift in Sources */,
@@ -629,6 +640,7 @@
 				59DEC7EE251CA1B600FF756C /* Invoice.swift in Sources */,
 				591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
+				593AAC302532201700626265 /* OrderPaymentViewController.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
 				599C3BF12529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift in Sources */,
 				598455BA2433C14000F08E96 /* FoodCourtVC.swift in Sources */,
