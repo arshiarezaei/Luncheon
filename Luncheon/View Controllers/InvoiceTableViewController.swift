@@ -21,6 +21,7 @@ class InvoiceTableViewController: UITableViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(InvoiceTableViewCell.self, forCellReuseIdentifier: "invoiceTableViewControllerCell")
         self.tableView.isScrollEnabled = false
+        self.tableView.allowsSelection = false
 
     }
 
@@ -49,7 +50,7 @@ class InvoiceTableViewController: UITableViewController {
         let i4:InvoiceItem = InvoiceItem(title:"هزینه ارسال" , value: 3000)
         let i5:InvoiceItem = InvoiceItem(title: "تخفیف", value: 0)
         let i6:InvoiceItem = InvoiceItem(title: "جمع سفارش", value: 43000)
-        self.invoice = [i1,i2,i3,i4,i5,i6,i1,i2,i3,i4,i5,i6]
+        self.invoice = [i1,i2,i3,i4,i5,i6]
     }
 
 }

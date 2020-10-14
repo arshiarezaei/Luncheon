@@ -49,16 +49,7 @@ class InvoiceTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
-    func setupCell(title:String,value:Int) {
-        invoiceItemLabel.text = title
-        invoiceItemPriceLabel.text = "\(value)  تومان "
-        if title == "تخفیف"{
-            invoiceItemLabel.textColor = .luncehonLogoText
-            invoiceItemPriceLabel.textColor = .luncehonLogoText            
-        }
-    }
-    
+        
     private func setupInvoiceItemLabel() {
         NSLayoutConstraint.activate([
             invoiceItemLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -71,5 +62,15 @@ class InvoiceTableViewCell: UITableViewCell {
             invoiceItemPriceLabel.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 16),
         ])
     }
+    func setupCell(title:String,value:Int) {
+        invoiceItemLabel.text = title
+        let valueInPersinaNumbers = Utilities.convertToPersianNumber(number: value)
+        invoiceItemPriceLabel.text = "\(valueInPersinaNumbers)  تومان "
+        if title == "تخفیف"{
+            invoiceItemLabel.textColor = .luncehonLogoText
+            invoiceItemPriceLabel.textColor = .luncehonLogoText
+        }
+    }
+
     
 }
