@@ -8,27 +8,15 @@
 
 import UIKit
 
-class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
+class OrderPaymentViewController: UIViewController {
     
-    private var scrollView:UIScrollView = {
+    internal var scrollView:UIScrollView = {
         var sv  = UIScrollView(frame: .zero)
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.backgroundColor = .whiteBackgroud
         return sv
     }()
-    
-    private let payOrderfromCredit:PayOrderFromCreditView = {
-        var pofc = PayOrderFromCreditView(frame: .zero)
-        pofc.translatesAutoresizingMaskIntoConstraints = false
-        pofc.layer.cornerRadius = 16
-        pofc.layer.borderWidth = 2
-        pofc.layer.borderColor = UIColor.whiteBorder.cgColor
-        pofc.backgroundColor = .white
-        return pofc
-    }()
-    
-    private let invoiceTVC = InvoiceTableViewController()
-    private let discountTextField:UITextField = {
+    internal let discountTextField:UITextField = {
         var dtf = UITextField(frame: .zero)
         dtf.translatesAutoresizingMaskIntoConstraints = false
         dtf.semanticContentAttribute = .forceLeftToRight
@@ -42,7 +30,7 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
         return dtf
     }()
     
-    private let useDiscountCodeButton:UIButton = {
+    internal let useDiscountCodeButton:UIButton = {
         var udcb = UIButton(frame: .zero)
         udcb.translatesAutoresizingMaskIntoConstraints = false
         udcb.layer.cornerRadius = 20
@@ -58,10 +46,26 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
         return udcb
     }()
     
+    private let payOrderfromCredit:PayOrderFromCreditView = {
+        var pofc = PayOrderFromCreditView(frame: .zero)
+        pofc.translatesAutoresizingMaskIntoConstraints = false
+        pofc.layer.cornerRadius = 16
+        pofc.layer.borderWidth = 2
+        pofc.layer.borderColor = UIColor.whiteBorder.cgColor
+        pofc.backgroundColor = .white
+        return pofc
+    }()
+    
+    private let invoiceTVC = InvoiceTableViewController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .whiteBackgroud
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         view.addSubview(self.scrollView)
         setupScrollView()
@@ -82,8 +86,6 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
         scrollView.addSubview(useDiscountCodeButton)
         setupUseDiscountCodeButtonConstraints()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         debugPrint("sss")
@@ -115,7 +117,7 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
             invoiceTVC.view.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             invoiceTVC.view.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, multiplier: 0.9),
             invoiceTVC.view.heightAnchor.constraint(equalToConstant:CGFloat(invoiceTVC.tableView.numberOfRows(inSection: 0))*invoiceTVC.tableView.rowHeight),
-//            invoiceTVC.view.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
+            //            invoiceTVC.view.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
         ])
     }
     private func setupDiscountTextFieldConstraints() {
@@ -125,7 +127,7 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
             discountTextField.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             discountTextField.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, multiplier: 0.9),
             discountTextField.heightAnchor.constraint(equalToConstant:36),
-
+            
         ])
     }
     private func setupUseDiscountCodeButtonConstraints(){
@@ -142,25 +144,10 @@ class OrderPaymentViewController: UIViewController,UITextFieldDelegate {
     }
     @objc func keyboardWillShow(notification:NSNotification){
         debugPrint("willshow")
-    }
-    @objc func keyboardWillHide(notification:NSNotification){
-        debugPrint("willhide")
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        scrollView.becomeFirstResponder()
-        discountTextField.resignFirstResponder()
-        return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if !discountTextField.text!.isEmpty {
-            useDiscountCodeButton.isEnabled = true
-            useDiscountCodeButton.alpha = 1
+        if self.view.frame.origin.y == 0 {
+            self.scrollView.frame.origin.y -= 170
         }
-    }
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        useDiscountCodeButton.isEnabled = false
-        useDiscountCodeButton.alpha = 0.4
-        return true
-    }
+    }    
+
 }
 

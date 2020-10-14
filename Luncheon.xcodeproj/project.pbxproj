@@ -25,6 +25,7 @@
 		592CC3E0252BA8350069F72B /* FoodTrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */; };
 		5931242325165BD5009918CB /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931242225165BD5009918CB /* OrderStatusView.swift */; };
 		5939E098253745440073BFC5 /* SelectBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5939E097253745440073BFC5 /* SelectBank.swift */; };
+		5939E09D253757A20073BFC5 /* Extentiion OrderPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5939E09C253757A20073BFC5 /* Extentiion OrderPaymentViewController.swift */; };
 		593AAC302532201700626265 /* OrderPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC2F2532201700626265 /* OrderPaymentViewController.swift */; };
 		593AAC3525322A6200626265 /* Sample User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC3425322A6200626265 /* Sample User.swift */; };
 		593AAC3A25322B6B00626265 /* PayOrderFromCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */; };
@@ -133,6 +134,7 @@
 		592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrayViewController.swift; sourceTree = "<group>"; };
 		5931242225165BD5009918CB /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
 		5939E097253745440073BFC5 /* SelectBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBank.swift; sourceTree = "<group>"; };
+		5939E09C253757A20073BFC5 /* Extentiion OrderPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extentiion OrderPaymentViewController.swift"; sourceTree = "<group>"; };
 		593AAC2F2532201700626265 /* OrderPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPaymentViewController.swift; sourceTree = "<group>"; };
 		593AAC3425322A6200626265 /* Sample User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample User.swift"; sourceTree = "<group>"; };
 		593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayOrderFromCreditView.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				59FB25CB252A2B0C00F1D931 /* Extention FCRMenuTitleCVDelegate.swift */,
 				59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */,
 				59FA2F9E2531E4F300662E00 /* Extention FoodTrayTableViewDelegate.swift */,
+				5939E09C253757A20073BFC5 /* Extentiion OrderPaymentViewController.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				5925A4D12423E9F800130990 /* CreditView.swift in Sources */,
 				59BEE95A243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift in Sources */,
 				5921F415240183E700739020 /* SceneDelegate.swift in Sources */,
+				5939E09D253757A20073BFC5 /* Extentiion OrderPaymentViewController.swift in Sources */,
 				59DB31E02528A6EA006D1C2D /* SampleRestaurant.swift in Sources */,
 				59A0AD2F252DA8410094F130 /* Sample FoodTray.swift in Sources */,
 				59DB31E52528A6FA006D1C2D /* SampleFood.swift in Sources */,
