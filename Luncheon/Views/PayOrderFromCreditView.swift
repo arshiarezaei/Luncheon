@@ -35,7 +35,7 @@ class PayOrderFromCreditView: UIView {
         ucl.translatesAutoresizingMaskIntoConstraints = false
         ucl.semanticContentAttribute = .forceRightToLeft
         ucl.contentMode = .right
-        let creditValue = Utilities.convertToPersianNumber(number:SampleUser.Credit)
+        let creditValue = Utilities.convertToPersianNumber(number:SampleUser.getCredit)
         ucl.text = "\(creditValue)"+"تومان"
         ucl.font = UIFont(name: UIFont.BYekanName, size: 25)
         ucl.textColor = .luncheonDarkBalck

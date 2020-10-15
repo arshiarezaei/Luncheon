@@ -25,6 +25,7 @@ class EnterVerificationCodeVC: UIViewController {
     private let verificationCodeOnlyContainsDigits:String = "کد تاییدیه فقط شامل عدد است"
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .whiteBackgroud
@@ -161,25 +162,32 @@ class EnterVerificationCodeVC: UIViewController {
         errorInEnteredVerificationCodeLabel.text = String()
         verficationCodeTF.resignFirstResponder()
         self.view.becomeFirstResponder()
+        // MARK: prototype version
+        if verficationCodeTF.text! != SampleUser.getCode {
+            errorInEnteredVerificationCodeLabel.text = "کد وارد شده صحیح نیست"
+        }else{
+            ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+        }
+        
         
         //        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
         
         // MARK: uncomment the following function for working version of Luncheon
-    /*
-        Network.validatingSMS(code: verficationCodeTF.text!){response in
-            if let error = response{
-                debugPrint("error in code verification \(error)")
-                self.errorInEnteredVerificationCodeLabel.textAlignment  = .right
-                self.errorInEnteredVerificationCodeLabel.semanticContentAttribute = .forceRightToLeft
-                self.errorInEnteredVerificationCodeLabel.text = error.localizedDescription
-            }
-            else{
-                DispatchQueue.main.async {
-                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
-                }
-            }
-        }
-*/
+        /*
+         Network.validatingSMS(code: verficationCodeTF.text!){response in
+         if let error = response{
+         debugPrint("error in code verification \(error)")
+         self.errorInEnteredVerificationCodeLabel.textAlignment  = .right
+         self.errorInEnteredVerificationCodeLabel.semanticContentAttribute = .forceRightToLeft
+         self.errorInEnteredVerificationCodeLabel.text = error.localizedDescription
+         }
+         else{
+         DispatchQueue.main.async {
+         ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
+         }
+         }
+         }
+         */
         
     }
     
