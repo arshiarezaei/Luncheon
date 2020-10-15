@@ -208,18 +208,24 @@ class EnterMobileNumberVC: UIViewController {
         self.view.becomeFirstResponder()
         mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         
-        Network.requesteSMS(clientNumber: mobileNumberTF.text!.persianToEnglishDigits){ error in
-            if let error = error {
-                self.mobileNumberIsRequiredLabel.text = error.localizedDescription
-            }
-            else{
-                DispatchQueue.main.async {
-                    let vc = EnterVerificationCodeVC()
-                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
-                }
-            }
-            
-        }
+//        MARK: sample data
+        SampleNetwork.requestSMS(to: mobileNumberTF.text!)
+        let vc = EnterVerificationCodeVC()
+        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
+
+        
+//        Network.requesteSMS(clientNumber: mobileNumberTF.text!.persianToEnglishDigits){ error in
+//            if let error = error {
+//                self.mobileNumberIsRequiredLabel.text = error.localizedDescription
+//            }
+//            else{
+//                DispatchQueue.main.async {
+//                    let vc = EnterVerificationCodeVC()
+//                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)
+//                }
+//            }
+//
+//        }
         
     }
     

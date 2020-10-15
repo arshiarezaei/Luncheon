@@ -21,8 +21,8 @@ class EnterVerificationCodeVC: UIViewController {
     
     private let cornerRadius:CGFloat = CGFloat(20.0)
     
-    private let mobileNumberIsRequiredLabelError1:String = "وارد کردن کد تاییدیه الزامی است"
-    private let mobileNumberIsRequiredLabelError2:String = "کد تاییدیه فقط شامل عدد است"
+    private let verificationCodeIsRequired:String = "وارد کردن کد تاییدیه الزامی است"
+    private let verificationCodeOnlyContainsDigits:String = "کد تاییدیه فقط شامل عدد است"
     
     
     override func viewDidLoad() {
@@ -151,11 +151,11 @@ class EnterVerificationCodeVC: UIViewController {
     @objc private func confirmVerficationCodeButtonTapped(){
         debugPrint("confirmVerficationCodeButtonTapped")
         guard  !(verficationCodeTF.text!.isEmpty) else {
-            errorInEnteredVerificationCodeLabel.text = mobileNumberIsRequiredLabelError1
+            errorInEnteredVerificationCodeLabel.text = verificationCodeIsRequired
             return}
         
         guard let  _ = Utilities.phoneNumberValidation(phoneNumber: verficationCodeTF.text!) else {
-            errorInEnteredVerificationCodeLabel.text = mobileNumberIsRequiredLabelError2
+            errorInEnteredVerificationCodeLabel.text = verificationCodeOnlyContainsDigits
             return
         }
         errorInEnteredVerificationCodeLabel.text = String()
@@ -164,8 +164,8 @@ class EnterVerificationCodeVC: UIViewController {
         
         //        ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
         
-        
-        
+        // MARK: uncomment the following function for working version of Luncheon
+    /*
         Network.validatingSMS(code: verficationCodeTF.text!){response in
             if let error = response{
                 debugPrint("error in code verification \(error)")
@@ -179,21 +179,7 @@ class EnterVerificationCodeVC: UIViewController {
                 }
             }
         }
-        
-        
-        
-        //        debugPrint("veri txt \(verficationCodeTF.text!)")
-        //        Networking.validatingSMS(code: verficationCodeTF.text!){error in
-        //            debugPrint("escaping closoure")
-        //            if error == nil{
-        //                DispatchQueue.main.async {
-        //                    ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)
-        //                }
-        //            }
-        //            else{
-        //                debugPrint(error!)
-        //            }
-        //        }
+*/
         
     }
     
@@ -201,11 +187,3 @@ class EnterVerificationCodeVC: UIViewController {
 }
 
 
-//        self.navigationItem.title = ""
-//        self.navigationItem.backBarButtonItem?.title = "بازگشت"
-//        self.view.backgroundColor = .red
-//        self.navigationItem.title = "sss"
-//        self.navigationItem.backBarButtonItem?.title = "بازگشت"
-//        navigationController?.navigationBar.backItem?.backBarButtonItem?.isEnabled = false
-//        navigationController?.navigationBar.isUserInteractionEnabled = false
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem

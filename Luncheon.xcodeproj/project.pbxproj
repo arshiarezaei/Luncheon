@@ -68,6 +68,7 @@
 		59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */; };
 		59D431292441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */; };
 		59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */; };
+		59D46E4E25388128008E44EC /* Sample Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D46E4D25388128008E44EC /* Sample Network.swift */; };
 		59DB31DB2528A6C4006D1C2D /* SampleDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB31DA2528A6C4006D1C2D /* SampleDataManager.swift */; };
 		59DB31E02528A6EA006D1C2D /* SampleRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB31DF2528A6EA006D1C2D /* SampleRestaurant.swift */; };
 		59DB31E52528A6FA006D1C2D /* SampleFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB31E42528A6FA006D1C2D /* SampleFood.swift */; };
@@ -176,6 +177,7 @@
 		59D431262441DCBC00388FE2 /* FCRMenuTitleCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCV.swift; sourceTree = "<group>"; };
 		59D431282441E74200388FE2 /* FCRMenuTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRMenuTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		59D4312A2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FCRMenuTitleCVDataSource.swift"; sourceTree = "<group>"; };
+		59D46E4D25388128008E44EC /* Sample Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Network.swift"; sourceTree = "<group>"; };
 		59DB31DA2528A6C4006D1C2D /* SampleDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataManager.swift; sourceTree = "<group>"; };
 		59DB31DF2528A6EA006D1C2D /* SampleRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRestaurant.swift; sourceTree = "<group>"; };
 		59DB31E42528A6FA006D1C2D /* SampleFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFood.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				59A0AD2E252DA8410094F130 /* Sample FoodTray.swift */,
 				593AAC3425322A6200626265 /* Sample User.swift */,
 				596D8F1A253865DF006B1AEB /* Sample Invoice.swift */,
+				59D46E4D25388128008E44EC /* Sample Network.swift */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
 				59DFBA8D24432BC600D35C37 /* FoodCV.swift in Sources */,
 				59DFBA912443338500D35C37 /* Extention FoodCVDatasource.swift in Sources */,
+				59D46E4E25388128008E44EC /* Sample Network.swift in Sources */,
 				59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */,
 				59DB31EA2528A706006D1C2D /* SampleMenu.swift in Sources */,
 				59F593ED243916330009E7D7 /* Food.swift in Sources */,
