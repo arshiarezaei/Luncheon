@@ -235,7 +235,8 @@ class LoginView: UIView {
         passwordIsRequiredLabel.text = String()
         
         debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
-        
+        // MARK: uncomment the following function for working version of Luncheon
+/*
         Network.loginRequest(loginParameteres: ["username":usernameTextField.text!,"password":passwordTextField.text!]){
             error in
             if error == nil{
@@ -262,7 +263,7 @@ class LoginView: UIView {
                 self.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
             }
         }
-        
+    */
     }
 }
 //loginButton.isUserInteractionEnabled = false

@@ -14,9 +14,11 @@ struct SampleUser {
     static private let lastName = "رضائی هزاوه"
     static private let credit:Int = 10000
     static private let password:String = "123456"
-    static private let code = "2455"
+    static private var code = "2455"
     static var getCode:String {
         get{
+            let newCode = Int.random(in: 10000..<100000)
+            self.code = String(newCode)
             return code
         }
     }
@@ -28,5 +30,6 @@ struct SampleUser {
     static var getCredit:Int {
         return self.credit
     }
+    static public func newUser(userName:String,)
     
 }

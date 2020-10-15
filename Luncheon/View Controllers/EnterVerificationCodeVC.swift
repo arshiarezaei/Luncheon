@@ -47,7 +47,10 @@ class EnterVerificationCodeVC: UIViewController {
         self.view.addSubview(confirmVerificationCodeButton)
         setupConfirmVerificationCodeButton()
         
-        
+        let backBarBtnItem = UIBarButtonItem()
+        backBarBtnItem.title = "بازگشت"
+        backBarBtnItem.tintColor = .luncehonLogoText
+        navigationItem.backBarButtonItem = backBarBtnItem
         
         
     }

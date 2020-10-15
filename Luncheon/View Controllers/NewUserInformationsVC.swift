@@ -221,7 +221,7 @@ class NewUserInformationsVC: UIViewController {
             confirmPassowrdTF.safeAreaLayoutGuide.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor, multiplier: multiplier),
             confirmPassowrdTF.safeAreaLayoutGuide.heightAnchor.constraint(equalToConstant: 42),
         ])
-
+        
         
     }
     
@@ -256,37 +256,51 @@ class NewUserInformationsVC: UIViewController {
     
     @objc private func confirmInformationButtonTapped() {
         debugPrint("executing NewUserInformationsVC->confirmInformationButtonTapped")
-//        precondition(formValidator(), "check inputs")
+        //        precondition(formValidator(), "check inputs")
         let name = nameTF.text!
         let familyName = lastNameTF.text!
         let email = emailTF.text!
         let password = passwordTF.text!
         
         debugPrint("\(name) \(familyName) \(email) \(password)")
-        let info :[String:String] = ["email": email, "familyName": familyName, "name": name, "password": password, "username":email]
-        Network.newUserRegistraion(infoItems: info){ (result,message) in
-            if !result {
-                debugPrint("registration completed")
-                DispatchQueue.main.async {
-                    let a = UIAlertController(title:  "خطا", message: message! , preferredStyle: .alert)
-                    let action = UIAlertAction(title: "تلاش مجدد", style: UIAlertAction.Style.default, handler:nil)
-                    action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
-                    a.addAction(action)
-                    a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
-                    a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
-                     a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
-                    self.view.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
-                }
-            }
-            else{
-            
-            }
-            
-        }
-
+        // MARK: PROTOTYPE
+        let message = "به خانواد لانچن خوش آمدید"
+        let a = UIAlertController(title:  "تبریک", message: message , preferredStyle: .alert)
+        let action = UIAlertAction(title: "ایول", style: UIAlertAction.Style.default, handler:{_ in
+                                    
+                                    self.dismiss(animated: true, completion: nil)})
+        action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
+        a.addAction(action)
+        a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan.fontName, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
+        a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
+        a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
+        self.view.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
+        // MARK: uncomment the following function for working version of Luncheon
+        /*
+         let info :[String:String] = ["email": email, "familyName": familyName, "name": name, "password": password, "username":email]
+         Network.newUserRegistraion(infoItems: info){ (result,message) in
+         if !result {
+         debugPrint("registration completed")
+         DispatchQueue.main.async {
+         let a = UIAlertController(title:  "خطا", message: message! , preferredStyle: .alert)
+         let action = UIAlertAction(title: "تلاش مجدد", style: UIAlertAction.Style.default, handler:nil)
+         action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
+         a.addAction(action)
+         a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
+         a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
+         a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
+         self.view.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
+         }
+         }
+         else{
+         
+         }
+         
+         }
+         */
         
     }
-   
+    
     
     
 }
