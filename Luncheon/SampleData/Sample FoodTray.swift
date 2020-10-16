@@ -16,6 +16,20 @@ struct SampleFoodTray {
             return self.foodTray.count
         }
     }
+    public static var OrderPrice:Int{
+        get{
+            var price:Int  = 0
+            foodTray.forEach{
+                restaurantId , foods in
+                foods.forEach{
+                    foodId,count in
+                    price += (SampleRestaurantManager.restaurats[restaurantId].food[foodId].price - SampleRestaurantManager.restaurats[restaurantId].food[foodId].discountAmount) * count
+                }
+            }
+            debugPrint(price)
+            return price
+        }
+    }
     static subscript(index: Int) -> Int {
         get {
             if let count = foodTray[index]?.count {
@@ -36,12 +50,14 @@ struct SampleFoodTray {
 //                debugPrint(" \(index)  \(foodTray[resId]![index].foodId)  \(foodId)")
                 if count == 0 {
                     foodTray[resId]!.remove(at: index)
+                    if foodTray[resId]!.isEmpty {
+//                        debugPrint("empty")
+                        foodTray.removeValue(forKey: resId)
+//                        debugPrint(foodTray)
+                    }
                 }else{
                     foodTray[resId]![index].count = count
-//                    debugPrint(foodTray[resId]![index])
-//                    debugPrint("-----")
                 }
- 
                 return
             }
         }

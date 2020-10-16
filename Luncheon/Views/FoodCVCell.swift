@@ -197,7 +197,7 @@ class FoodCVCell: UICollectionViewCell {
         
         
         
-//        setupCell(foodName: "اسم غذا", foodDescription: "این غذا شامل توضیحات خاصی نمی باشد", foodPrice: 20000, discountAmount: 0, foodRate: 4.2)
+        //        setupCell(foodName: "اسم غذا", foodDescription: "این غذا شامل توضیحات خاصی نمی باشد", foodPrice: 20000, discountAmount: 0, foodRate: 4.2)
         
     }
     
@@ -215,7 +215,8 @@ class FoodCVCell: UICollectionViewCell {
         self.foodID = foodId
         
         if discountAmount != 0 {
-            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: discountAmount)
+            let fp = foodPrice - discountAmount
+            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: fp)
             self.foodPriceAfterDiscountLabel.text = fpadInPersianNumberFormat + "ت"
             self.foodPriceLabel.text?.removeLast()
             let attributedString = NSMutableAttributedString(string: foodPriceInPersinaNumberFormate)
@@ -307,10 +308,11 @@ class FoodCVCell: UICollectionViewCell {
         orderedCountLabel.text = Utilities.convertToPersianNumber(number: orderedCount)
         // update food tray
         let resId = (parentViewController as! FoodCourtVC).currentRestaurant
-//        let menuId = (parentViewController as! FoodCourtVC).currentMenu
-//        debugPrint("r \(resId)    m \(menuId)  f \(self.foodID) ")
+        //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
+        //        debugPrint("r \(resId)    m \(menuId)  f \(self.foodID) ")
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-//        debugPrint(SampleFoodTray.foodTray)
+        testFoodTray()
+        //        debugPrint(SampleFoodTray.foodTray)
     }
     
     @objc private func minusButtonTapped(){
@@ -331,8 +333,15 @@ class FoodCVCell: UICollectionViewCell {
             NSLayoutConstraint.activate(foodPriceAfterDiscountInitialLayout)
         }
         let resId = (parentViewController as! FoodCourtVC).currentRestaurant
-//        let menuId = (parentViewController as! FoodCourtVC).currentMenu
+        //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-//        debugPrint(SampleFoodTray.foodTray)
+        testFoodTray()
+        //        debugPrint(SampleFoodTray.foodTray)
+    }
+    private func testFoodTray(){
+        debugPrint("*-----")
+        debugPrint(SampleFoodTray.foodTray)
+        debugPrint(SampleFoodTray.OrderPrice)
+        debugPrint("-----*")
     }
 }
