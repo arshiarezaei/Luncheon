@@ -10,11 +10,11 @@ import Foundation
 
 struct SampleUser {
     static private var isLoggedIn:Bool = false
-    static private var username:String?
-    static private var name:String?
-    static private var lastName:String?
-    static private var credit:Int?
-    static private var password:String?
+    static private var username:String? = "aaa"
+    static private var name:String? =  "ارشیا"
+    static private var lastName:String? = "رضایی"
+    static private var credit:Int? = 12345
+    static private var password:String? = "1234"
     static private var code:Int = 0
     static public var phone:String?
     static var getCode:Int {
@@ -30,6 +30,11 @@ struct SampleUser {
     static var getCredit:Int {
         return self.credit != nil ? self.credit! : 0
     }
+    static var getStatus:Bool{
+        get{
+            return self.isLoggedIn
+        }
+    }
     static func newUser(username:String,name:String,lastname:String,password:String){
         self.username = username
         self.lastName = lastname
@@ -41,6 +46,7 @@ struct SampleUser {
         if self.username == username , self.password == password {
             self.isLoggedIn = true
             NotificationCenter.default.post(name: .userProfileRecevied, object: nil)
+            NotificationCenter.default.post(name: .userLoggedIn, object: nil)
             return true
         }
         return false
@@ -53,6 +59,7 @@ struct SampleUser {
         self.password = nil
         self.credit = nil
         self.phone = nil
+        NotificationCenter.default.post(name: .userLoggedOut, object: nil)
     }
     static func generateCode()->Int{
         self.code = Int.random(in: 10000..<100000)

@@ -234,12 +234,21 @@ class LoginView: UIView {
         usernameIsRequiredLabel.text = String()
         passwordIsRequiredLabel.text = String()
         
-        debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
+//        debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
         // MARK: prototype
         if SampleUser.login(username: usernameTextField.text!, password: passwordTextField.text!){
             self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            NotificationCenter.default.post(name: .userLoggedIn, object: nil)
         }else{
-            
+            let message = "نام کاربری یا کلمه عبور اشتباه است"
+            let a = UIAlertController(title:  "خطا", message: message , preferredStyle: .alert)
+            let action = UIAlertAction(title: "متوجه شدم", style: UIAlertAction.Style.default, handler:nil)
+            action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
+            a.addAction(action)
+            a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan.fontName, NSAttributedString.Key.foregroundColor : UIColor.green]), forKey: "attributedMessage")
+            a.setValue(NSAttributedString(string: a.message!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedMessage")
+            a.setValue(NSAttributedString(string: a.title!, attributes: [NSAttributedString.Key.font : UIFont.BYekan]), forKey: "attributedTitle")
+            self.window?.rootViewController?.presentedViewController?.present(a, animated: true, completion: nil)
         }
         // MARK: uncomment the following function for working version of Luncheon
 /*

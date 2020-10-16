@@ -11,8 +11,12 @@ import UIKit
 class LoginAlertView: UIView {
     private var text:UILabel = {
         var l = UILabel(frame: .zero)
-        l.text = "برای مشاهده این صفحه ابتدا وارد حساب کاربری خود شوید"
         l.translatesAutoresizingMaskIntoConstraints = false
+        l.text = "برای مشاهده این صفحه ابتدا وارد حساب کاربری خود شوید"
+        l.numberOfLines = 0
+        l.font = UIFont(name: UIFont.BYekan.fontName, size: 30)
+        l.semanticContentAttribute = .forceRightToLeft
+        l.textAlignment = .center
         return l
     }()
     override init(frame: CGRect) {

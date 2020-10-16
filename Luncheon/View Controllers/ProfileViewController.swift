@@ -21,6 +21,11 @@ class ProfileViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userLoggedIn), name: .userLoggedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(userLoggedout), name: .userLoggedOut, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(userProfileReceived), name: .userProfileRecevied, object: nil)
+        
+        let backBarBtnItem = UIBarButtonItem()
+        backBarBtnItem.title = "بازگشت"
+        backBarBtnItem.tintColor = .luncehonLogoText
+        navigationItem.backBarButtonItem = backBarBtnItem
     }
     @objc private func setupLoginOrSignUpView() {
         debugPrint("class ProfileViewController->setupLoginOrSignUpView ")
@@ -52,7 +57,7 @@ class ProfileViewController: UIViewController {
         acitivityIndicator.frame.size  = CGSize(width: 100, height: 100)
         acitivityIndicator.center = self.view.center
         self.view.addSubview(acitivityIndicator)
-        acitivityIndicator.startAnimating()
+//        acitivityIndicator.startAnimating()
         
         //        view.addSubview(profileView)
         //        setupProfileView()

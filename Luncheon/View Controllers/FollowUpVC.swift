@@ -55,10 +55,23 @@ class FollowUpVC: UIViewController {
         scrollView.addSubview(invoiceTVC.view)
         invoiceTVC.didMove(toParent: self)
         setupInvoiceTVC()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBlurEffectView), name: .userLoggedIn, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeBlurEffectView), name: .userProfileRecevied, object: nil)
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //MARK: prototype
+        if !SampleUser.getStatus{
+            self.view.isUserInteractionEnabled = false
+            view.addSubview(blurEffectView)
+            setupBlurView()
+            blurEffectView.contentView.addSubview(loginALert)
+            setupLoginAlert()
+        }
+        // MARK: uncomment the following code function for working version of Luncheon
+        /*
         if UserStates.currentState == .LoggedOut {
             debugPrint("logged out ")
             self.view.isUserInteractionEnabled = false
@@ -66,10 +79,10 @@ class FollowUpVC: UIViewController {
             setupBlurView()
             blurEffectView.contentView.addSubview(loginALert)
             setupLoginAlert()
-        }
+        }*/
     }
     override func viewDidAppear(_ animated: Bool) {
-        debugPrint("appeared")
+
         //        timeToCookView.startTimer(value: 13602)
     }
     private func setupNavBar() {
@@ -133,9 +146,9 @@ class FollowUpVC: UIViewController {
         loginALert.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loginALert.centerXAnchor.constraint(equalTo: blurEffectView.contentView.centerXAnchor),
-            loginALert.centerYAnchor.constraint(equalTo: blurEffectView.contentView.centerYAnchor),
-            loginALert.heightAnchor.constraint(equalToConstant: 100),
-            loginALert.widthAnchor.constraint(equalTo: blurEffectView.contentView.widthAnchor,multiplier: 0.8),
+            loginALert.centerYAnchor.constraint(equalTo: blurEffectView.contentView.centerYAnchor,constant: -100),
+//            loginALert.heightAnchor.constraint(equalToConstant: 100),
+            loginALert.widthAnchor.constraint(equalTo: blurEffectView.contentView.widthAnchor,multiplier: 0.9),
         ])
     }
     private func  setupBlurView()  {
@@ -147,8 +160,9 @@ class FollowUpVC: UIViewController {
             blurEffectView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
         ])
     }
-    func removeBlurEffectView() {
+    @objc private func removeBlurEffectView() {
         blurEffectView.removeFromSuperview()
+        loginALert.removeFromSuperview()
         self.view.isUserInteractionEnabled = true
     }
 }

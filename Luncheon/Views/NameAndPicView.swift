@@ -53,13 +53,16 @@ class NameAndPicView: UIView {
     private func setupName() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = {
-            if let name = UserStates.currentUserProfile?.fullName {
-                debugPrint("class NameAndPicView->setupName if let ")
-            return name
-            }
-            else{
-                return "نام و نام خانوادگی"
-            }
+            // MARK: Prototype
+            return SampleUser.fullName
+            //MARK:uncomment the following function for working version of Luncheon
+//            if let name = UserStates.currentUserProfile?.fullName {
+//                debugPrint("class NameAndPicView->setupName if let ")
+//            return name
+//            }
+//            else{
+//                return "نام و نام خانوادگی"
+//            }
         }()
         nameLabel.textAlignment = .center
         nameLabel.textColor = .black
