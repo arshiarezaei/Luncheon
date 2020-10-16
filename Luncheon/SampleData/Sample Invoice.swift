@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-struct SampeInvoice {
-    public static var total:Int = 0
+struct SampleInvoice {
+    public static var total:Int {
+        return SampleFoodTray.OrderPrice
+    }
     public static var packaging:Int = 0
     public static var delivery:Int = 0
     public static var discount:Int  {
         get {
-            return total/10
+            return total*5/100
         }
     }
     public static var tax: Int {

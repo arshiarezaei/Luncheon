@@ -44,12 +44,12 @@ class InvoiceTableViewController: UITableViewController {
     
 
     private func defaultInvoiceItem(){
-        let i1:InvoiceItem = InvoiceItem(title: "جمع سفارش", value: 40000)
-        let i2:InvoiceItem = InvoiceItem(title: " مالیات", value:0)
-        let i3:InvoiceItem = InvoiceItem(title: "بسته بندی", value: 0)
-        let i4:InvoiceItem = InvoiceItem(title:"هزینه ارسال" , value: 3000)
-        let i5:InvoiceItem = InvoiceItem(title: "تخفیف", value: 0)
-        let i6:InvoiceItem = InvoiceItem(title: "جمع سفارش", value: 43000)
+        let i1:InvoiceItem = InvoiceItem(title: "جمع سفارش", value: SampleInvoice.total)
+        let i2:InvoiceItem = InvoiceItem(title: " مالیات", value:SampleInvoice.tax)
+        let i3:InvoiceItem = InvoiceItem(title: "بسته بندی", value: SampleInvoice.packaging)
+        let i4:InvoiceItem = InvoiceItem(title:"هزینه ارسال" , value: SampleInvoice.delivery)
+        let i5:InvoiceItem = InvoiceItem(title: "تخفیف", value: SampleInvoice.discount)
+        let i6:InvoiceItem = InvoiceItem(title: "جمع سفارش", value: SampleInvoice.totalOrder)
         self.invoice = [i1,i2,i3,i4,i5,i6]
     }
 

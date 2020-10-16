@@ -10,7 +10,7 @@ import Foundation
 
 
 struct SampleFoodTray {
-    static var foodTray : [Int:[(foodId:Int,count:Int)]]  = [Int:[(Int,Int)]]()
+    static var foodTray : [Int:[(foodId:Int,count:Int)]]  = [Int:[(Int,Int)]]() 
     public static var restaurantsInFoodTray:Int {
         get{
             return self.foodTray.count
@@ -26,7 +26,7 @@ struct SampleFoodTray {
                     price += (SampleRestaurantManager.restaurats[restaurantId].food[foodId].price - SampleRestaurantManager.restaurats[restaurantId].food[foodId].discountAmount) * count
                 }
             }
-            debugPrint(price)
+//            debugPrint(price)
             return price
         }
     }
