@@ -264,10 +264,10 @@ class NewUserInformationsVC: UIViewController {
         
         debugPrint("\(name) \(familyName) \(email) \(password)")
         // MARK: PROTOTYPE
+        SampleUser.newUser(username: email, name: name, lastname: familyName, password: password)
         let message = "به خانواد لانچن خوش آمدید"
         let a = UIAlertController(title:  "تبریک", message: message , preferredStyle: .alert)
-        let action = UIAlertAction(title: "ایول", style: UIAlertAction.Style.default, handler:{_ in
-                                    
+        let action = UIAlertAction(title: "ممنون", style: UIAlertAction.Style.default, handler:{_ in
                                     self.dismiss(animated: true, completion: nil)})
         action.setValue(UIColor.luncehonLogoText, forKey: "titleTextColor")
         a.addAction(action)

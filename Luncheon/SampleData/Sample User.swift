@@ -9,27 +9,54 @@
 import Foundation
 
 struct SampleUser {
-    static private let userName = "arshiyarezaie"
-    static private let name = "ارشیا"
-    static private let lastName = "رضائی هزاوه"
-    static private let credit:Int = 10000
-    static private let password:String = "123456"
-    static private var code = "2455"
-    static var getCode:String {
+    static private var isLoggedIn:Bool = false
+    static private var username:String?
+    static private var name:String?
+    static private var lastName:String?
+    static private var credit:Int?
+    static private var password:String?
+    static private var code:Int = 0
+    static public var phone:String?
+    static var getCode:Int {
         get{
-            let newCode = Int.random(in: 10000..<100000)
-            self.code = String(newCode)
             return code
         }
     }
     static var fullName :String {
         get{
-            return name + lastName
+            return name! + lastName!
         }
     }
     static var getCredit:Int {
-        return self.credit
+        return self.credit != nil ? self.credit! : 0
     }
-    static public func newUser(userName:String,)
+    static func newUser(username:String,name:String,lastname:String,password:String){
+        self.username = username
+        self.lastName = lastname
+        self.name = name
+        self.password = password
+        self.credit = 0
+    }
+    static func login(username:String,password:String)->Bool{
+        if self.username == username , self.password == password {
+            self.isLoggedIn = true
+            NotificationCenter.default.post(name: .userProfileRecevied, object: nil)
+            return true
+        }
+        return false
+    }
+    static func logout(){
+        self.isLoggedIn = false
+        self.username = nil
+        self.name = nil
+        self.lastName = nil
+        self.password = nil
+        self.credit = nil
+        self.phone = nil
+    }
+    static func generateCode()->Int{
+        self.code = Int.random(in: 10000..<100000)
+        return code
+    }
     
 }

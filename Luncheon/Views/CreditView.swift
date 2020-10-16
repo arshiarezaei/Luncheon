@@ -57,7 +57,9 @@ class CreditView: UIView {
         yourCreditValue.textAlignment = .right
         yourCreditValue.semanticContentAttribute = .forceRightToLeft
         yourCreditValue.text = {
-            let balance = UserStates.currentUserProfile!.credit / 10
+            let balance = Utilities.convertToPersianNumber(number:SampleUser.getCredit/10)
+            // MARK: uncomment following line for working version
+//            let balance = UserStates.currentUserProfile!.credit / 10
             return "\(balance) تومان"
         }()
         

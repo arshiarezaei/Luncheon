@@ -209,6 +209,7 @@ class EnterMobileNumberVC: UIViewController {
         mobileNumberTF.layer.borderColor = UIColor.luncheonGray.cgColor
         
 //        MARK: sample data
+        SampleUser.phone = mobileNumberTF.text!
         SampleNetwork.requestSMS(to: mobileNumberTF.text!)
         let vc = EnterVerificationCodeVC()
         ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(vc, animated: true)

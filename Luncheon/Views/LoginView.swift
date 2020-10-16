@@ -235,6 +235,12 @@ class LoginView: UIView {
         passwordIsRequiredLabel.text = String()
         
         debugPrint("login\(usernameTextField.text!) \(passwordTextField.text!)")
+        // MARK: prototype
+        if SampleUser.login(username: usernameTextField.text!, password: passwordTextField.text!){
+            self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        }else{
+            
+        }
         // MARK: uncomment the following function for working version of Luncheon
 /*
         Network.loginRequest(loginParameteres: ["username":usernameTextField.text!,"password":passwordTextField.text!]){

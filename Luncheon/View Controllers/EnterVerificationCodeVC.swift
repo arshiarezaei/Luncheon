@@ -166,7 +166,7 @@ class EnterVerificationCodeVC: UIViewController {
         verficationCodeTF.resignFirstResponder()
         self.view.becomeFirstResponder()
         // MARK: prototype version
-        if verficationCodeTF.text! != SampleUser.getCode {
+        if verficationCodeTF.text! != String(SampleUser.getCode) {
             errorInEnteredVerificationCodeLabel.text = "کد وارد شده صحیح نیست"
         }else{
             ((self.view.window?.rootViewController?.presentedViewController) as! SignUpVC).pushViewController(NewUserInformationsVC(), animated: true)

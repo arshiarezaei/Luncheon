@@ -24,7 +24,9 @@ class IncreaseCreditVC: UIViewController,UITextFieldDelegate {
     private let yourCreditValueLabel: UILabel = {
         let ycl = UILabel(frame: .zero)
         ycl.translatesAutoresizingMaskIntoConstraints = false
-        ycl.text = "\((UserStates.currentUserProfile!.credit/10 ))"
+        // MARK: uncomment following line for working version
+//        ycl.text = "\((UserStates.currentUserProfile!.credit/10 ))"
+        ycl.text = "\(Utilities.convertToPersianNumber(number: SampleUser.getCredit/10))"
         ycl.text?.append("تومان ")
         ycl.font = UIFont(name: UIFont.BYekan.fontName, size: 30)
         ycl.semanticContentAttribute = .forceRightToLeft
