@@ -10,6 +10,7 @@
 		59021A67241167CB00F633E2 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59021A66241167CB00F633E2 /* SignUpVC.swift */; };
 		5902C00F251682D900562BA9 /* TimeToCookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902C00E251682D900562BA9 /* TimeToCookView.swift */; };
 		5910260F252C85D80093DB5D /* InvoiceItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */; };
+		591391CE2539D52400217440 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 591391CD2539D52400217440 /* 114.png */; };
 		591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */; };
 		5921F413240183E700739020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F412240183E700739020 /* AppDelegate.swift */; };
 		5921F415240183E700739020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F414240183E700739020 /* SceneDelegate.swift */; };
@@ -115,6 +116,7 @@
 		59021A66241167CB00F633E2 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5902C00E251682D900562BA9 /* TimeToCookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToCookView.swift; sourceTree = "<group>"; };
 		5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemViewController.swift; sourceTree = "<group>"; };
+		591391CD2539D52400217440 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRestaurant.swift; sourceTree = "<group>"; };
 		5921F40F240183E700739020 /* Luncheon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luncheon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5921F412240183E700739020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				59DF12DB252A63E600F7556E /* RateView.swift */,
 				59430547252CDA0F0032364F /* DropDownMenu.swift */,
 				59A0AD10252D639E0094F130 /* FoodTrayTableView.swift */,
+				591391CD2539D52400217440 /* 114.png */,
 				59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */,
 				593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */,
 				5939E097253745440073BFC5 /* SelectBank.swift */,
@@ -557,6 +560,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591391CE2539D52400217440 /* 114.png in Resources */,
 				59833FDE24052F4500D131BF /* BYekan+ Bold.ttf in Resources */,
 				59833FDD24052F4500D131BF /* BYekan+.ttf in Resources */,
 				5921F422240183EA00739020 /* LaunchScreen.storyboard in Resources */,
@@ -846,7 +850,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.Luncheon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -864,7 +868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.pouyeshsystem.luncheon.Luncheon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
