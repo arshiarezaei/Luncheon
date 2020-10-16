@@ -58,6 +58,32 @@ class OrderPaymentViewController: UIViewController {
     
     private let invoiceTVC = InvoiceTableViewController()
     
+    private let selecetBank:SelectBank = {
+        var sbv = SelectBank(frame: .zero)
+        sbv.translatesAutoresizingMaskIntoConstraints = false
+        sbv.backgroundColor = .red
+        return sbv
+    }()
+    
+    private let priviousSate:UIButton = {
+        let psb = UIButton(frame: .zero)
+        psb.translatesAutoresizingMaskIntoConstraints = false
+        psb.layer.cornerRadius = 16
+        psb.layer.borderWidth = 2
+        psb.layer.borderColor = UIColor.luncehonLogoText.cgColor
+        return psb
+    }()
+    
+    private let pay:UIButton = {
+        let psb = UIButton(frame: .zero)
+        psb.translatesAutoresizingMaskIntoConstraints = false
+        psb.layer.cornerRadius = 16
+        psb.layer.borderWidth = 2
+        psb.layer.borderColor = UIColor.white.cgColor
+        psb.backgroundColor = .luncehonLogoText
+        return psb
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +111,11 @@ class OrderPaymentViewController: UIViewController {
         
         scrollView.addSubview(useDiscountCodeButton)
         setupUseDiscountCodeButtonConstraints()
+        
+        scrollView.addSubview(selecetBank)
+        setupSelectBankConstraints()
+        
+        
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -137,6 +168,15 @@ class OrderPaymentViewController: UIViewController {
             useDiscountCodeButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             useDiscountCodeButton.heightAnchor.constraint(equalToConstant: 36)
             
+        ])
+    }
+    
+    private func setupSelectBankConstraints(){
+        NSLayoutConstraint.activate([
+            selecetBank.topAnchor.constraint(equalTo: useDiscountCodeButton.bottomAnchor, constant: 16),
+            selecetBank.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            selecetBank.widthAnchor.constraint(equalTo: scrollView.widthAnchor,multiplier: 0.9),
+            selecetBank.heightAnchor.constraint(equalToConstant: 100),
         ])
     }
     @objc private func useDiscountCodeButtonTapped(){
