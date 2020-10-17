@@ -61,6 +61,8 @@
 		59BEE95C243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */; };
 		59C276322423872B00B69D22 /* Extention NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C276312423872B00B69D22 /* Extention NSNotificationName.swift */; };
 		59C2763424238AEC00B69D22 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2763324238AEC00B69D22 /* ProfileView.swift */; };
+		59C53703253B02B0000A2139 /* Sample Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53702253B02B0000A2139 /* Sample Notification.swift */; };
+		59C53708253B05E7000A2139 /* Sample OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53707253B05E7000A2139 /* Sample OrderStatusView.swift */; };
 		59D32DE0240A950000DE55B8 /* Extention UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DDF240A950000DE55B8 /* Extention UIFont.swift */; };
 		59D32DE2240ABA5C00DE55B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE1240ABA5C00DE55B8 /* LoginView.swift */; };
 		59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D32DE3240ABB0800DE55B8 /* LoginVC.swift */; };
@@ -171,6 +173,8 @@
 		59BEE95B243A5EFD0060BCAB /* FoodCourtRestaurantsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtRestaurantsCollectionViewCell.swift; sourceTree = "<group>"; };
 		59C276312423872B00B69D22 /* Extention NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention NSNotificationName.swift"; sourceTree = "<group>"; };
 		59C2763324238AEC00B69D22 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		59C53702253B02B0000A2139 /* Sample Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Notification.swift"; sourceTree = "<group>"; };
+		59C53707253B05E7000A2139 /* Sample OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample OrderStatusView.swift"; sourceTree = "<group>"; };
 		59D32DDF240A950000DE55B8 /* Extention UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention UIFont.swift"; sourceTree = "<group>"; };
 		59D32DE1240ABA5C00DE55B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		59D32DE3240ABB0800DE55B8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -436,6 +440,8 @@
 				596D8F1A253865DF006B1AEB /* Sample Invoice.swift */,
 				59D46E4D25388128008E44EC /* Sample Network.swift */,
 				59E5E6682539E5FC00F16230 /* Sample Order.swift */,
+				59C53702253B02B0000A2139 /* Sample Notification.swift */,
+				59C53707253B05E7000A2139 /* Sample OrderStatusView.swift */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				59D431272441DCBC00388FE2 /* FCRMenuTitleCV.swift in Sources */,
 				59A0AD11252D639E0094F130 /* FoodTrayTableView.swift in Sources */,
 				596D8F1B253865DF006B1AEB /* Sample Invoice.swift in Sources */,
+				59C53703253B02B0000A2139 /* Sample Notification.swift in Sources */,
 				59E3FD4B251B3EF60012584B /* InvoiceTableViewController.swift in Sources */,
 				59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
@@ -641,6 +648,7 @@
 				59021A67241167CB00F633E2 /* SignUpVC.swift in Sources */,
 				5925A4CF2423BE3600130990 /* NameAndPicView.swift in Sources */,
 				59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */,
+				59C53708253B05E7000A2139 /* Sample OrderStatusView.swift in Sources */,
 				59788113241298EF008A694E /* EnterMobileNumberView.swift in Sources */,
 				59951B6324086861007CE646 /* ProfileViewController.swift in Sources */,
 				59A0AD16252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift in Sources */,

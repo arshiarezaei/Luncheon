@@ -59,6 +59,9 @@ class FollowUpVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(removeBlurEffectView), name: .userLoggedIn, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeBlurEffectView), name: .userProfileRecevied, object: nil)
         
+  
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

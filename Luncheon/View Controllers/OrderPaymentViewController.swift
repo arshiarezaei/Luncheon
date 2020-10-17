@@ -224,6 +224,7 @@ class OrderPaymentViewController: UIViewController {
     @objc private func payButtonTapped(){
         debugPrint("payButtonTapped")
         SampleOrder.cordinateEventForAsampleOrder()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func useDiscountCodeButtonTapped(){

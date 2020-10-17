@@ -16,7 +16,7 @@ struct SampleUser {
     static private var credit:Int? = 12345
     static private var password:String? = "1234"
     static private var code:Int = 0
-    static public var phone:String?
+    static public var phone:String? = "09213975282"
     static var getCode:Int {
         get{
             return code

@@ -44,6 +44,9 @@ class TimeToCookView: UIView {
         self.addSubview(timerValue)
         setupTimerValue()
         
+        //MARK: prototype
+        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: .orderConfirmed, object: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -63,8 +66,9 @@ class TimeToCookView: UIView {
         ])
     }
     
-    func startTimer(value:Int) {
-        self.runCount = value
+    @objc private func startTimer() {
+        // MARK: prototype
+        self.runCount = 15
         timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startTime), userInfo: nil, repeats: true)
     }
     

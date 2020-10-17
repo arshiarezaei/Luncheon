@@ -152,7 +152,7 @@ class FoodCVCell: UICollectionViewCell {
         foodPriceAfterDiscountLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 4),
         foodPriceAfterDiscountLabel.safeAreaLayoutGuide.heightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.heightAnchor,multiplier: 0.055, constant: 15),
     ]
-    var parentViewController: UIViewController? {
+    private var parentViewController: UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
             parentResponder = parentResponder?.next
@@ -205,28 +205,6 @@ class FoodCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
-        let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
-        self.foodNameLabel.text = foodName
-        self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
-        self.foodDescriptionLabel.text = foodDescription
-        self.foodImage.image = foodImage
-        self.discountAmount = discountAmount
-        self.foodID = foodId
-        
-        if discountAmount != 0 {
-            let fp = foodPrice - discountAmount
-            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: fp)
-            self.foodPriceAfterDiscountLabel.text = fpadInPersianNumberFormat + "ت"
-            self.foodPriceLabel.text?.removeLast()
-            let attributedString = NSMutableAttributedString(string: foodPriceInPersinaNumberFormate)
-            attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
-            foodPriceLabel.font = UIFont(name: "BYekan+", size:11)
-            self.foodPriceLabel.attributedText = attributedString
-        }
-        foodRateView.setRateNumber(rate: foodRate)
-        
-    }
     
     private func setupFoodRateView() {
         NSLayoutConstraint.activate([
@@ -344,4 +322,26 @@ class FoodCVCell: UICollectionViewCell {
     //        debugPrint(SampleFoodTray.OrderPrice)
     //        debugPrint("-----*")
     //    }
+    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
+        let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
+        self.foodNameLabel.text = foodName
+        self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
+        self.foodDescriptionLabel.text = foodDescription
+        self.foodImage.image = foodImage
+        self.discountAmount = discountAmount
+        self.foodID = foodId
+        
+        if discountAmount != 0 {
+            let fp = foodPrice - discountAmount
+            let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: fp)
+            self.foodPriceAfterDiscountLabel.text = fpadInPersianNumberFormat + "ت"
+            self.foodPriceLabel.text?.removeLast()
+            let attributedString = NSMutableAttributedString(string: foodPriceInPersinaNumberFormate)
+            attributedString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: attributedString.length))
+            foodPriceLabel.font = UIFont(name: "BYekan+", size:11)
+            self.foodPriceLabel.attributedText = attributedString
+        }
+        foodRateView.setRateNumber(rate: foodRate)
+        
+    }
 }

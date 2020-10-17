@@ -109,6 +109,11 @@ class OrderStatusView: UIView {
         self.addSubview(orderIsReadyLabel)
         setupOrderIsReadyLabel()
         
+        // MARK: prototype
+        NotificationCenter.default.addObserver(self, selector: #selector(changeSateToOrderConfirmed), name: .orderConfirmed, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeSateToOrderIsCocking), name: .orderIsCooking, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeSateToOrderIsReady), name: .OrderIsReady, object: nil)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -179,5 +184,23 @@ class OrderStatusView: UIView {
             orderIsCockingImage.tintColor = .gray
             orderIsReadyImage.tintColor = .luncehonLogoText
         }
+    }
+    
+    
+    //MARK: protptype
+    @objc func changeSateToOrderConfirmed(){
+        debugPrint("orderSatuts changeSateToOrderConfirmed")
+        orderConfirmedImage.tintColor = .luncehonLogoText
+        orderConfirmedLabel.textColor = .luncehonLogoText
+    }
+    @objc func changeSateToOrderIsCocking(){
+        debugPrint("orderSatuts changeSateToOrderIsCocking")
+        orderIsCockingImage.tintColor = .luncehonLogoText
+        orderIsCockingLabel.textColor = .luncehonLogoText
+    }
+    @objc func changeSateToOrderIsReady(){
+        debugPrint("orderSatuts changeSateToOrderIsReady")
+        orderIsReadyImage.tintColor = .luncehonLogoText
+        orderIsReadyLabel.textColor = .luncehonLogoText
     }
 }

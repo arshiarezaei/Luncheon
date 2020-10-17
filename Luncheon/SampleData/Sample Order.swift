@@ -31,17 +31,24 @@ struct SampleOrder {
     }
     static func cordinateEventForAsampleOrder(){
         SampleNetwork.orderPaid()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)){
             SampleNetwork.orderRegistered()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15) ){
+            debugPrint("sampleOrder orderConfirmed")
             SampleNetwork.orderConfirmed()
+            NotificationCenter.default.post(name: .orderConfirmed, object: nil)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20) ){
+            debugPrint("sampleOrder orderIsCooking")
             SampleNetwork.orderIsCooking()
+            NotificationCenter.default.post(name: .orderIsCooking, object: nil)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(30) ){
+            debugPrint("sampleOrder orderIsReady")
             SampleNetwork.orderIsReady()
+            NotificationCenter.default.post(name: .OrderIsReady, object: nil)
         }
     }
 }
