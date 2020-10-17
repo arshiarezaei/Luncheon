@@ -29,4 +29,19 @@ struct SampleOrder {
         self.OrderNo = Int.random(in: 10000..<100000)
         return OrderNo
     }
+    static func cordinateEventForAsampleOrder(){
+        SampleNetwork.orderPaid()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+            SampleNetwork.orderRegistered()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+            SampleNetwork.orderConfirmed()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+            SampleNetwork.orderIsCooking()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ){
+            SampleNetwork.orderIsReady()
+        }
+    }
 }
