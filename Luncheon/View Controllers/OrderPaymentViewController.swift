@@ -27,6 +27,7 @@ class OrderPaymentViewController: UIViewController {
         dtf.textAlignment = .center
         dtf.clearButtonMode = .always
         dtf.returnKeyType = .done
+        dtf.backgroundColor = .white
         return dtf
     }()
     
@@ -43,6 +44,7 @@ class OrderPaymentViewController: UIViewController {
         udcb.setAttributedTitle(title, for: .normal)
         udcb.isEnabled = false
         udcb.alpha = 0.4
+        udcb.backgroundColor = .white
         return udcb
     }()
     
