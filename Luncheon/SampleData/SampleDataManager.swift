@@ -12,7 +12,7 @@ import  UIKit
 struct SampleRestaurantManager {
     public static let restaurats : [SampleRestaurant] = [
         SampleRestaurant(id: 1, persianName: "مک دونالد", rate: 4.8, logo: UIImage(named: "Mc donald")!, menus:mcdonaldMenu,food: mcDonalFood),
-        SampleRestaurant(id: 2, persianName: "ساب وی", rate: 4.8, logo: UIImage(named: "subway")!, menus:subwayMenu,food: []),
+        SampleRestaurant(id: 2, persianName: "ساب وی", rate: 4.8, logo: UIImage(named: "subway")!, menus:subwayMenu,food:SubwayFood),
         SampleRestaurant(id: 3, persianName: "پیتزا هات", rate: 4.8, logo: UIImage(named: "pizza hut")!, menus:pizzahutMenu,food: []),
         SampleRestaurant(id: 4, persianName: "استار باکس", rate: 4.8, logo: UIImage(named: "starbucks")!, menus: [],food: []),
         SampleRestaurant(id: 5, persianName: "برگر کینگ", rate: 4.0, logo: UIImage(named: "BK")!, menus: [],food: []),
