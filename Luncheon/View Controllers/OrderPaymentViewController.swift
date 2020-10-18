@@ -61,7 +61,8 @@ class OrderPaymentViewController: UIViewController {
     private let selecetBank:SelectBank = {
         var sbv = SelectBank(frame: .zero)
         sbv.translatesAutoresizingMaskIntoConstraints = false
-        sbv.backgroundColor = .green
+        sbv.backgroundColor = .white
+        sbv.layer.cornerRadius = 16
         return sbv
     }()
     
