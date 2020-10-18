@@ -143,7 +143,7 @@ class FoodCourtVC: UIViewController {
         //        debugPrint("changeSeelectedRestaurant \(index)")
         currentSelectedItem = (index,0)
         fcrMenutitles.reloadData()
-        fcrMenutitles.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
+        fcrMenutitles.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .init())
         food.reloadData()
     }
     func changeSeelectedMenu(index: Int) {
