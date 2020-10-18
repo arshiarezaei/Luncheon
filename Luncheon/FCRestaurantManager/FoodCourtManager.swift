@@ -50,11 +50,11 @@ struct FoodCourtManager {
     }
     
     static func getRestaurantsOfAFC() {
-        Network.getRestaurantsOfaFoodCourt(){ json in
-            debugPrint("FoodCourtManager")
-//            jsonToFCRestaurantsArray(josn: json!)
-            
-        }
+//        Network.getRestaurantsOfaFoodCourt(){ json in
+//            debugPrint("FoodCourtManager")
+////            jsonToFCRestaurantsArray(josn: json!)
+//            
+//        }
     }
     
     static func getARestaurant(index:Int)->FCRestaurant?{

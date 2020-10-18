@@ -66,7 +66,7 @@ class DropDownMenu: UIView {
         self.addSubview(items)
         adddItemTableView()
 //    MARK : temporary
-        items.index = index
+        items.index = 0
         items.reloadData()
     }
     

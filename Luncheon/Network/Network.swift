@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 struct Network {
-    
+  
     static private let baseURL:URL = URL(string: "http://81.31.168.254:8080")!
     static private let requestSMSURL:URL = baseURL.appendingPathComponent("auth/users/sms")
     static private let APIs:URL = baseURL.appendingPathComponent("api/api/v1/")

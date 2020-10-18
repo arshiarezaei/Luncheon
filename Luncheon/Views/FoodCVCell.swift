@@ -289,7 +289,7 @@ class FoodCVCell: UICollectionViewCell {
         //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
         //        debugPrint("r \(resId)    m \(menuId)  f \(self.foodID) ")
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-        //        testFoodTray()
+        testFoodTray()
         //        debugPrint(SampleFoodTray.foodTray)
     }
     
@@ -313,15 +313,15 @@ class FoodCVCell: UICollectionViewCell {
         let resId = (parentViewController as! FoodCourtVC).currentRestaurant
         //        let menuId = (parentViewController as! FoodCourtVC).currentMenu
         SampleFoodTray.updateFoodTray(resId: resId, foodId: foodID, count: orderedCount)
-        //        testFoodTray()
+        testFoodTray()
         //        debugPrint(SampleFoodTray.foodTray)
     }
-    //    private func testFoodTray(){
-    //        debugPrint("*-----")
-    //        debugPrint(SampleFoodTray.foodTray)
-    //        debugPrint(SampleFoodTray.OrderPrice)
-    //        debugPrint("-----*")
-    //    }
+    private func testFoodTray(){
+        debugPrint("*-----")
+        debugPrint(SampleFoodTray.foodTray)
+        debugPrint(SampleFoodTray.OrderPrice)
+        debugPrint("-----*")
+    }
     func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
         let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
         self.foodNameLabel.text = foodName

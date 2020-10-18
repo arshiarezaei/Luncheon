@@ -69,15 +69,15 @@ class FoodTrayViewController: UIViewController {
         self.view.addSubview(foodTrayItem[0])
         seutpFoodTrayItem()
 
-        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
-        self.view.addSubview(foodTrayItem[1])
-        
-        NSLayoutConstraint.activate([
-            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
-            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
-            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
-            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
-        ])
+//        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
+//        self.view.addSubview(foodTrayItem[1])
+//        
+//        NSLayoutConstraint.activate([
+//            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
+//            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
+//            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+//            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
+//        ])
         
         self.view.addSubview(payOrderButton)
         setupPayOrderButtonConstraints()
