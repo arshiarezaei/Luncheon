@@ -13,7 +13,7 @@ import UIKit
 extension FoodTrayTableView:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        debugPrint("FoodTrayTableViewDataSourcee numberOfRowsInSection")
+        debugPrint("FoodTrayTableViewDataSourcee numberOfRowsInSection \(index)")
         return SampleFoodTray.foodTray[index]!.count
 //        return 5
     }

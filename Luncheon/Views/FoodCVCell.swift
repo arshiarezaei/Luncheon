@@ -322,7 +322,7 @@ class FoodCVCell: UICollectionViewCell {
         debugPrint(SampleFoodTray.OrderPrice)
         debugPrint("-----*")
     }
-    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int) {
+    func setupCell(foodName:String , foodDescription:String,foodPrice:Int,discountAmount:Int,foodImage:UIImage=UIImage(named: "food")!,foodRate:Double,foodId:Int,count:Int) {
         let foodPriceInPersinaNumberFormate :String = Utilities.convertToPersianNumber(number: Double(foodPrice)) + "ت"
         self.foodNameLabel.text = foodName
         self.foodPriceLabel.text = foodPriceInPersinaNumberFormate
@@ -330,7 +330,34 @@ class FoodCVCell: UICollectionViewCell {
         self.foodImage.image = foodImage
         self.discountAmount = discountAmount
         self.foodID = foodId
-        
+        foodRateView.setRateNumber(rate: foodRate)
+        self.orderedCount = count
+        // MARK: test
+        if count == 0 {
+        self.orderedCount = 0
+        NSLayoutConstraint.deactivate(plusButtonLayoutAfterbeingTapped)
+        NSLayoutConstraint.activate(plusButtonInitialLayoutSetup)
+        minusButton.removeFromSuperview()
+//        self.addSubview(minusButton)
+//        setupMinusButton()
+        orderedCountLabel.removeFromSuperview()
+        }else{
+            NSLayoutConstraint.deactivate(plusButtonInitialLayoutSetup)
+            minusButton.removeFromSuperview()
+            orderedCountLabel.removeFromSuperview()
+            self.addSubview(orderedCountLabel)
+            self.addSubview(minusButton)
+            setupMinusButton()
+            NSLayoutConstraint.activate(minusButtonInitialLayoutSetup)
+            NSLayoutConstraint.activate(orderedCountLabelLayout)
+            NSLayoutConstraint.activate(plusButtonLayoutAfterbeingTapped)
+            NSLayoutConstraint.deactivate(foodPriceAfterDiscountInitialLayout)
+            NSLayoutConstraint.activate(foodPriceAfterDiscountLabelLayoutAfterTappingPlusButton)
+            orderedCountLabel.text = Utilities.convertToPersianNumber(number: count)
+            if discountAmount != 0{ foodPriceLabel.removeFromSuperview()}
+            
+        }
+        //
         if discountAmount != 0 {
             let fp = foodPrice - discountAmount
             let fpadInPersianNumberFormat:String = Utilities.convertToPersianNumber(number: fp)
@@ -341,7 +368,7 @@ class FoodCVCell: UICollectionViewCell {
             foodPriceLabel.font = UIFont(name: "BYekan+", size:11)
             self.foodPriceLabel.attributedText = attributedString
         }
-        foodRateView.setRateNumber(rate: foodRate)
+        
         
     }
 }

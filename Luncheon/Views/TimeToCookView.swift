@@ -74,13 +74,17 @@ class TimeToCookView: UIView {
     
     @objc private func startTime() {
         self.runCount -= 1
-        DispatchQueue.main.async {
-            let houres = self.runCount / 3600
-            let minutes = (self.runCount % 3600) / 60
-            let sec = (self.runCount % 3600) % 60
-            //                debugPrint(String(format: "%02d:%02d:%02d",houres, minutes, sec))
-            self.timerValue.text = String(format: "%2d:%2d:%2d",houres, minutes, sec)
-            
+        if runCount >= 0 {
+            DispatchQueue.main.async {
+                let houres = self.runCount / 3600
+                let minutes = (self.runCount % 3600) / 60
+                let sec = (self.runCount % 3600) % 60
+                //                debugPrint(String(format: "%02d:%02d:%02d",houres, minutes, sec))
+                self.timerValue.text = String(format: "%2d:%2d:%2d",houres, minutes, sec)
+                
+            }
+        }else{
+            timer = nil
         }
     }
     

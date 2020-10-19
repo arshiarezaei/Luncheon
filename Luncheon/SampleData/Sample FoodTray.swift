@@ -38,7 +38,7 @@ struct SampleFoodTray {
             return 0
         }
     }
-    
+     
     static func updateFoodTray(resId:Int,foodId:Int,count:Int) {
 //        debugPrint("****")
 //        debugPrint(foodTray)
@@ -72,4 +72,13 @@ struct SampleFoodTray {
         //        debugPrint("----")
     }
     
+    static func  getNumberOfFoods(resID:Int,foodId:Int) -> Int {
+        guard let foods = foodTray[resID] else {return 0}
+        for (fId,count) in foods {
+            if fId == foodId {
+                return count
+            }
+        }
+        return 0
+    }
 }

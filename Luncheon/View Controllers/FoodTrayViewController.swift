@@ -65,9 +65,16 @@ class FoodTrayViewController: UIViewController {
         setupFoodTrayLabel()
         
         // MARK: test purpose
-        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:0))
+        let k = Array(SampleFoodTray.foodTray.keys).sorted()
+        for restaurants in k {
+            foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:restaurants))
+        }
         self.view.addSubview(foodTrayItem[0])
         seutpFoodTrayItem()
+        
+        
+//        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:k[0]))
+
 
 //        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
 //        self.view.addSubview(foodTrayItem[1])
