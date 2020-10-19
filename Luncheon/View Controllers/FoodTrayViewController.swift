@@ -9,9 +9,9 @@
 import UIKit
 
 class FoodTrayViewController: UIViewController {
-
+    
     private let closeButton:UIButton = {
-       var cb =  UIButton(frame: .zero)
+        var cb =  UIButton(frame: .zero)
         cb.translatesAutoresizingMaskIntoConstraints = false
         cb.setImage(UIImage(named: "close"), for: .normal)
         cb.addTarget(self, action: #selector(closeButtonTapped(_:)), for: .touchUpInside)
@@ -33,7 +33,7 @@ class FoodTrayViewController: UIViewController {
         ftb.text = "سینی غذا"
         return ftb
     }()
-
+    
     private var foodTrayItem = [DropDownMenu]()
     private var payOrderButton:UIButton = {
         var pob = UIButton(frame: .zero)
@@ -55,7 +55,7 @@ class FoodTrayViewController: UIViewController {
         // close button
         self.view.addSubview(closeButton)
         setupCloseButton()
-
+        
         // luncheon logo
         self.view.addSubview(luncheonLogo)
         setupLuncheonLogo()
@@ -66,25 +66,25 @@ class FoodTrayViewController: UIViewController {
         
         // MARK: test purpose
         let k = Array(SampleFoodTray.foodTray.keys).sorted()
-        for restaurants in k {
+        for (restaurants,index) in k.enumerated() {
             foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:restaurants))
+            self.view.addSubview(foodTrayItem[index])
+            seutpFoodTrayItem(index: index)
         }
-        self.view.addSubview(foodTrayItem[0])
-        seutpFoodTrayItem()
+
+        
+        //        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:k[0]))
         
         
-//        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران",index:k[0]))
-
-
-//        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
-//        self.view.addSubview(foodTrayItem[1])
-//        
-//        NSLayoutConstraint.activate([
-//            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
-//            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
-//            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
-//            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
-//        ])
+        //        foodTrayItem.append(DropDownMenu(frame: .zero,title:"اسم رستوران 2",index:1))
+        //        self.view.addSubview(foodTrayItem[1])
+        //
+        //        NSLayoutConstraint.activate([
+        //            foodTrayItem[1].topAnchor.constraint(equalTo: foodTrayItem[0].bottomA,constant: 32),
+        //            foodTrayItem[1].centerXAnchor.constraint(equalTo: foodTrayItem[0].centerXAnchor),
+        //            foodTrayItem[1].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+        //            foodTrayItem[1].heightAnchor.constraint(equalToConstant: 60),
+        //        ])
         
         self.view.addSubview(payOrderButton)
         setupPayOrderButtonConstraints()
@@ -113,13 +113,22 @@ class FoodTrayViewController: UIViewController {
         ])
     }
     
-    private func seutpFoodTrayItem(){
-        NSLayoutConstraint.activate([
-            foodTrayItem[0].topAnchor.constraint(equalTo: self.view.topAnchor,constant: 120),
-            foodTrayItem[0].centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            foodTrayItem[0].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
-            foodTrayItem[0].heightAnchor.constraint(greaterThanOrEqualToConstant: 65),
-        ])
+    private func seutpFoodTrayItem(index:Int){
+        if index == 0 {
+            NSLayoutConstraint.activate([
+                foodTrayItem[0].topAnchor.constraint(equalTo: self.view.topAnchor,constant: 120),
+                foodTrayItem[0].centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                foodTrayItem[0].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+                foodTrayItem[0].heightAnchor.constraint(greaterThanOrEqualToConstant: 65),
+            ])
+        }else{
+            NSLayoutConstraint.activate([
+                foodTrayItem[index].topAnchor.constraint(equalTo: foodTrayItem[index-1].bottomA,constant: 32),
+                foodTrayItem[index].centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                foodTrayItem[index].widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.8),
+                foodTrayItem[index].heightAnchor.constraint(greaterThanOrEqualToConstant: 65),
+            ])
+        }
     }
     @objc private func closeButtonTapped(_ sender:UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -144,5 +153,5 @@ class FoodTrayViewController: UIViewController {
     }
     
     
-
+    
 }
