@@ -83,9 +83,11 @@ class FollowUpVC: UIViewController {
             blurEffectView.contentView.addSubview(loginALert)
             setupLoginAlert()
         }*/
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
-
+        invoiceTVC.tableView.reloadData()
         //        timeToCookView.startTimer(value: 13602)
     }
     private func setupNavBar() {

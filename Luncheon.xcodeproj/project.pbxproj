@@ -48,6 +48,7 @@
 		598CBC23240EE7D600D25405 /* Extention LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598CBC22240EE7D600D25405 /* Extention LoginView.swift */; };
 		59951B6324086861007CE646 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B6224086861007CE646 /* ProfileViewController.swift */; };
 		59951B662408875E007CE646 /* LoginOrSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59951B652408875E007CE646 /* LoginOrSignUpView.swift */; };
+		59986328253E4A2D00821E3C /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59986327253E4A2D00821E3C /* FoodDetailViewController.swift */; };
 		599C3BF12529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599C3BF02529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift */; };
 		59A0AD11252D639E0094F130 /* FoodTrayTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0AD10252D639E0094F130 /* FoodTrayTableView.swift */; };
 		59A0AD16252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */; };
@@ -160,6 +161,7 @@
 		598CBC22240EE7D600D25405 /* Extention LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention LoginView.swift"; sourceTree = "<group>"; };
 		59951B6224086861007CE646 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59951B652408875E007CE646 /* LoginOrSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrSignUpView.swift; sourceTree = "<group>"; };
+		59986327253E4A2D00821E3C /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
 		599C3BF02529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodCourtRestaurantsCVDelegate.swift"; sourceTree = "<group>"; };
 		59A0AD10252D639E0094F130 /* FoodTrayTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrayTableView.swift; sourceTree = "<group>"; };
 		59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodTrayTableViewDataSource.swift"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				592CC3DF252BA8350069F72B /* FoodTrayViewController.swift */,
 				5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */,
 				593AAC2F2532201700626265 /* OrderPaymentViewController.swift */,
+				59986327253E4A2D00821E3C /* FoodDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
 				593AAC3525322A6200626265 /* Sample User.swift in Sources */,
 				59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */,
+				59986328253E4A2D00821E3C /* FoodDetailViewController.swift in Sources */,
 				59C2763424238AEC00B69D22 /* ProfileView.swift in Sources */,
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
 				59E5E6692539E5FC00F16230 /* Sample Order.swift in Sources */,

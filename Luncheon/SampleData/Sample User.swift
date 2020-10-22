@@ -10,10 +10,10 @@ import Foundation
 
 struct SampleUser {
     static private var isLoggedIn:Bool = false
-    static private var username:String? = "aaa"
+    static private var username:String? = "arshiyarezaie@gmail.com"
     static private var name:String? =  "ارشیا"
     static private var lastName:String? = "رضایی"
-    static private var credit:Int? = 12345
+    static private var credit:Int? = 0
     static private var password:String? = "1234"
     static private var code:Int = 0
     static public var phone:String? = "09213975282"
