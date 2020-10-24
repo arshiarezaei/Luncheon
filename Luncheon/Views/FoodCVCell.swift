@@ -371,4 +371,10 @@ class FoodCVCell: UICollectionViewCell {
         
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        debugPrint("touch FoodCVCell")
+        let foodDetailVC = FoodDetailViewController()
+        foodDetailVC.view.backgroundColor = .white
+        self.parentViewController?.showDetailViewController(foodDetailVC, sender: nil)
+    }
 }

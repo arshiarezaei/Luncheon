@@ -54,6 +54,7 @@
 		59A0AD16252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */; };
 		59A0AD2F252DA8410094F130 /* Sample FoodTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0AD2E252DA8410094F130 /* Sample FoodTray.swift */; };
 		59A3066D2413FD870088E463 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A3066C2413FD870088E463 /* Utilities.swift */; };
+		59A780062541F6F200C8F4B8 /* FoodIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A780052541F6F200C8F4B8 /* FoodIngredients.swift */; };
 		59AC26BD243E28480025984E /* FoodCourtManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC26BC243E28480025984E /* FoodCourtManager.swift */; };
 		59BC42EF240978AF00787A4F /* UserStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42ED240978AE00787A4F /* UserStates.swift */; };
 		59BC42F0240978AF00787A4F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BC42EE240978AE00787A4F /* UserProfile.swift */; };
@@ -167,6 +168,7 @@
 		59A0AD15252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention FoodTrayTableViewDataSource.swift"; sourceTree = "<group>"; };
 		59A0AD2E252DA8410094F130 /* Sample FoodTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample FoodTray.swift"; sourceTree = "<group>"; };
 		59A3066C2413FD870088E463 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		59A780052541F6F200C8F4B8 /* FoodIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIngredients.swift; sourceTree = "<group>"; };
 		59AC26BC243E28480025984E /* FoodCourtManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourtManager.swift; sourceTree = "<group>"; };
 		59BC42ED240978AE00787A4F /* UserStates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStates.swift; sourceTree = "<group>"; };
 		59BC42EE240978AE00787A4F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				59FA2F992531D8FF00662E00 /* FoodTrayTableViewCell.swift */,
 				593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */,
 				5939E097253745440073BFC5 /* SelectBank.swift */,
+				59A780052541F6F200C8F4B8 /* FoodIngredients.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				59A0AD16252D63CC0094F130 /* Extention FoodTrayTableViewDataSource.swift in Sources */,
 				592CC3E0252BA8350069F72B /* FoodTrayViewController.swift in Sources */,
 				5921F413240183E700739020 /* AppDelegate.swift in Sources */,
+				59A780062541F6F200C8F4B8 /* FoodIngredients.swift in Sources */,
 				59430548252CDA0F0032364F /* DropDownMenu.swift in Sources */,
 				5925A4D12423E9F800130990 /* CreditView.swift in Sources */,
 				59BEE95A243A5C2F0060BCAB /* Extention FoodCourtRestaurantsCV.swift in Sources */,
