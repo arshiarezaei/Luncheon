@@ -49,11 +49,11 @@ class FoodIngredients: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(title)
-        NSLayoutConstraint.activate(titleconstraints)
-        
-        self.addSubview(ingredients)
-        NSLayoutConstraint.activate(ingredientsConstraints)
+//        self.addSubview(title)
+//        NSLayoutConstraint.activate(titleconstraints)
+//        
+//        self.addSubview(ingredients)
+//        NSLayoutConstraint.activate(ingredientsConstraints)
         
     }
     

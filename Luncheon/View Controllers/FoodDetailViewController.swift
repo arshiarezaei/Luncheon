@@ -49,6 +49,16 @@ class FoodDetailViewController: UIViewController {
         return r
     }()
     
+    private let ingredients:FoodIngredients = {
+        var i = FoodIngredients(frame: .zero)
+        i.translatesAutoresizingMaskIntoConstraints = false
+        i.backgroundColor = .white
+        i.layer.cornerRadius = 20
+        i.layer.borderWidth = 2
+        i.layer.borderColor = UIColor.luncheonGray.cgColor
+        return i
+    }()
+    
     private lazy var topBarConstraints: [NSLayoutConstraint] = [
         topBar.topAnchor.constraint(equalTo: self.view.topAnchor),
         topBar.widthAnchor.constraint(equalTo: self.view.widthAnchor),
@@ -77,9 +87,19 @@ class FoodDetailViewController: UIViewController {
         rate.heightAnchor.constraint(equalToConstant: 24)
     ]
     
+    private lazy var ingredientsConstraints:[NSLayoutConstraint] = [
+        ingredients.topAnchor.constraint(equalTo: menuBar.bottomAnchor, constant: 32),
+        ingredients.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        ingredients.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
+        ingredients.heightAnchor.constraint(equalToConstant: 80)
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //setup self.view
+        self.view.backgroundColor = .whiteBackgroud
+        // setup other subviews
         self.view.addSubview(topBar)
         NSLayoutConstraint.activate(topBarConstraints)
         
@@ -93,16 +113,37 @@ class FoodDetailViewController: UIViewController {
         self.view.addSubview(menuBar)
         NSLayoutConstraint.activate(menuBarConstraints)
         
+        menuBar.collectionView(self.menuBar, didSelectItemAt: IndexPath(row: 0, section: 0))
+    
+    }
+    
+    func setupFoodIngredientsConstraints()  {
+        debugPrint("setupFoodIngredientsConstraints")
         
-        
-        
+        self.view.addSubview(ingredients)
+        NSLayoutConstraint.activate(ingredientsConstraints)
         
     }
     
-    
+    func setupFoodCommentsConstraints() {
+        debugPrint("setupsetupFoodCommentsConstraints")
+        
+        ingredients.removeFromSuperview()
+    }
     
 }
 fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    private var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder?.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame,collectionViewLayout: layout)
@@ -116,7 +157,7 @@ fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollection
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    fileprivate func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuBarCell", for: indexPath) as! MenuBarCell
         cell.backgroundColor = .whiteBackgroud
         if indexPath.item == 0 {
@@ -126,15 +167,18 @@ fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollection
         }
         return cell
     }
-    //    override func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menu", for: indexPath)
-    //        if indexPath.item == 0 {
-    //            cell.backgroundColor = .green
-    //        }else if indexPath.item == 1{
-    //            cell.backgroundColor = .red
-    //        }
-    //        return cell
-    //    }
+    fileprivate func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        debugPrint("MenuBar didselect")
+        switch indexPath.item {
+        case 0:
+            (parentViewController as! FoodDetailViewController).setupFoodIngredientsConstraints()
+        case 1 :
+            (parentViewController as! FoodDetailViewController).setupFoodCommentsConstraints()
+        default:
+            fatalError()
+        }
+        
+    }
 }
 fileprivate class MenuBarCell:UICollectionViewCell {
     
@@ -179,7 +223,7 @@ fileprivate class MenuBarCell:UICollectionViewCell {
     
     private lazy var numberOfCommentsConstraints:[NSLayoutConstraint] = [
         numberOfComments.rightAnchor.constraint(equalTo: label.leftAnchor,constant:-8),
-        numberOfComments.bottomAnchor.constraint(equalTo: self.centerYAnchor),
+        numberOfComments.centerYAnchor.constraint(equalTo: self.centerYAnchor,constant: -3),
         numberOfComments.widthAnchor.constraint(equalToConstant: 24 ),
         numberOfComments.heightAnchor.constraint(equalToConstant: 24),
     ]
