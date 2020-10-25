@@ -95,6 +95,12 @@ class FoodDetailViewController: UIViewController {
         ingredients.heightAnchor.constraint(equalTo: ingredients.height, multiplier: 1.5),
     ]
     
+    private var id:(restaurantId:Int,foodId:Int)! {
+        didSet{
+            self.foodImage.image  = SampleRestaurantManager.restaurats[self.id.restaurantId].food[self.id.foodId].image
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,7 +142,16 @@ class FoodDetailViewController: UIViewController {
         ingredients.removeFromSuperview()
     }
     
+    func  setupIDs(foodId:Int,restaurantID:Int) {
+        id = (restaurantID,foodId)
+        
+    }
 }
+
+
+
+
+
 fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource {
     
     private var parentViewController: UIViewController? {

@@ -16,7 +16,6 @@ class FoodIngredients: UIView {
             return ingredients.heightAnchor
         }
     }
-
     
     private let title:UILabel = {
         var t = UILabel(frame: .zero)

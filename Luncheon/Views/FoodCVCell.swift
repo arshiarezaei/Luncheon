@@ -375,6 +375,8 @@ class FoodCVCell: UICollectionViewCell {
         debugPrint("touch FoodCVCell")
         let foodDetailVC = FoodDetailViewController()
 //        foodDetailVC.view.backgroundColor = .white
+        let r = (parentViewController as! FoodCourtVC).currentRestaurant
+        foodDetailVC.setupIDs(foodId: foodID, restaurantID: r)
         self.parentViewController?.showDetailViewController(foodDetailVC, sender: nil)
     }
 }
