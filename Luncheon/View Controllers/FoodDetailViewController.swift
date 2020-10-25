@@ -91,7 +91,8 @@ class FoodDetailViewController: UIViewController {
         ingredients.topAnchor.constraint(equalTo: menuBar.bottomAnchor, constant: 32),
         ingredients.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ingredients.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8),
-        ingredients.heightAnchor.constraint(equalToConstant: 80)
+//        ingredients.heightAnchor.constraint(greaterThanOrEqualToConstant: 90),
+        ingredients.heightAnchor.constraint(equalTo: ingredients.height, multiplier: 1.5),
     ]
     
     
@@ -113,13 +114,17 @@ class FoodDetailViewController: UIViewController {
         self.view.addSubview(menuBar)
         NSLayoutConstraint.activate(menuBarConstraints)
         
-        menuBar.collectionView(self.menuBar, didSelectItemAt: IndexPath(row: 0, section: 0))
-    
+
+        menuBar.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .init())
+        
+//        ingredients.heightAnchor.constraint(equalTo: ingredients.height, multiplier: 1.5).isActive = true
+        
+        
     }
     
     func setupFoodIngredientsConstraints()  {
         debugPrint("setupFoodIngredientsConstraints")
-        
+        ingredients.setIngredients(text: ["ریب استیک یکی از محبوب ترین استیک ها است این استیک لذیذ از گوشت دنده گاو تهیه میشود"])
         self.view.addSubview(ingredients)
         NSLayoutConstraint.activate(ingredientsConstraints)
         
@@ -167,8 +172,9 @@ fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollection
         }
         return cell
     }
+    
     fileprivate func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("MenuBar didselect")
+//        debugPrint("MenuBar didselect")
         switch indexPath.item {
         case 0:
             (parentViewController as! FoodDetailViewController).setupFoodIngredientsConstraints()
@@ -177,9 +183,23 @@ fileprivate class MenuBar:UICollectionView,UICollectionViewDelegate,UICollection
         default:
             fatalError()
         }
-        
+
+    }
+    
+    override func selectItem(at indexPath: IndexPath?, animated: Bool, scrollPosition: UICollectionView.ScrollPosition) {
+        super.selectItem(at: indexPath, animated: animated, scrollPosition: scrollPosition)
+        switch indexPath!.item {
+        case 0:
+            (parentViewController as! FoodDetailViewController).setupFoodIngredientsConstraints()
+        case 1 :
+            (parentViewController as! FoodDetailViewController).setupFoodCommentsConstraints()
+        default:
+            fatalError()
+        }
     }
 }
+
+
 fileprivate class MenuBarCell:UICollectionViewCell {
     
     override var isSelected: Bool {
@@ -205,6 +225,7 @@ fileprivate class MenuBarCell:UICollectionViewCell {
         label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
     ]
+    
     private let numberOfComments:UILabel = {
         let l = UILabel(frame: .zero)
         l.translatesAutoresizingMaskIntoConstraints = false
@@ -232,6 +253,8 @@ fileprivate class MenuBarCell:UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.backgroundColor = .whiteBackgroud
+        
         self.addSubview(label)
         NSLayoutConstraint.activate(labelConstraints)
     }
@@ -239,6 +262,7 @@ fileprivate class MenuBarCell:UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setupContent(labelText:String,numberOfComments:Int!)  {
         label.text = labelText
         guard let  noc = numberOfComments else { return }
