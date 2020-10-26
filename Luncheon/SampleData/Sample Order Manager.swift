@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SampleOrder {
+struct SampleOrderManager {
     public static var orderInProcessing:Bool = false {
         didSet{
         }

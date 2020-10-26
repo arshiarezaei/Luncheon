@@ -97,7 +97,9 @@ class FoodDetailViewController: UIViewController {
     
     private var id:(restaurantId:Int,foodId:Int)! {
         didSet{
-            self.foodImage.image  = SampleRestaurantManager.restaurats[self.id.restaurantId].food[self.id.foodId].image
+            let food = SampleRestaurantManager.restaurats[self.id.restaurantId].food[self.id.foodId]
+            self.foodImage.image  = food.image
+            self.rate.setRateNumber(rate: food.rate)
         }
     }
     

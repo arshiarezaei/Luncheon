@@ -16,7 +16,7 @@ struct SampleNetwork {
     static private let userName:String = "09213975282"
     static private let password:String = "613e754"
     static private let from:String = "50001060658364"
-    static private let orderPaidText = "Luncheon, Your order from TestFoodCourt paid successfully. order No: \(SampleOrder.generateOrderNo())"
+    static private let orderPaidText = "Luncheon, Your order from TestFoodCourt paid successfully. order No: \(SampleOrderManager.generateOrderNo())"
     static private let orderRegisteredText = "Luncheon, Your order from TestFoodCourt registered."
     static private let orderConfirmedText = "Luncheon, Your order from TestFoodCourt confirmed."
     static private let orderIsCockingText = "Luncheon, Your order from TestFoodCourt is coocking."
