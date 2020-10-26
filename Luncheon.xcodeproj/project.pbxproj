@@ -10,6 +10,8 @@
 		59021A67241167CB00F633E2 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59021A66241167CB00F633E2 /* SignUpVC.swift */; };
 		5902C00F251682D900562BA9 /* TimeToCookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902C00E251682D900562BA9 /* TimeToCookView.swift */; };
 		5910260F252C85D80093DB5D /* InvoiceItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */; };
+		591B801D2546D2B000886317 /* Sample Order List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B801C2546D2B000886317 /* Sample Order List.swift */; };
+		591B80222546D2BE00886317 /* Sample Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B80212546D2BE00886317 /* Sample Order.swift */; };
 		591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */; };
 		5921F413240183E700739020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F412240183E700739020 /* AppDelegate.swift */; };
 		5921F415240183E700739020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F414240183E700739020 /* SceneDelegate.swift */; };
@@ -120,6 +122,8 @@
 		59021A66241167CB00F633E2 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5902C00E251682D900562BA9 /* TimeToCookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToCookView.swift; sourceTree = "<group>"; };
 		5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemViewController.swift; sourceTree = "<group>"; };
+		591B801C2546D2B000886317 /* Sample Order List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Order List.swift"; sourceTree = "<group>"; };
+		591B80212546D2BE00886317 /* Sample Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Order.swift"; sourceTree = "<group>"; };
 		591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRestaurant.swift; sourceTree = "<group>"; };
 		5921F40F240183E700739020 /* Luncheon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luncheon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5921F412240183E700739020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -448,6 +452,8 @@
 				59E5E6682539E5FC00F16230 /* Sample Order Manager.swift */,
 				59C53702253B02B0000A2139 /* Sample Notification.swift */,
 				59C53707253B05E7000A2139 /* Sample OrderStatusView.swift */,
+				591B801C2546D2B000886317 /* Sample Order List.swift */,
+				591B80212546D2BE00886317 /* Sample Order.swift */,
 			);
 			path = SampleData;
 			sourceTree = "<group>";
@@ -601,12 +607,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591B80222546D2BE00886317 /* Sample Order.swift in Sources */,
 				59833FF02405646D00D131BF /* MainTabBarViewController.swift in Sources */,
 				593AAC3525322A6200626265 /* Sample User.swift in Sources */,
 				59DDE7EE2432647100FA5C0A /* PaymentVC.swift in Sources */,
 				59986328253E4A2D00821E3C /* FoodDetailViewController.swift in Sources */,
 				59C2763424238AEC00B69D22 /* ProfileView.swift in Sources */,
 				59456BEA24068C5B00B9F6C8 /* NavigationController.swift in Sources */,
+				591B801D2546D2B000886317 /* Sample Order List.swift in Sources */,
 				59E5E6692539E5FC00F16230 /* Sample Order Manager.swift in Sources */,
 				59DFBA8D24432BC600D35C37 /* FoodCV.swift in Sources */,
 				59DFBA912443338500D35C37 /* Extention FoodCVDatasource.swift in Sources */,
