@@ -13,6 +13,21 @@ class ProfileView: UIView {
     private let nameAndPicView:NameAndPicView = NameAndPicView(frame: .zero)
     private let creditView : CreditView = CreditView(frame: .zero)
     private let logoutButton:UIButton = UIButton(frame: .zero)
+    // MARK: prototype
+    private let previousOrders:UIButton = {
+        var po = UIButton(frame: .zero)
+        po.translatesAutoresizingMaskIntoConstraints = false
+        po.backgroundColor = .white
+        po.layer.borderWidth = 2
+        po.layer.borderColor = UIColor.luncehonLogoText.cgColor
+        po.layer.cornerRadius = 20
+        let fontAttributes = [NSAttributedString.Key.font: UIFont(name: UIFont.BYekanName, size:20),NSAttributedString.Key.foregroundColor:UIColor.luncehonLogoText]
+        let title = NSAttributedString(string: "سفارشات قبلی", attributes: fontAttributes as [NSAttributedString.Key : Any])
+        po.setAttributedTitle(title, for: .normal)
+        po.addTarget(self, action: #selector(previousOrdersButtonTapped), for: .touchUpInside)
+        return po
+    }()
+    //
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -23,7 +38,10 @@ class ProfileView: UIView {
         
         self.addSubview(creditView)
         setupCreditView()
-        
+        // MARK: prototype
+        self.addSubview(previousOrders)
+        setupPreviousOrdersConstraints()
+        //
         self.addSubview(logoutButton)
         setupLogoutButton()
     }
@@ -73,19 +91,39 @@ class ProfileView: UIView {
         logoutButton.setAttributedTitle(title, for: .normal)
         
         logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
-        
-        
+        /*
         NSLayoutConstraint.activate([
             logoutButton.topAnchor.constraint(equalTo: creditView.bottomAnchor, constant: 16),
             logoutButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             logoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             
         ])
+        */
+        // MARK: prototype
+        NSLayoutConstraint.activate([
+            logoutButton.topAnchor.constraint(equalTo: previousOrders.bottomAnchor, constant: 16),
+            logoutButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
+            logoutButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            
+        ])
+        //
         
+    }
+    
+    private func setupPreviousOrdersConstraints(){
+        // MARK: prototype
+        NSLayoutConstraint.activate([
+            previousOrders.topAnchor.constraint(equalTo: creditView.bottomAnchor, constant: 16),
+            previousOrders.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
+            previousOrders.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+        //
     }
     
     @objc private func logoutButtonTapped() {
         UserStates.changeStateToLoggedOut()
     }
     
+    @objc private func previousOrdersButtonTapped() {
+        debugPrint("previousOrdersButtonTapped()")
+    }
 }
