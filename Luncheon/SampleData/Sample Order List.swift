@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct SampleOrderList {
+    
+    static private var orderList:[SampleOrder] = [SampleOrder]()
+    static public var countOfOrders:Int{
+        get{
+            return orderList.count
+        }
+    }
+    static subscript (orderIndex:Int)->SampleOrder {
+        return orderList[orderIndex]
+    }
+    
+    static func addOrder(newOrder:SampleOrder){
+        orderList.append(newOrder)
+    }
+}
