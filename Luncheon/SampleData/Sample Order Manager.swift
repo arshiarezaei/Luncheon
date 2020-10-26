@@ -49,6 +49,8 @@ struct SampleOrderManager {
             debugPrint("sampleOrder orderIsReady")
             SampleNetwork.orderIsReady()
             NotificationCenter.default.post(name: .OrderIsReady, object: nil)
+            let order = SampleOrder(status: .ready, orderNo: getOrderNo, items: SampleFoodTray.foodTray)
+            SampleOrderList.addOrder(newOrder: order)
         }
     }
 }
