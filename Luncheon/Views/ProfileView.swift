@@ -125,5 +125,9 @@ class ProfileView: UIView {
     
     @objc private func previousOrdersButtonTapped() {
         debugPrint("previousOrdersButtonTapped()")
+        let vc = PreviousOrdersListTableViewController()
+        vc.view.backgroundColor = .whiteBackgroud
+        (self.window?.rootViewController as! MainTabBarViewController).selectedViewController?.show(vc, sender:self)
+        
     }
 }

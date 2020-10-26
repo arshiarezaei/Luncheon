@@ -12,6 +12,8 @@
 		5910260F252C85D80093DB5D /* InvoiceItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */; };
 		591B801D2546D2B000886317 /* Sample Order List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B801C2546D2B000886317 /* Sample Order List.swift */; };
 		591B80222546D2BE00886317 /* Sample Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B80212546D2BE00886317 /* Sample Order.swift */; };
+		591B80272546E6B500886317 /* PreviousOrdersListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B80262546E6B500886317 /* PreviousOrdersListTableViewController.swift */; };
+		591B802C2546E95000886317 /* PreviousOrdersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B802B2546E95000886317 /* PreviousOrdersCell.swift */; };
 		591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */; };
 		5921F413240183E700739020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F412240183E700739020 /* AppDelegate.swift */; };
 		5921F415240183E700739020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921F414240183E700739020 /* SceneDelegate.swift */; };
@@ -124,6 +126,8 @@
 		5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceItemViewController.swift; sourceTree = "<group>"; };
 		591B801C2546D2B000886317 /* Sample Order List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Order List.swift"; sourceTree = "<group>"; };
 		591B80212546D2BE00886317 /* Sample Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample Order.swift"; sourceTree = "<group>"; };
+		591B80262546E6B500886317 /* PreviousOrdersListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrdersListTableViewController.swift; sourceTree = "<group>"; };
+		591B802B2546E95000886317 /* PreviousOrdersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrdersCell.swift; sourceTree = "<group>"; };
 		591EA5DF2437AE2800A9BC5A /* FCRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCRestaurant.swift; sourceTree = "<group>"; };
 		5921F40F240183E700739020 /* Luncheon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luncheon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5921F412240183E700739020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 				5910260E252C85D80093DB5D /* InvoiceItemViewController.swift */,
 				593AAC2F2532201700626265 /* OrderPaymentViewController.swift */,
 				59986327253E4A2D00821E3C /* FoodDetailViewController.swift */,
+				591B80262546E6B500886317 /* PreviousOrdersListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				593AAC3925322B6B00626265 /* PayOrderFromCreditView.swift */,
 				5939E097253745440073BFC5 /* SelectBank.swift */,
 				59A780052541F6F200C8F4B8 /* FoodIngredients.swift */,
+				591B802B2546E95000886317 /* PreviousOrdersCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				59A0AD11252D639E0094F130 /* FoodTrayTableView.swift in Sources */,
 				596D8F1B253865DF006B1AEB /* Sample Invoice.swift in Sources */,
 				59C53703253B02B0000A2139 /* Sample Notification.swift in Sources */,
+				591B80272546E6B500886317 /* PreviousOrdersListTableViewController.swift in Sources */,
 				59E3FD4B251B3EF60012584B /* InvoiceTableViewController.swift in Sources */,
 				59D4312B2441F01600388FE2 /* Extention FCRMenuTitleCVDataSource.swift in Sources */,
 				59BC42EF240978AF00787A4F /* UserStates.swift in Sources */,
@@ -684,6 +691,7 @@
 				59DEC7EE251CA1B600FF756C /* Invoice.swift in Sources */,
 				591EA5E02437AE2800A9BC5A /* FCRestaurant.swift in Sources */,
 				59A3066D2413FD870088E463 /* Utilities.swift in Sources */,
+				591B802C2546E95000886317 /* PreviousOrdersCell.swift in Sources */,
 				593AAC302532201700626265 /* OrderPaymentViewController.swift in Sources */,
 				59D32DE4240ABB0800DE55B8 /* LoginVC.swift in Sources */,
 				599C3BF12529D2F000284F29 /* Extention FoodCourtRestaurantsCVDelegate.swift in Sources */,
